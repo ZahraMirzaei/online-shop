@@ -20,6 +20,8 @@
     "react-hot-toast": "^2.2.0",
     "react-icons": "^4.3.1",
     "react-query": "^3.38.1",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "stripe": "^9.1.0"
   },
   "devDependencies": {
