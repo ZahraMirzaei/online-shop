@@ -15,7 +15,5 @@ module.exports = {
           },
         ]
       : undefined,
-    "postcss-preset-env",
-    ...(process.env.NODE_ENV === "production" ? { cssnano: {} } : {}),
   ],
 };
