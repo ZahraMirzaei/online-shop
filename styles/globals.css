@@ -4,26 +4,24 @@
 
 @layer base {
   :root {
-    --color-primary: #ee384e;
-    --color-secondary: #4a4c5a;
+    --color-primary: 238, 56, 78; /*#ee384e*/
+    --color-secondary: 74, 76, 90; /* #4a4c5a*/
 
-    --color-bg: #f1f5f9;
-    --color-bg-side: #fcfdff;
+    --color-bg: 241, 245, 249; /* #f1f5f9*/
+    --color-bg-side: 252, 251, 255; /* #fcfdff*/
 
-    --color-text-base: #424750;
-    --color-text-muted: #6b7280;
-    --color-text-side: #ffe7e7;
+    --color-text-base: 66, 71, 80; /* #424750*/
+    --color-text-muted: 107, 114, 128; /*#6b7280*/
+    --color-text-side: 255, 231, 231; /*#ffe7e7*/
   }
+
   .theme-dark {
-    --color-primary: #ee384e;
-    --color-secondary: #4a4c5a;
+    --color-bg: 15, 23, 42; /* #0f172a*/
+    --color-bg-side: 30, 41, 59; /* #1e293b*/
 
-    --color-bg: #0f172a;
-    --color-bg-side: #1e293b;
-
-    --color-text-base: #e2e8f0;
-    --color-text-muted: #8c9aaf;
-    --color-text-side: #ffe7e7;
+    --color-text-base: 226, 232, 240; /*#e2e8f0*/
+    --color-text-muted: 140, 154, 175; /*#8c9aaf*/
+    --color-text-side: 255, 231, 231; /*#ffe7e7*/
   }
 }
 
