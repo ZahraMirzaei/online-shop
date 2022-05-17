@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-primary: #ee384e;
+    --color-secondary: #4a4c5a;
+
+    --color-bg: #f1f5f9;
+    --color-bg-side: #fcfdff;
+
+    --color-text-base: #424750;
+    --color-text-muted: #6b7280;
+    --color-text-side: #ffe7e7;
+  }
+  .theme-dark {
+    --color-primary: #ee384e;
+    --color-secondary: #4a4c5a;
+
+    --color-bg: #0f172a;
+    --color-bg-side: #1e293b;
+
+    --color-text-base: #e2e8f0;
+    --color-text-muted: #8c9aaf;
+    --color-text-side: #ffe7e7;
+  }
+}
+
 html,
 body {
   padding: 0;
