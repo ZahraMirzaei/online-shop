@@ -1,4 +1,14 @@
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgba(var(${variableName})`;
+  };
+}
+
 module.exports = {
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -7,21 +17,21 @@ module.exports = {
     extend: {
       colors: {
         palette: {
-          primary: "var(--color-primary)",
-          secondary: "var(--color-secondary)",
+          primary: withOpacity("--color-primary"),
+          secondary: withOpacity("--color-secondary"),
         },
       },
       textColor: {
         palette: {
-          base: "var(--color-text-base)",
-          mute: "var(--color-text-muted)",
-          side: "var(--color-text-side)",
+          base: withOpacity("--color-text-base"),
+          mute: withOpacity("--color-text-muted"),
+          side: withOpacity("--color-text-side"),
         },
       },
       backgroundColor: {
         palette: {
-          fill: "var(--color-bg)",
-          card: "var(--color-bg-side)",
+          fill: withOpacity("--color-bg"),
+          card: withOpacity("--color-bg-side"),
         },
       },
     },
