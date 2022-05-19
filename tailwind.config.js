@@ -34,6 +34,10 @@ module.exports = {
           card: withOpacity("--color-bg-side"),
         },
       },
+      fontFamily: {
+        farsi: "'iranyekan', 'IRANSans', 'Tahoma'",
+        english: "'Poppins', 'Roboto', 'sans-serif'",
+      },
     },
   },
   plugins: [],
