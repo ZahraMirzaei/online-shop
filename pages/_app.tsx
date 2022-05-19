@@ -11,9 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const { locale } = useRouter();
   return (
     <ThemeProvider enableSystem={true} attribute="class">
-      <div dir={locale === "fa" ? "rtl" : "ltr"}>
-        <Component {...pageProps} />
-      </div>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 }
