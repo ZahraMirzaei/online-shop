@@ -15,7 +15,7 @@
     --color-text-side: 255, 231, 231; /*#ffe7e7*/
   }
 
-  .theme-dark {
+  .dark {
     --color-bg: 15, 23, 42; /* #0f172a*/
     --color-bg-side: 30, 41, 59; /* #1e293b*/
 
