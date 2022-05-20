@@ -35,6 +35,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text-base));
 }
 
 a {
