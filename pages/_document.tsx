@@ -14,7 +14,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className="md:py-10 md:px-28">
+      <body className=" md:px-28">
         <Main />
         <NextScript />
       </body>
