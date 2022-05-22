@@ -38,6 +38,20 @@ module.exports = {
         farsi: "'iranyekan', 'IRANSans', 'Tahoma'",
         english: "'Poppins', 'Roboto', 'sans-serif'",
       },
+      keyframes: {
+        sidenavLTR: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0px)" },
+        },
+        sidenavRTL: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(0px)" },
+        },
+      },
+      animation: {
+        sidenavLTR: "sidenavLTR 1s ease-in-out",
+        sidenavRTL: "sidenavRTL 1s ease-in-out",
+      },
     },
   },
   plugins: [],
