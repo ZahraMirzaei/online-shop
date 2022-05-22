@@ -6,14 +6,15 @@ import en from "../../locales/pages/home/en";
 import fa from "../../locales/pages/home/fa";
 import SearchBar from "./SearchBar";
 import { GoGrabber } from "react-icons/go";
-
+import Theme from "./Theme";
+import Language from "./Language";
 const Header = () => {
   const { locale } = useRouter();
   const t = locale === "en" ? en : fa;
   return (
-    <div className="px-3 pt-4">
+    <div className=" pt-4">
       <div>
-        <div className="flex flex-wrap">
+        <div className="flex justify-between">
           <GoGrabber style={{ fontSize: "2.5rem" }} />
           <Link href="/">
             <h1>
@@ -25,7 +26,12 @@ const Header = () => {
               />
             </h1>
           </Link>
+          <div className="flex justify-between items-center w-16  ">
+            <Theme />
+            <Language />
+          </div>
         </div>
+        <hr />
         <SearchBar />
       </div>
     </div>
