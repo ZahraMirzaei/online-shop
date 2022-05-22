@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { BsFillMoonStarsFill } from "react-icons/bs";
+import { FaCloudMoon } from "react-icons/fa";
 import { BsFillBrightnessHighFill } from "react-icons/bs";
 
 const Theme = () => {
@@ -24,7 +24,7 @@ const Theme = () => {
     } else {
       return (
         <div role="button" onClick={() => setTheme("dark")}>
-          <BsFillMoonStarsFill style={{ fontSize: "1.3rem" }} />
+          <FaCloudMoon style={{ fontSize: "1.3rem" }} />
         </div>
       );
     }
