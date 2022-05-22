@@ -19,9 +19,9 @@ const Language = () => {
 
   return (
     <div className=" relative">
-      <MdLanguage style={{ fontSize: "1.5rem" }} />
+      <MdLanguage style={{ fontSize: "1.4rem" }} />
       <div
-        className={`absolute top-8 ltr:right-0 rtl:left-0 bg-palette-card py-3 px-6 shadow-md `}
+        className={`absolute top-8 ltr:right-0 rtl:left-0 bg-palette-card py-3 px-6 shadow-md rounded-md`}
       >
         <Link href="/" locale="fa">
           <a className="whitespace-nowrap flex justify-between items-center">
