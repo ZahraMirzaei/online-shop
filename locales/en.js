@@ -1,4 +1,6 @@
 const en = {
+  farsi: "فارسی - fa",
+  english: "English - en",
   Digital: "Digital",
   Laptop: "Laptop",
   Asus: "Asus",

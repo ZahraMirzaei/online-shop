@@ -1,4 +1,6 @@
 const fa = {
+  farsi: "فارسی - fa",
+  english: "en - English",
   Digital: "کالای دیجیتال",
   Laptop: "لپ تاپ",
   Asus: "ایسوس",
