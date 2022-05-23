@@ -1,6 +1,8 @@
 import React, { forwardRef } from "react";
 import { useRouter } from "next/router";
 import { IoClose } from "react-icons/io5";
+import Image from "next/image";
+import SideNavContent from "./SideNavContent";
 
 interface Props {
   state?: string;
@@ -33,6 +35,16 @@ const SideNav = forwardRef<HTMLDivElement, Props>(({ state, onClose }, ref) => {
         >
           <IoClose />
         </div>
+        <div className="pt-5 pb-3 ltr:pl-4 rtl:pr-5">
+          <Image
+            src="/images/logo.png"
+            alt="zishop-logo"
+            width={100}
+            height={25}
+          />
+        </div>
+        <hr />
+        <SideNavContent />
       </div>
     </>
   );
