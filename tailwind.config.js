@@ -32,6 +32,7 @@ module.exports = {
         palette: {
           fill: withOpacity("--color-bg"),
           card: withOpacity("--color-bg-side"),
+          dark: withOpacity("--color-bg-dark"),
         },
       },
       fontFamily: {
@@ -49,8 +50,10 @@ module.exports = {
         },
       },
       animation: {
-        sidenavLTR: "sidenavLTR 1s ease-in-out",
-        sidenavRTL: "sidenavRTL 1s ease-in-out",
+        sidenavLTREntering: "sidenavLTR 0.3s ease-in-out forwards",
+        sidenavRTLEntering: "sidenavRTL 0.3s ease-in-out forwards",
+        sidenavLTRExit: "sidenavLTR 0.3s ease-in-out reverse forwards",
+        sidenavRTLExit: "sidenavRTL 0.3s ease-in-out reverse forwards",
       },
     },
   },
