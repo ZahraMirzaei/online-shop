@@ -10,7 +10,7 @@ import { GoGrabber } from "react-icons/go";
 
 import Theme from "./Theme";
 import Language from "./Language";
-import SideNav from "./SideNav";
+import SideNav from "./SideNav/SideNav";
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
   const nodeRef = useRef<HTMLDivElement>(null);
