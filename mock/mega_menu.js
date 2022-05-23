@@ -77,3 +77,5 @@ const megaMenu = [
   { category: "Sport", icon: "MdSportsTennis" },
   { category: "Stationery", icon: "BsBook" },
 ];
+
+export default megaMenu;
