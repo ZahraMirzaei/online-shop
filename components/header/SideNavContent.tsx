@@ -2,7 +2,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import megaMenu from "../../mock/mega_menu";
-// import
 import en from "../../locales/en";
 import fa from "../../locales/fa";
 const SideNavContent = () => {
@@ -13,7 +12,6 @@ const SideNavContent = () => {
       {megaMenu.map((item) => {
         return (
           <div key={item.category}>
-            {/* <Link href='/'  */}
             <div>{t[item.category]}</div>
           </div>
         );
