@@ -28,6 +28,7 @@ const fa: { [key: string]: string } = {
   PowerBank: "پاور بانک",
   Speaker: "اسپیکر بلوتوث و با سیم",
   Headphone: "هدفون، هدست و هندزفری",
+  fashion: "مد و پوشاک",
   toys: "اسباب بازی، کودک و نوزاد",
   Cosmetic: "آرایشی و بهداشتی",
   Home: "لوازم خانه و آشپز خانه",

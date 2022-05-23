@@ -28,6 +28,7 @@ const en: { [key: string]: string } = {
   PowerBank: "Power Bank",
   Speaker: "Bluetooth Speaker and wire",
   Headphone: "Headphone, Headset and Hands free",
+  fashion: "Fashion and Clothes",
   toys: "Toys and Baby",
   Cosmetic: "Cosmetic",
   Home: "Furniture and kitchen",
