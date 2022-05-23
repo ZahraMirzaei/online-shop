@@ -7,6 +7,7 @@ import en from "../../locales/pages/home/en";
 import fa from "../../locales/pages/home/fa";
 import SearchBar from "./SearchBar";
 import { GoGrabber } from "react-icons/go";
+
 import Theme from "./Theme";
 import Language from "./Language";
 import SideNav from "./SideNav";
@@ -40,10 +41,18 @@ const Header = () => {
             {(state) => {
               return (
                 <>
-                  <SideNav ref={nodeRef} state={state} />
-                  <div className="fixed inset-0 z-50 bg-palette-dark/[0.6]"></div>
+                  <SideNav ref={nodeRef} state={state} onClose={closeNav} />
                   <div
-                    className={`absolute top-0 ltr:left-0 rtl:right-0`}
+                    className={`fixed inset-0 z-50 bg-black/60
+                  ${
+                    state === "entering"
+                      ? "animate-fadeEntering"
+                      : state === "entered"
+                      ? "opacity-100"
+                      : "animate-fadeExit"
+                  }
+                  `}
+                    onClick={closeNav}
                   ></div>
                 </>
               );
