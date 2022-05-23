@@ -15,27 +15,20 @@ const SideNav = forwardRef<HTMLDivElement, Props>(({ state, onClose }, ref) => {
     <>
       <div
         ref={ref}
-        className={`max-w-[380px] w-[80%] h-screen fixed top-0 shadow-md
-      ${locale == "en" ? "left-0" : "right-0"} 
-      z-[100] bg-palette-card origin-left overflow-hidden 
-      ${locale == "en" ? "translate-x-[-100%]" : "translate-x-[100%]"}
-      ${
-        state === "entering"
-          ? "ltr:animate-sidenavLTREntering rtl:animate-sidenavRTLEntering"
-          : state === "entered"
-          ? "translate-x-0"
-          : "ltr:animate-sidenavLTRExit rtl:animate-sidenavRTLExit"
-      }
-      `}
+        className={`max-w-[380px] w-[80%] h-screen fixed top-0 shadow-md z-[100] bg-palette-card origin-left overflow-hidden 
+        ${locale == "en" ? "left-0" : "right-0"} 
+        ${locale == "en" ? "translate-x-[-100%]" : "translate-x-[100%]"}
+        ${
+          state === "entering"
+            ? "ltr:animate-sidenavLTREntering rtl:animate-sidenavRTLEntering"
+            : state === "entered"
+            ? "translate-x-0"
+            : "ltr:animate-sidenavLTRExit rtl:animate-sidenavRTLExit"
+        }
+        `}
       >
         <div
-          className={`absolute top-3 ltr:left-0 rtl:right-0 ltr:ml-[85%] rtl:mr-[85%]   text-4xl cursor-pointer z-[100] ${
-            state === "entering"
-              ? "animate-fadeCloseBtnEntering"
-              : state === "entered"
-              ? "opacity-100"
-              : "animate-fadeCloseBtnExit"
-          }`}
+          className={`absolute top-3 ltr:left-0 rtl:right-0 ltr:ml-[85%] rtl:mr-[85%]   text-4xl cursor-pointer `}
           onClick={onClose}
         >
           <IoClose />
