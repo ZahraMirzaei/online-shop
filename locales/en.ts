@@ -1,4 +1,4 @@
-const en = {
+const en: { [key: string]: string } = {
   farsi: "فارسی - fa",
   english: "English - en",
   Digital: "Digital",
@@ -30,7 +30,7 @@ const en = {
   Headphone: "Headphone, Headset and Hands free",
   toys: "Toys and Baby",
   Cosmetic: "Cosmetic",
-  Home: "Home",
+  Home: "Furniture and kitchen",
   Sport: "Sport and Trip",
   Stationery: "Books, Stationery and Art",
 };

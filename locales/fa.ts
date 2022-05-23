@@ -1,4 +1,4 @@
-const fa = {
+const fa: { [key: string]: string } = {
   farsi: "فارسی - fa",
   english: "en - English",
   Digital: "کالای دیجیتال",
@@ -30,7 +30,7 @@ const fa = {
   Headphone: "هدفون، هدست و هندزفری",
   toys: "اسباب بازی، کودک و نوزاد",
   Cosmetic: "آرایشی و بهداشتی",
-  Home: "خانه",
+  Home: "لوازم خانه و آشپز خانه",
   Sport: "ورزش و سفر",
   Stationery: "کتاب، لوازم تحریر و هنر",
 };
