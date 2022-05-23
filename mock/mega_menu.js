@@ -1,7 +1,14 @@
+import { BsLaptop, BsBook } from "react-icons/bs";
+import { IoShirtOutline } from "react-icons/io5";
+import { MdOutlineToys } from "react-icons/md";
+import { RiHeartPulseLine } from "react-icons/ri";
+import { AiOutlineHome } from "react-icons/ai";
+import { BiFootball } from "react-icons/bi";
+
 const megaMenu = [
   {
     category: "Digital",
-    icon: "BsLaptop",
+    icon: BsLaptop,
     productsGroup: [
       {
         title: "Laptop",
@@ -41,7 +48,7 @@ const megaMenu = [
   },
   {
     category: "fashion",
-    icon: "IoShirtOutline",
+    icon: IoShirtOutline,
     productsGroup: [
       {
         title: "women",
@@ -71,11 +78,11 @@ const megaMenu = [
       },
     ],
   },
-  { category: "toys", icon: "MdOutlineToys" },
-  { category: "Cosmetic", icon: "RiHeartPulseLine" },
-  { category: "Home", icon: "AiOutlineHome" },
-  { category: "Sport", icon: "MdSportsTennis" },
-  { category: "Stationery", icon: "BsBook" },
+  { category: "toys", icon: MdOutlineToys },
+  { category: "Cosmetic", icon: RiHeartPulseLine },
+  { category: "Home", icon: AiOutlineHome },
+  { category: "Sport", icon: BiFootball },
+  { category: "Stationery", icon: BsBook },
 ];
 
 export default megaMenu;
