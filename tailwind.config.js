@@ -52,6 +52,10 @@ module.exports = {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 },
         },
+        dropDown: {
+          "0%": { opacity: 0, transform: "scaleY(0)" },
+          "100%": { opacity: 1, transform: "scaleY(1)" },
+        },
       },
       animation: {
         sidenavLTREntering: "sidenavLTR 0.3s ease-in-out forwards",
@@ -60,6 +64,8 @@ module.exports = {
         sidenavRTLExit: "sidenavRTL 0.3s ease-in-out reverse forwards",
         fadeEntering: "fade 0.3s forwards",
         fadeExit: "fade 0.3s reverse forwards",
+        dropDown: "dropDown 0.3s forwards",
+        dropDownExit: "dropDown 0.3s reverse forwards",
       },
     },
   },
