@@ -25,7 +25,7 @@ const Header = () => {
   };
 
   return (
-    <div className=" pt-4">
+    <div className="pt-4">
       <div>
         <div className="flex justify-between">
           <div onClick={openNav}>
@@ -65,6 +65,8 @@ const Header = () => {
                 alt="zishop-logo"
                 width={150}
                 height={35}
+                objectFit="contain"
+                className="cursor-pointer"
               />
             </h1>
           </Link>
