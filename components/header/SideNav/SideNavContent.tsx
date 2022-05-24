@@ -17,7 +17,13 @@ const SideNavContent = () => {
             <div className="flex items-center mt-3 py-3 ltr:pl-5 rtl:pr-5  cursor-pointer font-semibold hover:ltr:translate-x-2 hover:rtl:-translate-x-2 transition-transform">
               <item.icon className="w-6 h-6 " />
               <div className="mx-4">{t[item.category]}</div>
-              {locale === "en" ? <HiChevronRight /> : <HiChevronLeft />}
+              {item.productsGroup ? (
+                locale === "en" ? (
+                  <HiChevronRight />
+                ) : (
+                  <HiChevronLeft />
+                )
+              ) : null}
             </div>
           </div>
         );
