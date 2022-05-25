@@ -22,7 +22,7 @@ const Language = () => {
   return (
     <div className=" relative">
       <MdLanguage
-        style={{ fontSize: "1.4rem" }}
+        style={{ fontSize: "1.4rem", margin: "0 0.1rem 0 0.1rem" }}
         onClick={() => setOpenLang((prevState) => !prevState)}
       />
       {openLang ? (
@@ -42,6 +42,7 @@ const Language = () => {
                     id="fa"
                     name="language"
                     value={lang}
+                    className="accent-rose-600"
                     checked={locale === "fa" ? true : false}
                     onChange={onChangeHandler}
                   />
@@ -60,6 +61,7 @@ const Language = () => {
                     id="en"
                     name="language"
                     value={lang}
+                    className="accent-rose-600"
                     checked={locale === "en" ? true : false}
                     onChange={onChangeHandler}
                   />
