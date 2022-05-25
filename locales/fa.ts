@@ -1,4 +1,6 @@
 const fa: { [key: string]: string } = {
+  login: "ورود",
+  signIn: "ثبت‌نام",
   farsi: "فارسی - fa",
   english: "en - English",
   Digital: "کالای دیجیتال",
