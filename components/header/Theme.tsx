@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { FaCloudMoon } from "react-icons/fa";
+// import { FaCloudMoon } from "react-icons/fa";
+import { FaMoon } from "react-icons/fa";
 import { BsFillBrightnessHighFill } from "react-icons/bs";
 
 const Theme = () => {
@@ -18,19 +19,19 @@ const Theme = () => {
     if (currentTheme === "dark") {
       return (
         <div role="button" onClick={() => setTheme("light")}>
-          <BsFillBrightnessHighFill style={{ fontSize: "1.5rem" }} />
+          <BsFillBrightnessHighFill style={{ fontSize: "1.3rem" }} />
         </div>
       );
     } else {
       return (
         <div role="button" onClick={() => setTheme("dark")}>
-          <FaCloudMoon style={{ fontSize: "1.3rem" }} />
+          <FaMoon style={{ fontSize: "1.1rem" }} />
         </div>
       );
     }
   };
 
-  return <>{renderThemeChanger()}</>;
+  return renderThemeChanger();
 };
 
 export default Theme;
