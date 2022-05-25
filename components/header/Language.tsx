@@ -27,7 +27,7 @@ const Language = () => {
         className="flex items-center cursor-pointer"
         onClick={() => setOpenLang((prevState) => !prevState)}
       >
-        <div className="flex items-center md:border-2 border-palette-secondary rounded-lg py-1 md:px-2 shadow-md">
+        <div className="flex items-center md:border-2 border-palette-secondary rounded-lg py-1 md:px-2 md:shadow-md">
           <MdLanguage
             style={{ fontSize: "1.4rem", margin: "0 0.1rem 0 0.1rem" }}
           />
