@@ -8,6 +8,9 @@ import fa from "../../locales/pages/home/fa";
 import SearchBar from "./SearchBar";
 import { GoGrabber } from "react-icons/go";
 
+import { HiOutlineLogin } from "react-icons/hi";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
 import Theme from "./Theme";
 import Language from "./Language";
 import SideNav from "./SideNav/SideNav";
@@ -27,9 +30,9 @@ const Header = () => {
   return (
     <div className="pt-4">
       <div>
-        <div className="flex justify-between">
+        <div className="flex justify-between mb-2">
           <div onClick={openNav}>
-            <GoGrabber style={{ fontSize: "2.5rem" }} />
+            <GoGrabber style={{ fontSize: "2rem" }} />
           </div>
           <Transition
             nodeRef={nodeRef}
@@ -59,24 +62,28 @@ const Header = () => {
             }}
           </Transition>
           <Link href="/">
-            <h1>
-              <Image
-                src="/images/logo.png"
-                alt="zishop-logo"
-                width={150}
-                height={35}
-                objectFit="contain"
-                className="cursor-pointer"
-              />
-            </h1>
+            <Image
+              src="/images/logo.png"
+              alt="zishop-logo"
+              width={120}
+              height={25}
+              objectFit="contain"
+              className="cursor-pointer ltr:-mr-3"
+            />
           </Link>
-          <div className="flex justify-between items-center w-16  ">
+          <div className="flex justify-between items-center w-16">
             <Theme />
             <Language />
           </div>
         </div>
         <hr />
-        <SearchBar />
+        <div className="my-2 flex items-center">
+          <SearchBar />
+          <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ltr:w-[4.1rem] rtl:w-[4.3rem] text-[1.6rem] font-bold">
+            <HiOutlineLogin />
+            <AiOutlineShoppingCart />
+          </div>
+        </div>
       </div>
     </div>
   );
