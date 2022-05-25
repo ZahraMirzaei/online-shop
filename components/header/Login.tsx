@@ -14,7 +14,7 @@ const Login: React.FC<Props> = ({ modifier }) => {
   return (
     <>
       {modifier === "md" ? (
-        <div className="flex items-center rounded-lg border-2 border-palette-secondary py-1 px-2 ltr:mr-6 rtl:ml-6 shadow-md">
+        <div className="flex items-center rounded-lg border-2 border-palette-secondary py-1 px-2 ltr:mr-6 rtl:ml-6 shadow-md bg-palette-card">
           <HiOutlineLogin style={{ fontSize: "1.6rem" }} />
           <p className="ltr:ml-2 rtl:mr-2 text-xs">
             {t.login} | {t.signIn}
