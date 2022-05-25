@@ -2,86 +2,75 @@ import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { Transition } from "react-transition-group";
-import en from "../../locales/pages/home/en";
-import fa from "../../locales/pages/home/fa";
+
 import SearchBar from "./SearchBar";
-import { GoGrabber } from "react-icons/go";
-
-import { HiOutlineLogin } from "react-icons/hi";
-import { AiOutlineShoppingCart } from "react-icons/ai";
-
 import Theme from "./Theme";
 import Language from "./Language";
-import SideNav from "./SideNav/SideNav";
+import Basket from "./Basket";
+import Login from "./Login";
+import SideBar from "./SideNav/SideBar";
+import en from "../../locales/en";
+import fa from "../../locales/fa";
+
 const Header = () => {
-  const [navOpen, setNavOpen] = useState(false);
-  const nodeRef = useRef<HTMLDivElement>(null);
   const { locale } = useRouter();
   const t = locale === "en" ? en : fa;
-
-  const openNav = () => {
-    setNavOpen(true);
-  };
-  const closeNav = () => {
-    setNavOpen(false);
-  };
 
   return (
     <div className="pt-4">
       <div>
         <div className="flex justify-between mb-2">
-          <div onClick={openNav}>
-            <GoGrabber style={{ fontSize: "2rem" }} />
+          <div className="flex items-center">
+            <SideBar />
+
+            <Link href="/">
+              <a className="flex items-center">
+                <Image
+                  src="/images/logo.png"
+                  alt="zishop-logo"
+                  width={120}
+                  height={25}
+                  objectFit="contain"
+                  className="cursor-pointer ltr:-mr-3"
+                />
+              </a>
+            </Link>
           </div>
-          <Transition
-            nodeRef={nodeRef}
-            in={navOpen}
-            timeout={300}
-            mountOnEnter
-            unmountOnExit
-          >
-            {(state) => {
-              return (
-                <>
-                  <SideNav ref={nodeRef} state={state} onClose={closeNav} />
-                  <div
-                    className={`fixed inset-0 z-50 bg-black/60
-                  ${
-                    state === "entering"
-                      ? "animate-fadeEntering"
-                      : state === "entered"
-                      ? "opacity-100"
-                      : "animate-fadeExit"
-                  }
-                  `}
-                    onClick={closeNav}
-                  ></div>
-                </>
-              );
-            }}
-          </Transition>
-          <Link href="/">
-            <Image
-              src="/images/logo.png"
-              alt="zishop-logo"
-              width={120}
-              height={25}
-              objectFit="contain"
-              className="cursor-pointer ltr:-mr-3"
-            />
-          </Link>
-          <div className="flex justify-between items-center w-16">
-            <Theme />
+
+          <div className="hidden md:block ltr:ml-4 rtl:mr-4 grow">
+            <SearchBar />
+          </div>
+
+          {/* 💻 md break point -login and basket */}
+          <div className="hidden md:flex items-center justify-between font-bold ltr:ml-4 rtl:mr-4">
+            <Login modifier="md" />
+            <Basket />
+          </div>
+
+          {/* 📱 sm break point -Theme and language*/}
+          <div className="flex rtl:w-[4.1rem] ltr:w-[4.3rem] justify-between items-center md:hidden">
             <Language />
+            <Theme />
           </div>
         </div>
+
         <hr />
-        <div className="my-2 flex items-center">
+
+        {/* 📱 sm break point */}
+        <div className="md:hidden my-2 flex items-center">
           <SearchBar />
-          <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ltr:w-[4.1rem] rtl:w-[4.3rem] text-[1.6rem] font-bold">
-            <HiOutlineLogin />
-            <AiOutlineShoppingCart />
+          <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ltr:w-[4.1rem] rtl:w-[4.3rem] ">
+            <Login />
+            <Basket />
+          </div>
+        </div>
+
+        {/* 💻 md break point */}
+        <div className="hidden md:flex justify-between items-center my-3">
+          <div className="grow"></div>
+          <div className="flex items-center justify-between ltr:w-[10rem] rtl:w-[9.3rem]">
+            <Language />
+            <Theme />
           </div>
         </div>
       </div>
