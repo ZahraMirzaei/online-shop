@@ -19,19 +19,29 @@ const Theme = () => {
     if (currentTheme === "dark") {
       return (
         <div role="button" onClick={() => setTheme("light")}>
-          <BsFillBrightnessHighFill style={{ fontSize: "1.3rem" }} />
+          <BsFillBrightnessHighFill
+            style={{
+              fontSize: "1.3rem",
+              filter: "drop-shadow(0px 0px 5px rgb(255 255 255 / 0.6))",
+            }}
+          />
         </div>
       );
     } else {
       return (
         <div role="button" onClick={() => setTheme("dark")}>
-          <FaMoon style={{ fontSize: "1.1rem" }} />
+          <FaMoon
+            style={{
+              fontSize: "1.1rem",
+              filter: "drop-shadow(3px 3px 2px rgb(0 0 0 / 0.4))",
+            }}
+          />
         </div>
       );
     }
   };
 
-  return renderThemeChanger();
+  return <div className="rtl:ml-1 ltr:mr-1">{renderThemeChanger()}</div>;
 };
 
 export default Theme;
