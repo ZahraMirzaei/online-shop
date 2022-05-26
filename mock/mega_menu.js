@@ -42,7 +42,7 @@ const megaMenu = [
       },
       {
         title: "Other",
-        subtitles: ["Tablet", "Flash", "PowerBank", "Speaker", "Headphone"],
+        subtitles: ["Tablet", "PowerBank", "Speaker", "Headphone"],
       },
     ],
   },
@@ -71,7 +71,7 @@ const megaMenu = [
         subtitles: ["Overalls", "Mittens", "BabyApron", "Shoes", "TShirt"],
       },
       {
-        title: "other",
+        title: "Other",
         subtitles: ["watch", "wallet", "hat", "belt"],
       },
     ],
