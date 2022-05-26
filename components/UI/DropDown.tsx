@@ -1,67 +1,74 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef, useRef } from "react";
 import Link from "next/link";
 import { HiChevronUp, HiChevronDown } from "react-icons/hi";
+import { useRouter } from "next/router";
 import { Transition } from "react-transition-group";
-import { IconType } from "react-icons/lib";
+
+import { IDropDown } from "../../lib/interface/dropDown";
+import en from "../../locales/en";
+import fa from "../../locales/fa";
 
 interface Props {
-  dropDown: {
-    title: string | IconType;
-    url?: string;
-    icon?: IconType;
-    subtitles: string[];
-  };
+  dropDown: IDropDown;
+  ref: React.HTMLProps<HTMLDivElement>;
 }
-const DropDown: React.FC<Props> = ({ dropDown }) => {
+const DropDown = forwardRef<HTMLDivElement, Props>(({ dropDown }, ref) => {
   const [openDropdown, setOpenDropDown] = useState(false);
+  const { locale } = useRouter();
+  const t = locale === "en" ? en : fa;
   let ArrowDirection = !openDropdown ? HiChevronDown : HiChevronUp;
+  const nodeRef = useRef<HTMLDivElement>(null);
   return (
-    // h-0 and transition-all =>deleted
-    <div className=" origin-top">
-      <h3
-        className="flex justify-start items-center cursor-pointer py-4 px-6 w-full"
+    <div className="origin-top" ref={ref}>
+      <div
+        className="flex items-center cursor-pointer py-4 px-6 w-full"
         onClick={() => setOpenDropDown((prevState) => !prevState)}
       >
-        {typeof dropDown.title === "string" ? (
-          dropDown.title
-        ) : (
-          <dropDown.title />
-        )}
+        <h3 className="ltr:mr-3 rtl:ml-3 font-bold">
+          {t[`${dropDown.title}`]}
+        </h3>
         <ArrowDirection />
-      </h3>
+      </div>
       <Transition
         mountOnEnter
         unmountOnExit
         in={openDropdown}
         timeout={{ enter: 300, exit: 200 }}
+        nodeRef={nodeRef}
       >
         {(state) => (
-          <ul
-            className={`
+          <>
+            <div
+              className={`
           ${
             state === "entering"
-              ? "animate-dropDown"
+              ? `animate-dropDown`
               : state === "entered"
               ? "scale-y-100 opacity-100"
               : "animate-dropDownExit"
           }
           `}
-          >
-            {dropDown.subtitles.map((item) => {
-              let itemKey = new Date().toLocaleString();
-              return (
-                <li key={itemKey}>
-                  <Link href="/">
-                    <a></a>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+            >
+              {dropDown.subtitles.map((item, index) => {
+                return (
+                  <div
+                    className="ltr:ml-10 rtl:mr-10 py-3 w-full"
+                    ref={ref}
+                    key={`${item}-${index}`}
+                  >
+                    <Link href="/">
+                      <a>{t[`${item}`]}</a>
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </>
         )}
       </Transition>
     </div>
   );
-};
+});
 
+DropDown.displayName = "DropDown";
 export default DropDown;
