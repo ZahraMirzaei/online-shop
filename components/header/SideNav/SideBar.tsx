@@ -1,18 +1,23 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useContext } from "react";
 import { Transition } from "react-transition-group";
 import { GoGrabber } from "react-icons/go";
+import SidebarContext from "../../../store/NavContext";
 import SideNav from "./SideNav";
 
 const SideBar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const nodeRef = useRef<HTMLDivElement>(null);
+  const sidebarCtx = useContext(SidebarContext);
 
   const openNav = () => {
     setNavOpen(true);
   };
+
   const closeNav = () => {
     setNavOpen(false);
+    sidebarCtx.closeSidebar();
   };
+
   return (
     <div className="md:hidden">
       <div onClick={openNav}>
