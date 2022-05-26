@@ -17,6 +17,8 @@ const SidebarContext = createContext<SidebarContextObj>({
   closeSidebar: () => {},
 });
 
+export default SidebarContext;
+
 export const SidebarContextProvider: React.FC<{ children: React.ReactNode }> = (
   props
 ) => {
