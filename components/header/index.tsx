@@ -11,6 +11,7 @@ import Login from "./Login";
 import SideBar from "./SideNav/SideBar";
 import en from "../../locales/en";
 import fa from "../../locales/fa";
+import SideNavSide from "./SideNav/SideNavSide";
 
 const Header = () => {
   const { locale } = useRouter();
@@ -21,8 +22,10 @@ const Header = () => {
       <div>
         <div className="flex justify-between mb-2">
           <div className="flex items-center">
-            <SideBar />
-
+            <div className="md:hidden">
+              <SideBar />
+              <SideNavSide />
+            </div>
             <Link href="/">
               <a className="flex items-center">
                 <Image
