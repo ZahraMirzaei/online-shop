@@ -21,7 +21,7 @@ const DropDown = forwardRef<HTMLDivElement, Props>(({ dropDown }, ref) => {
   return (
     <div className="origin-top" ref={ref}>
       <div
-        className="flex items-center cursor-pointer py-4 px-6 w-full"
+        className="flex items-center cursor-pointer py-4 px-6"
         onClick={() => setOpenDropDown((prevState) => !prevState)}
       >
         <h3 className="ltr:mr-3 rtl:ml-3 font-bold">
@@ -52,7 +52,7 @@ const DropDown = forwardRef<HTMLDivElement, Props>(({ dropDown }, ref) => {
               {dropDown.subtitles.map((item, index) => {
                 return (
                   <div
-                    className="ltr:ml-10 rtl:mr-10 py-3 w-full"
+                    className="ltr:ml-10 rtl:mr-10 py-3"
                     ref={ref}
                     key={`${item}-${index}`}
                   >
