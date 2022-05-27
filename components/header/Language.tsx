@@ -19,19 +19,19 @@ const Language = () => {
   }
 
   return (
-    <div className=" relative">
+    <div className="relative">
       <div
         className="flex items-center cursor-pointer"
         onClick={() => setOpenLang((prevState) => !prevState)}
       >
-        <div className="flex items-center md:border-[1px] border-gray-200 rounded-lg py-1 md:px-2 md:shadow-sm">
+        <div className="flex items-center border-[1px] border-gray-200 rounded-lg py-1 px-2 shadow-sm">
           <MdLanguage
             style={{ fontSize: "1.4rem", margin: "0 0.1rem 0 0.1rem" }}
           />
-          <p className="hidden md:block mx-[0.15rem] text-xs font-bold">
+          <p className="mx-[0.15rem] text-xs font-bold">
             {locale === "en" ? "English" : "فارسی"}
           </p>
-          <div className="hidden md:block ">
+          <div>
             <ArrowDirection />
           </div>
         </div>
