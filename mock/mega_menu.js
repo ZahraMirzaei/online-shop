@@ -58,13 +58,13 @@ const megaMenu = [
           "jeans",
           "pants",
           "TShirt",
+          "Shoes",
           "scarf",
-          "shoes",
         ],
       },
       {
         title: "men",
-        subtitles: ["shirt", "pants", "tie", "TShirt", "jeans", "shoes"],
+        subtitles: ["shirt", "pants", "tie", "TShirt", "Shoes", "jeans"],
       },
       {
         title: "child",
