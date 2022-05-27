@@ -1,8 +1,11 @@
 const fa: { [key: string]: string } = {
+  search: "جستجو",
   login: "ورود",
   signIn: "ثبت‌نام",
   farsi: "فارسی - fa",
   CategoryOfGoods: "دسته‌بندی کالا‌ها",
+  offer: "پیشنهادات و تخفیف‌های ویژه",
+  bestSells: "پرفروش‌ترین‌ها",
   mainMenu: "منو‌ی اصلی",
   english: "en - English",
   Digital: "کالای دیجیتال",

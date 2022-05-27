@@ -4,6 +4,8 @@ import { MdOutlineToys } from "react-icons/md";
 import { RiHeartPulseLine } from "react-icons/ri";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiFootball } from "react-icons/bi";
+import { RiFireLine } from "react-icons/ri";
+import { AiOutlinePercentage } from "react-icons/ai";
 
 const menuItems = [
   {
@@ -84,3 +86,8 @@ const menuItems = [
 ];
 
 export default menuItems;
+
+export const extraMenu = [
+  { title: "offer", icon: AiOutlinePercentage },
+  { title: "bestSells", icon: RiFireLine },
+];

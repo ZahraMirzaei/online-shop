@@ -1,7 +1,10 @@
 const en: { [key: string]: string } = {
+  search: "Search",
   login: "Login",
   signIn: "Sign in",
   CategoryOfGoods: "Category of Goods",
+  offer: "Offers and Discounts",
+  bestSells: "The Best-Sells",
   mainMenu: "Main Menu",
   farsi: "فارسی - fa",
   english: "English - en",
