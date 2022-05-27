@@ -5,7 +5,7 @@ import { RiHeartPulseLine } from "react-icons/ri";
 import { AiOutlineHome } from "react-icons/ai";
 import { BiFootball } from "react-icons/bi";
 
-const megaMenu = [
+const menuItems = [
   {
     category: "Digital",
     icon: BsLaptop,
@@ -83,4 +83,4 @@ const megaMenu = [
   { category: "Stationery", icon: BsBook },
 ];
 
-export default megaMenu;
+export default menuItems;

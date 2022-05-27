@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useRouter } from "next/router";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
-import megaMenu from "../../../mock/mega_menu";
+import menuItems from "../../../mock/menuItems";
 import SidebarContext from "../../../store/NavContext";
 import en from "../../../locales/en";
 import fa from "../../../locales/fa";
@@ -18,7 +18,7 @@ const SideNavContent = () => {
   };
   return (
     <div className="absolute w-full h-full overflow-y-auto">
-      {megaMenu.map((item) => {
+      {menuItems.map((item) => {
         return (
           <div key={item.category}>
             <div
