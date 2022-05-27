@@ -1,7 +1,6 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useLanguage } from "../../hooks/useLanguage";
 
 import SearchBar from "./SearchBar";
 import Theme from "./Theme";
@@ -13,61 +12,67 @@ import SideNavSide from "./SideNav/SideNavSide";
 import MegaMenu from "./MegaMenu/MegaMenu";
 
 const Header = () => {
-  const { t, locale } = useLanguage();
-
   return (
-    <div className="pt-4">
-      <div>
+    <div className="pt-4 z-[1000]">
+      {/* 📱 sm break point */}
+      <div className="md:hidden">
         <div className="flex justify-between mb-2">
           <div className="flex items-center">
-            <div className="md:hidden">
+            <div className="">
               <SideBar />
               <SideNavSide />
             </div>
-
-            <Link href="/">
-              <a className="flex items-center">
+            <Link href="/" className="">
+              <a className="flex items-center w-full ">
                 <Image
                   src="/images/logo.png"
                   alt="zishop-logo"
                   width={120}
                   height={25}
                   objectFit="contain"
-                  className="cursor-pointer ltr:-mr-3"
+                  className="cursor-pointer ltr:-mr-3 "
                 />
               </a>
             </Link>
           </div>
-
-          <div className="hidden md:block ltr:ml-4 rtl:mr-4 grow">
-            <SearchBar />
-          </div>
-
-          {/* 💻 md break point -login and basket */}
-          <div className="hidden md:flex items-center justify-between font-bold ltr:ml-4 rtl:mr-4">
-            <Login modifier="md" />
-            <Basket />
-          </div>
-
-          {/* 📱 sm break point -Theme and language*/}
-          <div className="flex rtl:w-[4.1rem] ltr:w-[4.3rem] justify-between items-center md:hidden">
+          <div className="flex rtl:w-[9rem] ltr:w-[9rem] justify-between items-center ">
             <Language />
             <Theme />
           </div>
         </div>
-
         <hr />
-
-        {/* 📱 sm break point */}
-        <div className="md:hidden my-2 flex items-center">
+        <div className="mb-2 mt-4 flex items-center">
           <SearchBar />
           <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ltr:w-[4.1rem] rtl:w-[4.3rem] ">
             <Login />
             <Basket />
           </div>
         </div>
+      </div>
 
-        {/* 💻 md break point */}
+      {/* 💻 md break point */}
+      <div className="hidden md:block">
+        <div className="flex items-center">
+          <Link href="/" className="">
+            <a className="flex items-center">
+              <Image
+                src="/images/logo.png"
+                alt="zishop-logo"
+                width={120}
+                height={25}
+                objectFit="contain"
+                className="cursor-pointer ltr:-mr-3"
+              />
+            </a>
+          </Link>
+          <div className="md:block ltr:ml-4 rtl:mr-4 grow">
+            <SearchBar />
+          </div>
+          <div className="hidden md:flex items-center justify-between font-bold ltr:ml-4 rtl:mr-4">
+            <Login modifier="md" />
+            <Basket />
+          </div>
+        </div>
         <div className="hidden md:flex justify-between items-center my-3">
           <div className="grow">
             <MegaMenu />
