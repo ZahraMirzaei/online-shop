@@ -33,7 +33,7 @@ const Theme = () => {
           <FaMoon
             style={{
               fontSize: "1.1rem",
-              filter: "drop-shadow(3px 3px 2px rgb(0 0 0 / 0.4))",
+              filter: "drop-shadow(0px 2px 3px rgb(0 0 0 / 0.4))",
             }}
           />
         </div>
@@ -41,7 +41,11 @@ const Theme = () => {
     }
   };
 
-  return <div className="rtl:ml-1 ltr:mr-1">{renderThemeChanger()}</div>;
+  return (
+    <div className="rtl:ml-1 ltr:ml-1 border-[1px] border-gray-200 shadow-md p-1 rounded-full">
+      {renderThemeChanger()}
+    </div>
+  );
 };
 
 export default Theme;
