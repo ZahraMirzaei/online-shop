@@ -1,17 +1,14 @@
 import React, { useRef, useContext } from "react";
-import { useRouter } from "next/router";
 import { Transition } from "react-transition-group";
 import { HiOutlineArrowSmRight, HiOutlineArrowSmLeft } from "react-icons/hi";
 import DropDown from "../../UI/DropDown";
 import SidebarContext from "../../../store/NavContext";
-import en from "../../../locales/en";
-import fa from "../../../locales/fa";
+import { useLanguage } from "../../../hooks/useLanguage";
 
 const SideNavSide = () => {
   const sidebarCtx = useContext(SidebarContext);
   const nodeRef = useRef<HTMLDivElement>(null);
-  const { locale } = useRouter();
-  const t = locale === "en" ? en : fa;
+  const { t, locale } = useLanguage();
   const BackArrow =
     locale === "en" ? HiOutlineArrowSmLeft : HiOutlineArrowSmRight;
 

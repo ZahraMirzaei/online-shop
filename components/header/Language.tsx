@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import Link from "next/link";
 import { MdLanguage } from "react-icons/md";
 import { HiChevronUp, HiChevronDown } from "react-icons/hi";
-import en from "../../locales/en";
-import fa from "../../locales/fa";
+import { useLanguage } from "../../hooks/useLanguage";
 const Language = () => {
-  const { locale } = useRouter();
-  const t = locale === "en" ? en : fa;
+  const { t, locale } = useLanguage();
   const [lang, setLang] = useState(locale);
 
   const [openLang, setOpenLang] = useState(false);

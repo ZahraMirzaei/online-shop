@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRouter } from "next/router";
+import { useLanguage } from "../../hooks/useLanguage";
 
 import SearchBar from "./SearchBar";
 import Theme from "./Theme";
@@ -9,13 +9,11 @@ import Language from "./Language";
 import Basket from "./Basket";
 import Login from "./Login";
 import SideBar from "./SideNav/SideBar";
-import en from "../../locales/en";
-import fa from "../../locales/fa";
 import SideNavSide from "./SideNav/SideNavSide";
+import MegaMenu from "./MegaMenu/MegaMenu";
 
 const Header = () => {
-  const { locale } = useRouter();
-  const t = locale === "en" ? en : fa;
+  const { t, locale } = useLanguage();
 
   return (
     <div className="pt-4">
@@ -26,6 +24,7 @@ const Header = () => {
               <SideBar />
               <SideNavSide />
             </div>
+
             <Link href="/">
               <a className="flex items-center">
                 <Image
@@ -70,7 +69,9 @@ const Header = () => {
 
         {/* 💻 md break point */}
         <div className="hidden md:flex justify-between items-center my-3">
-          <div className="grow"></div>
+          <div className="grow">
+            <MegaMenu />
+          </div>
           <div className="flex items-center justify-between ltr:w-[10rem] rtl:w-[9.3rem]">
             <Language />
             <Theme />

@@ -1,16 +1,12 @@
 import React from "react";
-import { useRouter } from "next/router";
+import { useLanguage } from "../../hooks/useLanguage";
 import { HiOutlineLogin } from "react-icons/hi";
-
-import en from "../../locales/en";
-import fa from "../../locales/fa";
 
 interface Props {
   modifier?: string;
 }
 const Login: React.FC<Props> = ({ modifier }) => {
-  const { locale } = useRouter();
-  const t = locale === "en" ? en : fa;
+  const { t } = useLanguage();
   return (
     <>
       {modifier === "md" ? (

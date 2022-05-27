@@ -1,15 +1,12 @@
 import React, { useContext } from "react";
-import { useRouter } from "next/router";
+import { useLanguage } from "../../../hooks/useLanguage";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import menuItems from "../../../mock/menuItems";
 import SidebarContext from "../../../store/NavContext";
-import en from "../../../locales/en";
-import fa from "../../../locales/fa";
 import { IDropDown } from "../../../lib/interface/dropDown";
 
 const SideNavContent = () => {
-  const { locale } = useRouter();
-  const t = locale === "en" ? en : fa;
+  const { t, locale } = useLanguage();
   const sideNavCtx = useContext(SidebarContext);
   const ArrowDirection = locale === "en" ? HiChevronRight : HiChevronLeft;
   const openNav = (sidebarSideContent: IDropDown[] = []) => {
