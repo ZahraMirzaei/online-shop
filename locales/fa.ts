@@ -2,6 +2,7 @@ const fa: { [key: string]: string } = {
   login: "ورود",
   signIn: "ثبت‌نام",
   farsi: "فارسی - fa",
+  CategoryOfGoods: "دسته‌بندی کالا‌ها",
   mainMenu: "منو‌ی اصلی",
   english: "en - English",
   Digital: "کالای دیجیتال",

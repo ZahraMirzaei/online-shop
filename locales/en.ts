@@ -1,6 +1,7 @@
 const en: { [key: string]: string } = {
   login: "Login",
   signIn: "Sign in",
+  CategoryOfGoods: "Category of Goods",
   mainMenu: "Main Menu",
   farsi: "فارسی - fa",
   english: "English - en",
