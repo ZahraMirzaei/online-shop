@@ -28,7 +28,8 @@ const SideNavSide = () => {
           {(state) => {
             return (
               <div
-                className={`max-w-[380px] w-[80%] h-screen fixed top-0 shadow-md z-[110] bg-palette-card origin-left overflow-auto md:hidden
+                ref={nodeRef}
+                className={`max-w-[380px] w-[80%] h-screen pb-4 fixed top-0 shadow-md z-[110]   bg-palette-card origin-left overflow-auto md:hidden
                 ${locale == "en" ? "left-0" : "right-0"} 
                 
                 ${
@@ -51,7 +52,7 @@ const SideNavSide = () => {
                 {sidebarCtx.dropDownList.map((item) => {
                   return (
                     <div key={item.title}>
-                      <DropDown dropDown={item} ref={nodeRef} />
+                      <DropDown dropDown={item} />
                     </div>
                   );
                 })}

@@ -24,22 +24,23 @@ const DropDown = forwardRef<HTMLDivElement, Props>(({ dropDown }, ref) => {
         className="flex items-center cursor-pointer py-4 px-6"
         onClick={() => setOpenDropDown((prevState) => !prevState)}
       >
-        <h3 className="ltr:mr-3 rtl:ml-3 font-bold">
+        <h3 className="ltr:mr-3 rtl:ml-3 text-md font-bold grow">
           {t[`${dropDown.title}`]}
         </h3>
-        <ArrowDirection />
+        <ArrowDirection style={{ fontSize: "1.5rem" }} />
       </div>
       <Transition
         mountOnEnter
         unmountOnExit
         in={openDropdown}
-        timeout={{ enter: 300, exit: 200 }}
+        timeout={300}
         nodeRef={nodeRef}
       >
         {(state) => (
           <>
             <div
-              className={`
+              ref={nodeRef}
+              className={`origin-top rtl:mr-8 ltr:ml-8 px-2 rtl:border-r-4 ltr:border-l-4 border-slate-400
           ${
             state === "entering"
               ? `animate-dropDown`
@@ -52,7 +53,7 @@ const DropDown = forwardRef<HTMLDivElement, Props>(({ dropDown }, ref) => {
               {dropDown.subtitles.map((item, index) => {
                 return (
                   <div
-                    className="ltr:ml-10 rtl:mr-10 py-3"
+                    className="ltr:pl-6 rtl:pr-6 py-3"
                     ref={ref}
                     key={`${item}-${index}`}
                   >
