@@ -10,6 +10,7 @@ import Login from "./Login";
 import SideBar from "./SideNav/SideBar";
 import SideNavSide from "./SideNav/SideNavSide";
 import MegaMenu from "./MegaMenu/MegaMenu";
+import ExtraMenu from "./MegaMenu/ExtraMenu";
 
 const Header = () => {
   return (
@@ -74,8 +75,9 @@ const Header = () => {
           </div>
         </div>
         <div className="hidden md:flex justify-between items-center my-3">
-          <div className="grow">
+          <div className="flex items-center grow">
             <MegaMenu />
+            <ExtraMenu />
           </div>
           <div className="flex items-center justify-between ltr:w-[10rem] rtl:w-[9.3rem]">
             <Language />
