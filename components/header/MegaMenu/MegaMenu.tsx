@@ -19,7 +19,7 @@ const MegaMenu = () => {
 
   return (
     <div
-      className="relative flex items-center"
+      className="flex items-center"
       onMouseOver={openNav}
       onMouseOut={closeNav}
     >
@@ -37,9 +37,9 @@ const MegaMenu = () => {
       >
         {(state) => {
           return (
-            <div ref={nodeRef} className=" z-[100]">
+            <div ref={nodeRef} className="z-[100]">
               <div
-                className={`fixed top-[6.2rem] inset-0 bg-gray-600/60
+                className={`fixed top-[6.8rem] inset-0 bg-gray-600/60
                 ${
                   state === "entering"
                     ? "animate-fadeEntering"
@@ -50,7 +50,7 @@ const MegaMenu = () => {
                 `}
                 onClick={closeNav}
               ></div>
-              <div className="absolute top-full ltr:left-0 rtl:right-0 bg-palette-card z-[110] shadow-md">
+              <div className="absolute top-full left-0 right-0 bg-palette-card z-[110] shadow-md rounded-br-lg rounded-bl-lg">
                 <Menu />
               </div>
             </div>

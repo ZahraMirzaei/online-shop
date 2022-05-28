@@ -52,7 +52,7 @@ const Header = () => {
       </div>
 
       {/* 💻 md break point */}
-      <div className="hidden md:block">
+      <div className="hidden md:block relative">
         <div className="flex items-center">
           <Link href="/" className="">
             <a className="flex items-center">
