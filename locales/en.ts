@@ -60,5 +60,7 @@ const en: { [key: string]: string } = {
   Home: "Furniture and kitchen",
   Sport: "Sport and Trip",
   Stationery: "Books, Stationery and Art",
+  noProduct:
+    "There are no products in this category yet! There are no products in this category yet. New products will be added soon.",
 };
 export default en;
