@@ -6,6 +6,7 @@ import menuItems from "../../../mock/menuItems";
 import { extraMenu } from "../../../mock/menuItems";
 import SidebarContext from "../../../store/NavContext";
 import { IDropDown } from "../../../lib/interface/dropDown";
+import MenuItems from "../../UI/MenuItems";
 
 const SideNavContent = () => {
   const { t, locale } = useLanguage();
@@ -36,7 +37,8 @@ const SideNavContent = () => {
       <h2 className="font-semibold text-lg py-3 ltr:px-5 rtl:px-5">
         {t.CategoryOfGoods}
       </h2>
-      {menuItems.map((item) => {
+      <MenuItems onClick={openNav} />
+      {/* {menuItems.map((item) => {
         return (
           <div key={item.category}>
             <div
@@ -57,7 +59,7 @@ const SideNavContent = () => {
             </div>
           </div>
         );
-      })}
+      })} */}
     </div>
   );
 };
