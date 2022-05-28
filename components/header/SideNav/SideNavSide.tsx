@@ -39,7 +39,7 @@ const SideNavSide = () => {
                 `}
               >
                 <div
-                  className="flex items-center pt-4 pb-3 px-6 font-bold text-lg"
+                  className="flex items-center pt-4 pb-3 px-6 font-bold text-lg cursor-pointer"
                   onClick={sidebarCtx.closeSidebar}
                 >
                   <BackArrow style={{ fontSize: "1.5rem" }} />
