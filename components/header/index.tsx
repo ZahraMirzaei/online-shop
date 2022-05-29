@@ -11,6 +11,7 @@ import SideBar from "./SideNav/SideBar";
 import SideNavSide from "./SideNav/SideNavSide";
 import MegaMenu from "./MegaMenu/MegaMenu";
 import ExtraMenu from "./MegaMenu/ExtraMenu";
+import { ActiveMenuItemProvider } from "../../store/activeMenuItem";
 
 const Header = () => {
   return (
@@ -76,7 +77,9 @@ const Header = () => {
         </div>
         <div className="hidden md:flex justify-between items-center my-3">
           <div className="flex items-center grow">
-            <MegaMenu />
+            <ActiveMenuItemProvider>
+              <MegaMenu />
+            </ActiveMenuItemProvider>
             <ExtraMenu />
           </div>
           <div className="flex items-center justify-between ltr:w-[10rem] rtl:w-[9.3rem]">
