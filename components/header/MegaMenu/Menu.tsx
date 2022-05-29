@@ -1,16 +1,27 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import menuItems from "../../../mock/menuItems";
 import MenuItems from "../../UI/MenuItems";
 import { IDropDown } from "../../../lib/interface/dropDown";
 import Submenu from "./Submenu";
+import ActiveMenuItemContext from "../../../store/activeMenuItem";
 const Menu = () => {
   const [submenu, setSubmenu] = useState<IDropDown[]>();
+  const activeItemCtx = useContext(ActiveMenuItemContext);
 
-  function activeItem(submenuList: IDropDown[] | undefined) {
+  function activeItem(
+    submenuList: IDropDown[] | undefined,
+    activeItemIndex: number
+  ) {
     setSubmenu(submenuList);
+    activeItemCtx.setActiveMenuItemIndex(activeItemIndex);
   }
+
   useEffect(() => {
     setSubmenu(menuItems[0].productsGroup);
+    return () => {
+      activeItemCtx.setActiveMenuItemIndex(0);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
