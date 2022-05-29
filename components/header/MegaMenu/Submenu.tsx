@@ -9,13 +9,13 @@ interface Props {
 const Submenu: React.FC<Props> = ({ subMenu }) => {
   const { t } = useLanguage();
   return (
-    <div className="relative grow md:columns-[188px]  xl:columns-3 xl:max-w-4xl  px-6 py-5  ">
+    <div className="relative grow md:columns-[188px] xl:columns-3 xl:max-w-4xl  px-6 py-5  ">
       {subMenu ? (
         subMenu.map((item, index) => {
           return (
             <div className="py-3" key={`${item}-${index}`}>
               <Link href="/">
-                <a className="block text-sm rtl:ml-10 ltr:mr-10 font-bold px-2 ltr:border-l-4 rtl:border-r-4 border-palette-primary rounded-sm">
+                <a className="block text-sm rtl:ml-10 ltr:mr-10 font-bold px-2 ltr:border-l-4 rtl:border-r-4 border-palette-primary rounded-sm hover:text-palette-primary">
                   {t[`${item.title}`]}
                 </a>
               </Link>
@@ -23,7 +23,9 @@ const Submenu: React.FC<Props> = ({ subMenu }) => {
                 return (
                   <div key={`${item}-${index}`}>
                     <Link href="/">
-                      <a className="block py-2">{t[`${item}`]}</a>
+                      <a className="block py-2 hover:text-palette-primary">
+                        {t[`${item}`]}
+                      </a>
                     </Link>
                   </div>
                 );
