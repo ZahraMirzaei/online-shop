@@ -121,3 +121,7 @@ a {
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
       url("/fonts/ttf/iranyekanwebextrablack.ttf") format("truetype");
 }
+
+.slick-dots li button:before {
+  font-size: 12px;
+}
