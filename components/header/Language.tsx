@@ -43,7 +43,7 @@ const Language = () => {
             onClick={() => setOpenLang(false)}
           ></div>
           <div
-            className={`absolute top-9 ltr:right-0 rtl:left-0 bg-palette-card py-3 px-6 shadow-md rounded-md`}
+            className={`absolute top-9 ltr:right-0 rtl:left-0 bg-palette-card py-3 px-6 shadow-md rounded-md z-10`}
           >
             <Link href="/" locale="fa">
               <a className="whitespace-nowrap flex justify-between items-center">
