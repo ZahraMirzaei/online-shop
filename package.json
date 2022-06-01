@@ -13,6 +13,7 @@
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
     "@stripe/stripe-js": "^1.29.0",
+    "@types/react-slick": "^0.23.8",
     "@types/react-transition-group": "^4.4.4",
     "next": "12.1.6",
     "next-sanity-image": "^3.2.1",
