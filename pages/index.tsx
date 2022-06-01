@@ -1,10 +1,10 @@
 import type { NextPage } from "next";
-import Slider from "../components/slider";
+import Carousel from "../components/carousel";
 
 const Home: NextPage = () => {
   return (
     <div>
-      <Slider />
+      <Carousel />
     </div>
   );
 };
