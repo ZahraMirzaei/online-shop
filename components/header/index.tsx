@@ -46,7 +46,7 @@ const Header = () => {
         <div className="mb-2 mt-4 flex items-center">
           <SearchBar />
           <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ltr:w-[4.1rem] rtl:w-[4.3rem] ">
-            <Login />
+            <LoginBtn />
             <Basket />
           </div>
         </div>
