@@ -62,5 +62,18 @@ const en: { [key: string]: string } = {
   Stationery: "Books, Stationery and Art",
   noProduct:
     "There are no products in this category yet! There are no products in this category yet. New products will be added soon.",
+  digitalBT: "Have the best Experiences",
+  digitalBD: "We provide the best Experience with the most popular Brands.",
+  stationeryBT: "Variety in choice",
+  stationeryBD: "When it comes to Beauty and Efficiency",
+  toyBT: "Toys for Entertainment and the growth of Creativity",
+  toyBD:
+    "Products with the best quality and anti-allergy to create happy moments",
+  houseBT: "Modern Home",
+  houseBD: "A beautiful sense of Satisfaction and Peace",
+  fashionBT: "Beauty and Comfort",
+  fashionBD: "we make you look and feel good",
+  beautyBT: "Accentuates your Beauty",
+  beautyBD: "with us, you'll feel confident and beauty",
 };
 export default en;
