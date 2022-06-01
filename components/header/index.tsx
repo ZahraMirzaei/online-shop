@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import Theme from "./Theme";
 import Language from "./Language";
 import Basket from "./Basket";
-import Login from "./Login";
+import LoginBtn from "./LoginBtn";
 import SideBar from "./SideNav/SideBar";
 import SideNavSide from "./SideNav/SideNavSide";
 import MegaMenu from "./MegaMenu/MegaMenu";
@@ -71,7 +71,7 @@ const Header = () => {
             <SearchBar />
           </div>
           <div className="hidden md:flex items-center justify-between font-bold ltr:ml-4 rtl:mr-4">
-            <Login modifier="md" />
+            <LoginBtn modifier="md" />
             <Basket />
           </div>
         </div>

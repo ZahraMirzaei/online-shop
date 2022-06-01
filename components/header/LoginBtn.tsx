@@ -5,7 +5,7 @@ import { HiOutlineLogin } from "react-icons/hi";
 interface Props {
   modifier?: string;
 }
-const Login: React.FC<Props> = ({ modifier }) => {
+const LoginBtn: React.FC<Props> = ({ modifier }) => {
   const { t } = useLanguage();
   return (
     <>
@@ -23,4 +23,4 @@ const Login: React.FC<Props> = ({ modifier }) => {
   );
 };
 
-export default Login;
+export default LoginBtn;
