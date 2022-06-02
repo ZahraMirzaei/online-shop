@@ -63,17 +63,22 @@ const en: { [key: string]: string } = {
   noProduct:
     "There are no products in this category yet! There are no products in this category yet. New products will be added soon.",
   digitalBT: "Have the best Experiences",
-  digitalBD: "We provide the best Experience with the most popular Brands.",
+  digitalBD:
+    "We provide the best Experience with the most popular Brands.  With a warranty of 18 months, you can be confident in your choice",
   stationeryBT: "Variety in choice",
-  stationeryBD: "When it comes to Beauty and Efficiency",
-  toyBT: "Toys for Entertainment and the growth of Creativity",
+  stationeryBD:
+    "When it comes to Beauty and Efficiency. We specialize in providing stationery and office sets that are beautiful and high quality.",
+  toyBT: "Entertainment and the growth of Creativity",
   toyBD:
     "Products with the best quality and anti-allergy to create happy moments",
   houseBT: "Modern Home",
-  houseBD: "A beautiful sense of Satisfaction and Peace",
+  houseBD:
+    "enjoy beautiful moments of satisfaction and peace with your loved ones at home with products designed according to the most recent and prominent styles.",
   fashionBT: "Beauty and Comfort",
-  fashionBD: "we make you look and feel good",
+  fashionBD:
+    "You will find the best fabrics, the hottest designs, and the most popular brands at reasonable prices. Look your best and stand out among the crowd.",
   beautyBT: "Accentuates your Beauty",
-  beautyBD: "with us, you'll feel confident and beauty",
+  beautyBD:
+    "allergen-free, people with all skin types can find products they need. Approved by the World Health Organization, products from world-renowned brands.",
 };
 export default en;
