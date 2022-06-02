@@ -5,6 +5,7 @@ export const sliderContent = [
     description: "digitalBD",
     imgSrc: "/images/slider-img/digital-banner.jpg",
     url: "/",
+    className: "top-32 left-36 ",
   },
   {
     ID: 2,
@@ -12,6 +13,7 @@ export const sliderContent = [
     description: "stationeryBD",
     imgSrc: "/images/slider-img/stationery-banner.jpg",
     url: "/",
+    className: "top-36 right-52 ",
   },
   {
     ID: 3,
@@ -19,6 +21,7 @@ export const sliderContent = [
     description: "toyBD",
     imgSrc: "/images/slider-img/toy-banner.jpg",
     url: "/",
+    className: "top-32 right-20 ",
   },
   {
     ID: 4,
@@ -26,6 +29,7 @@ export const sliderContent = [
     description: "houseBD",
     imgSrc: "/images/slider-img/house-banner.jpg",
     url: "/",
+    className: "top-32 right-20 ",
   },
   {
     ID: 5,
@@ -33,6 +37,7 @@ export const sliderContent = [
     description: "fashionBD",
     imgSrc: "/images/slider-img/fashion-banner.jpg",
     url: "/",
+    className: "top-36 right-[30%] ",
   },
   {
     ID: 6,
@@ -40,5 +45,6 @@ export const sliderContent = [
     description: "beautyBD",
     imgSrc: "/images/slider-img/beauty-banner.jpg",
     url: "/",
+    className: "top-36 right-[30%] ",
   },
 ];

@@ -4,4 +4,5 @@ export interface ISlider {
   description: string;
   imgSrc: string;
   url: string;
+  className: string;
 }
