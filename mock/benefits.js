@@ -1,6 +1,6 @@
 export const benefitContent = [
   {
-    imgSrc: "/images/benefit-icons/005-delivery-truck-1.png",
+    imgSrc: "/images/benefit-icons/005-delivery-truck-2.png",
     title: "deliver",
   },
   {
@@ -16,7 +16,7 @@ export const benefitContent = [
     title: "warranty",
   },
   {
-    imgSrc: "/images/benefit-icons/004-return.png",
+    imgSrc: "/images/benefit-icons/007-return.png",
     title: "return",
   },
 ];
