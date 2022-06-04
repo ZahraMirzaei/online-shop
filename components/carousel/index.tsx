@@ -23,7 +23,7 @@ const index = () => {
     ),
   };
   return (
-    <div className=" md:h-full">
+    <div className="">
       <Slider {...settings}>
         {sliderContent.map((item) => {
           return (
