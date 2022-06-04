@@ -123,5 +123,14 @@ a {
 }
 
 .slick-dots li button:before {
-  font-size: 12px;
+  font-size: 6px;
+}
+
+@media (min-width: 1024px) {
+  .slick-dots li button:before {
+    font-size: 12px;
+  }
+  .slick-dots {
+    padding-bottom: 40px !important;
+  }
 }
