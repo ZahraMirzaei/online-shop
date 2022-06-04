@@ -17,22 +17,20 @@ const index = () => {
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     appendDots: (dots: string) => (
-      <div
-        style={{
-          backgroundColor: "transparent",
-          paddingBottom: "40px",
-        }}
-      >
+      <div className="bg-transparent !pb-[40px]">
         <ul> {dots} </ul>
       </div>
     ),
   };
   return (
-    <div className="">
+    <div className="h-[30vh] md:h-full">
       <Slider {...settings}>
         {sliderContent.map((item) => {
           return (
-            <div key={item.ID}>
+            <div
+              key={item.ID}
+              className={`relative w-[100%] h-[50vh] md:h-[70vh] bg-cover ${item.imgSrc}  bg-center bg-no-repeat`}
+            >
               <Slide sliderItem={item} />
             </div>
           );
