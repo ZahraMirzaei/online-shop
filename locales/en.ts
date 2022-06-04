@@ -80,10 +80,10 @@ const en: { [key: string]: string } = {
   beautyBT: "Accentuates your Beauty",
   beautyBD:
     "allergen-free, people with all skin types can find products they need. Approved by the World Health Organization, products from world-renowned brands.",
-  deliver: "Possibility of express delivery",
-  cash: "Possibility of payment on the spot",
+  deliver: "express delivery",
+  cash: "payment on the spot",
   support: "24/7 support",
-  warranty: "Guarantee the originality of the goods",
-  return: "commodity-back guarantee for seven days",
+  warranty: "Guarantee the originality",
+  return: "commodity-back guarantee",
 };
 export default en;
