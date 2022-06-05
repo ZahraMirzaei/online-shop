@@ -32,9 +32,53 @@ export default {
       type: "number",
     },
     {
+      name: "discount",
+      title: "Discount",
+      type: "number",
+    },
+    {
       name: "details",
       title: "Details",
+      type: "object",
+      fields: [
+        { name: "processor", title: "CPU", type: "string" },
+        { name: "screen", title: "screen", type: "string" },
+        { name: "operating_system", title: "OS", type: "string" },
+        { name: "ram", title: "RAM", type: "string" },
+        { name: "ssd", title: "SSD", type: "string" },
+        { name: "ports", title: "Ports", type: "string" },
+        { name: "graphic", title: "Graphic", type: "string" },
+        { name: "warranty", title: "Warranty", type: "string" },
+        { name: "back_camera", title: "BCamera", type: "string" },
+        { name: "front_camera", title: "FCamera", type: "string" },
+        { name: "battery", title: "Battery", type: "string" },
+      ],
+    },
+    {
+      name: "brand",
+      title: "Brand",
       type: "string",
+    },
+    {
+      name: "category",
+      title: "Category",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: { type: "category" },
+        },
+      ],
+    },
+    {
+      name: "isOffer",
+      title: "IsOffer",
+      type: "boolean",
+    },
+    {
+      name: "registerDate",
+      title: "RegisterDate",
+      type: "datetime",
     },
   ],
 };
