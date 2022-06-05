@@ -8,7 +8,7 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (
     <ThemeProvider enableSystem={true} attribute="class">
       <Head>
-        <title>ZShop e-commerce</title>
+        <title>ZiShop e-commerce</title>
       </Head>
       <header>
         <SidebarContextProvider>
