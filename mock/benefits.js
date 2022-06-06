@@ -15,8 +15,8 @@ export const benefitContent = [
     imgSrc: "/images/benefit-icons/006-best-seller.png",
     title: "warranty",
   },
-  {
-    imgSrc: "/images/benefit-icons/007-return.png",
-    title: "return",
-  },
+  // {
+  //   imgSrc: "/images/benefit-icons/007-return.png",
+  //   title: "return",
+  // },
 ];
