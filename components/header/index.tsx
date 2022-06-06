@@ -11,7 +11,7 @@ import SideBar from "./SideNav/SideBar";
 import SideNavSide from "./SideNav/SideNavSide";
 import MegaMenu from "./MegaMenu/MegaMenu";
 import ExtraMenu from "./MegaMenu/ExtraMenu";
-import { ActiveMenuItemProvider } from "../../store/activeMenuItem";
+import { ActiveMenuItemProvider } from "../../store/activeMenuItemContext";
 
 const Header = () => {
   return (
