@@ -80,5 +80,10 @@ export default {
       title: "RegisterDate",
       type: "datetime",
     },
+    {
+      name: "starRating",
+      title: "Star Rating",
+      type: "number",
+    },
   ],
 };
