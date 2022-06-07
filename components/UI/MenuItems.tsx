@@ -4,7 +4,7 @@ import { useLanguage } from "../../hooks/useLanguage";
 import menuItems from "../../mock/menuItems";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import { IDropDown } from "../../lib/interface/dropDown";
-import ActiveMenuItemContext from "../../store/activeMenuItem";
+import ActiveMenuItemContext from "../../store/activeMenuItemContext";
 
 interface Props {
   onClick?: (submenu: IDropDown[] | undefined) => void;

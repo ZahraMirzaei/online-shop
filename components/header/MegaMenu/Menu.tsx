@@ -3,7 +3,7 @@ import menuItems from "../../../mock/menuItems";
 import MenuItems from "../../UI/MenuItems";
 import { IDropDown } from "../../../lib/interface/dropDown";
 import Submenu from "./Submenu";
-import ActiveMenuItemContext from "../../../store/activeMenuItem";
+import ActiveMenuItemContext from "../../../store/activeMenuItemContext";
 const Menu = () => {
   const [submenu, setSubmenu] = useState<IDropDown[]>();
   const activeItemCtx = useContext(ActiveMenuItemContext);
