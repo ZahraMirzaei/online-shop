@@ -74,6 +74,8 @@ module.exports = {
         houseBG: "url('/images/slider-img/house-banner.jpg')",
         fashionBG: "url('/images/slider-img/fashion-banner.jpg')",
         beautyBG: "url('/images/slider-img/beauty-banner.jpg')",
+
+        offersBG: "url('/images/carouselBox-bg/offersbg.png')",
       },
     },
   },
