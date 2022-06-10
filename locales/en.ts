@@ -85,5 +85,8 @@ const en: { [key: string]: string } = {
   support: "24/7 support",
   warranty: "Guarantee the originality",
   return: "commodity-back guarantee",
+  offers: "Special Offers",
+  newest: "Newest Goods",
+  seeAll: "See All",
 };
 export default en;

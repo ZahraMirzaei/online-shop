@@ -85,5 +85,8 @@ const fa: { [key: string]: string } = {
   support: "پشتیبانی ۲۴ ساعته/۷ روز هفته",
   warranty: "ضمانت اصل بودن کالا",
   return: "هفت روز ضمانت بازگشت کالا",
+  offers: "پیشنهادات ویژه",
+  newest: "جدیدترین کالا‌ها",
+  seeAll: "دیدن همه",
 };
 export default fa;
