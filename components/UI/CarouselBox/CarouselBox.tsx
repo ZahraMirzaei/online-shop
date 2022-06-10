@@ -2,12 +2,16 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Slider from "react-slick";
-import { NextArrow, PrevArrow } from "../../carousel/Arrows";
+import { NextArrow, PrevArrow } from "./CarouselBoxArrows";
 
 import { useLanguage } from "../../../hooks/useLanguage";
 
-const CarouselBox = () => {
-  const { locale } = useLanguage();
+interface Props {
+  title: string;
+  className: string;
+}
+const CarouselBox: React.FC<Props> = (props) => {
+  const { t, locale } = useLanguage();
   const settings = {
     className: "center",
     infinite: false,
@@ -52,13 +56,17 @@ const CarouselBox = () => {
     ],
   };
   return (
-    <div className="w-[85%] mx-auto flex bg-[#19e5fc] rounded-md overflow-hidden">
-      <div className="flex flex-col items-center justify-around flex-grow text-sm sm:text-base bg-offersBG bg-cover bg-no-repeat bg-center backdrop-blur-md">
+    <div className="w-[85%] mx-auto flex bg-[#37bccef9] rounded-md">
+      <div
+        className={`flex flex-col items-center justify-around flex-grow text-sm sm:text-base  bg-cover bg-no-repeat bg-center rounded-md backdrop-blur-md ${props.className}`}
+      >
         <h2 className="sm:text-xl font-bold text-palette-primary">
-          پیشنهادات ویژه
+          {t[`${props.title}`]}
         </h2>
         <Link href="/">
-          <a className="text-palette-mute font-bold">دیدن همه</a>
+          <a className="text-palette-primary/60 text-sm font-bold py-1 px-4 -mb-2 shadow-lg block rounded-full backdrop-filter backdrop-blur-[10px] bg-gray-300/10">
+            {t.seeAll}
+          </a>
         </Link>
       </div>
       <div className="w-[55%]  sm:w-[75%] md:w-[85%]">
@@ -70,7 +78,7 @@ const CarouselBox = () => {
                 alt="laptop image"
                 width={200}
                 height={185}
-                className="object-contain object-center hover:scale-110 transition-transform"
+                className="object-contain hover:scale-110 transition-transform"
               />
               <p className="truncate">
                 Lenovo Yoga 7i Intel Core i5 8GB RAM 256GB SSD 14&quot; 2-in-1
