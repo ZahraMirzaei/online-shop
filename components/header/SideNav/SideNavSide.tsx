@@ -2,7 +2,7 @@ import React, { useRef, useContext } from "react";
 import { Transition } from "react-transition-group";
 import { HiOutlineArrowSmRight, HiOutlineArrowSmLeft } from "react-icons/hi";
 import DropDown from "../../UI/DropDown";
-import SidebarContext from "../../../store/NavContext";
+import SidebarContext from "../../../store/context/NavContext";
 import { useLanguage } from "../../../hooks/useLanguage";
 
 const SideNavSide = () => {

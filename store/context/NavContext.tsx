@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { IDropDown } from "../lib/interface/dropDown";
+import { IDropDown } from "../../lib/interface/dropDown";
 
 type SidebarContextObj = {
   isOpen: boolean;

@@ -4,7 +4,7 @@ import { useLanguage } from "../../../hooks/useLanguage";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import menuItems from "../../../mock/menuItems";
 import { extraMenu } from "../../../mock/menuItems";
-import SidebarContext from "../../../store/NavContext";
+import SidebarContext from "../../../store/context/NavContext";
 import { IDropDown } from "../../../lib/interface/dropDown";
 import MenuItems from "../../UI/MenuItems";
 

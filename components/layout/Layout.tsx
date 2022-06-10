@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import Header from "../header";
-import { SidebarContextProvider } from "../../store/NavContext";
+import { SidebarContextProvider } from "../../store/context/NavContext";
 
 const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   return (

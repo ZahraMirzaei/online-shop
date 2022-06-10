@@ -1,7 +1,7 @@
 import React, { useState, useRef, useContext } from "react";
 import { Transition } from "react-transition-group";
 import { GoGrabber } from "react-icons/go";
-import SidebarContext from "../../../store/NavContext";
+import SidebarContext from "../../../store/context/NavContext";
 import SideNav from "./SideNav";
 
 const SideBar = () => {
