@@ -4,6 +4,7 @@ import { client } from "../lib/client";
 
 import Benefits from "../components/Benefits";
 import Carousel from "../components/carousel";
+import Offers from "../components/Offers/Offers";
 
 import { IProduct } from "../lib/interface/products";
 import { ICategory } from "../lib/interface/categories";
@@ -16,6 +17,7 @@ const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
     <div>
       <Carousel />
       <Benefits />
+      <Offers />
     </div>
   );
 };
