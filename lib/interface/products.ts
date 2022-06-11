@@ -23,17 +23,17 @@ export type TCategory = {
   _type: "reference";
 };
 
-export type TImage = {
-  _key: string;
-  _type: "image";
-  asset: {
-    _ref: string;
-    _type: "reference";
-  };
-};
+// export type TImage = {
+//   _key: string;
+//   _type: "image";
+//   asset: {
+//     _ref: string;
+//     _type: "reference";
+//   };
+// };
 
 export interface IProduct {
-  image: TImage;
+  image: any;
   name: string;
   slug: TSlug;
   price: number;
