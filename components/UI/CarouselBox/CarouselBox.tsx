@@ -1,17 +1,19 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Slider from "react-slick";
 import { NextArrow, PrevArrow } from "./CarouselBoxArrows";
-
 import { useLanguage } from "../../../hooks/useLanguage";
+import { IProduct } from "../../../lib/interface/products";
+import CarouselBoxCard from "./CarouselBoxCard";
 
 interface Props {
   title: string;
   className: string;
+  productList: IProduct[];
 }
 const CarouselBox: React.FC<Props> = (props) => {
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
+
   const settings = {
     className: "center",
     infinite: false,
@@ -55,6 +57,7 @@ const CarouselBox: React.FC<Props> = (props) => {
       },
     ],
   };
+
   return (
     <div className="w-[85%] mx-auto flex bg-[#37bccef9] rounded-md">
       <div
@@ -69,176 +72,16 @@ const CarouselBox: React.FC<Props> = (props) => {
           </a>
         </Link>
       </div>
-      <div className="w-[55%]  sm:w-[75%] md:w-[85%]">
+      <div className="w-[55%] sm:w-[75%] md:w-[85%]">
         <Slider {...settings}>
-          <div className="w-full px-2 my-2">
-            <div className="w-full p-3 shadow-lg backdrop-filter backdrop-blur-[10px] bg-palette-card/80 rounded-md">
-              <Image
-                src="/images/card-temporary/image.png"
-                alt="laptop image"
-                width={200}
-                height={185}
-                className="object-contain hover:scale-110 transition-transform"
-              />
-              <p className="truncate">
-                Lenovo Yoga 7i Intel Core i5 8GB RAM 256GB SSD 14&quot; 2-in-1
-                Laptop
-              </p>
-              <span>
-                <del className="text-sm text-rose-600">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,350,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </del>
-                <br />
-                <ins className="text-[16px]  self-end mt-6 font-bold">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,000,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </ins>
-              </span>
-            </div>
-          </div>
-          <div className="w-full px-2 my-2">
-            <div className="w-full p-3 shadow-lg backdrop-filter backdrop-blur-[10px] bg-palette-card/80 rounded-md">
-              <Image
-                src="/images/card-temporary/image.png"
-                alt="laptop image"
-                width={200}
-                height={185}
-                className="object-contain object-center hover:scale-110 transition-transform"
-              />
-              <p className="truncate">
-                Lenovo Yoga 7i Intel Core i5 8GB RAM 256GB SSD 14&quot; 2-in-1
-                Laptop
-              </p>
-              <span>
-                <del className="text-sm text-rose-600">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,350,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </del>
-                <br />
-                <ins className="text-[16px]  self-end mt-6 font-bold">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,000,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </ins>
-              </span>
-            </div>
-          </div>
-          <div className="w-full px-2 my-2">
-            <div className="w-full p-3 shadow-lg backdrop-filter backdrop-blur-[10px] bg-palette-card/80 rounded-md">
-              <Image
-                src="/images/card-temporary/image.png"
-                alt="laptop image"
-                width={200}
-                height={185}
-                className="object-contain object-center hover:scale-110 transition-transform"
-              />
-              <p className="truncate">
-                Lenovo Yoga 7i Intel Core i5 8GB RAM 256GB SSD 14&quot; 2-in-1
-                Laptop
-              </p>
-              <span>
-                <del className="text-sm text-rose-600">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,350,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </del>
-                <br />
-                <ins className="text-[16px]  self-end mt-6 font-bold">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,000,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </ins>
-              </span>
-            </div>
-          </div>
-          <div className="w-full px-2 my-2">
-            <div className="w-full p-3 shadow-lg backdrop-filter backdrop-blur-[10px] bg-palette-card/80 rounded-md">
-              <Image
-                src="/images/card-temporary/image.png"
-                alt="laptop image"
-                width={200}
-                height={185}
-                className="object-contain object-center hover:scale-110 transition-transform"
-              />
-              <p className="truncate">
-                Lenovo Yoga 7i Intel Core i5 8GB RAM 256GB SSD 14&quot; 2-in-1
-                Laptop
-              </p>
-              <span>
-                <del className="text-sm text-rose-600">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,350,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </del>
-                <br />
-                <ins className="text-[16px]  self-end mt-6 font-bold">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,000,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </ins>
-              </span>
-            </div>
-          </div>
-          <div className="w-full px-2 my-2">
-            <div className="w-full p-3 shadow-lg backdrop-filter backdrop-blur-[10px] bg-palette-card/80 rounded-md">
-              <Image
-                src="/images/card-temporary/image.png"
-                alt="laptop image"
-                width={200}
-                height={185}
-                className="object-contain object-center hover:scale-110 transition-transform"
-              />
-              <p className="truncate">
-                Lenovo Yoga 7i Intel Core i5 8GB RAM 256GB SSD 14&quot; 2-in-1
-                Laptop
-              </p>
-              <span>
-                <del className="text-sm text-rose-600">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,350,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </del>
-                <br />
-                <ins className="text-[16px]  self-end mt-6 font-bold">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,000,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </ins>
-              </span>
-            </div>
-          </div>
-          <div className="w-full px-2 my-2">
-            <div className="w-full p-3 shadow-lg backdrop-filter backdrop-blur-[10px] bg-palette-card/80 rounded-md">
-              <Image
-                src="/images/card-temporary/image.png"
-                alt="laptop image"
-                width={200}
-                height={185}
-                className="object-contain object-center hover:scale-110 transition-transform"
-              />
-              <p className="truncate">
-                Lenovo Yoga 7i Intel Core i5 8GB RAM 256GB SSD 14&quot; 2-in-1
-                Laptop
-              </p>
-              <span>
-                <del className="text-sm text-rose-600">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,350,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </del>
-                <br />
-                <ins className="text-[16px]  self-end mt-6 font-bold">
-                  <sup className="mr-1">{locale === "en" ? "$" : ""}</sup>
-                  2,000,00
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </ins>
-              </span>
-            </div>
-          </div>
+          <CarouselBoxCard product={props.productList[0]} />
+          <CarouselBoxCard product={props.productList[1]} />
+          <CarouselBoxCard product={props.productList[2]} />
+          <CarouselBoxCard product={props.productList[3]} />
+          <CarouselBoxCard product={props.productList[4]} />
+          <CarouselBoxCard product={props.productList[5]} />
+          <CarouselBoxCard product={props.productList[6]} />
+          <CarouselBoxCard product={props.productList[7]} />
         </Slider>
       </div>
     </div>
