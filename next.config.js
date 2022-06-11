@@ -6,6 +6,9 @@ const nextConfig = {
     defaultLocale: "fa",
     localeDetection: false,
   },
+  images: {
+    domains: ["cdn.sanity.io"],
+  },
 };
 
 module.exports = nextConfig;
