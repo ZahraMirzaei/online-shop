@@ -1,4 +1,8 @@
 import type { NextPage } from "next";
+import { useEffect } from "react";
+
+import { useDispatch } from "react-redux";
+import { specialOfferProductsActions } from "../store/specialOfferProducts-slice";
 
 import { client } from "../lib/client";
 
@@ -13,6 +17,13 @@ const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
   products,
   categories,
 }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const offersProducts = products.filter((item) => item.discount);
+    dispatch(specialOfferProductsActions.addProducts(offersProducts));
+  }, [dispatch, products]);
+
   return (
     <div>
       <Carousel />
