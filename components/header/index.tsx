@@ -15,7 +15,7 @@ import { ActiveMenuItemProvider } from "../../store/context/activeMenuItemContex
 
 const Header = () => {
   return (
-    <div className="pt-4 z-[1000]">
+    <div className="md:fixed left-0 right-0 top-0 md:bg-palette-fill shadow-sm pt-4 z-[1000]">
       {/* 📱 sm break point */}
       <div className="md:hidden">
         <div className="flex justify-between mb-2">
@@ -53,7 +53,7 @@ const Header = () => {
       </div>
 
       {/* 💻 md break point */}
-      <div className="hidden md:block relative">
+      <div className="hidden md:block px-4 relative">
         <div className="flex items-center">
           <Link href="/" className="">
             <a className="flex items-center">
@@ -75,7 +75,7 @@ const Header = () => {
             <Basket />
           </div>
         </div>
-        <div className="hidden md:flex justify-between items-center my-3">
+        <div className="hidden md:flex justify-between items-center my-4">
           <div className="flex items-center grow">
             <ActiveMenuItemProvider>
               <MegaMenu />

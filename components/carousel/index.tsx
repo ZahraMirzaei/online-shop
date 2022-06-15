@@ -26,7 +26,7 @@ const Carousel = () => {
     ),
   };
   return (
-    <div className="">
+    <div className=" md:mt-40">
       <Slider {...settings}>
         <div
           className={`relative w-[100%] h-[50vh] md:h-[70vh] bg-cover bg-digitalBG bg-center bg-no-repeat`}
