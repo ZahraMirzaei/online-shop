@@ -10,6 +10,13 @@
     --color-bg: 243, 244, 245; /* #f3f4f5*/
     --color-bg-side: 252, 251, 255; /* #fcfdff*/
     --color-bg-black: 0, 0, 0;
+    --digital-category-bgc: #ade8f4;
+    --fashion-category-bgc: #ffddd2;
+    --beauty-category-bgc: #ddd92a;
+    --sport-category-bgc: #ffd60a;
+    --house-category-bgc: #ccd5ae;
+    --toy-category-bgc: #cce3de;
+    --stationery-category-bgc: #fbb13c;
 
     --color-text-base: 66, 71, 80; /* #424750*/
     --color-text-muted: 107, 114, 128; /*#6b7280*/
@@ -20,6 +27,12 @@
   .dark {
     --color-bg: 15, 23, 42; /* #0f172a*/
     --color-bg-side: 30, 41, 59; /* #1e293b*/
+    --digital-category-bgc: #219ebc;
+    --fashion-category-bgc: #e29578;
+    --beauty-category-bgc: #af4d98;
+    --sport-category-bgc: #f46036;
+    --house-category-bgc: #6b9080;
+    --toy-category-bgc: #b77e8f;
 
     --color-text-base: 226, 232, 240; /*#e2e8f0*/
     --color-text-muted: 140, 154, 175; /*#8c9aaf*/

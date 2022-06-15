@@ -33,6 +33,13 @@ module.exports = {
           fill: withOpacity("--color-bg"),
           card: withOpacity("--color-bg-side"),
           dark: withOpacity("--color-bg-dark"),
+          digitalCategory: "var(--digital-category-bgc)",
+          fashionCategory: "var(--fashion-category-bgc)",
+          beautyCategory: "var( --beauty-category-bgc)",
+          sportCategory: "var(--sport-category-bgc)",
+          houseCategory: "var(--house-category-bgc)",
+          toyCategory: "var(--toy-category-bgc)",
+          stationeryCategory: "var(--stationery-category-bgc)",
         },
       },
       fontFamily: {
