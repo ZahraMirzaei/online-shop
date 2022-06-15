@@ -88,5 +88,23 @@ const en: { [key: string]: string } = {
   offers: "Special Offers",
   newest: "Newest Goods",
   seeAll: "See All",
+  digitalCategoryTitle: "Digital Products",
+  digitalCategoryDescription:
+    "We offer the newest products at the most competitive prices",
+  fashionCategoryTitle: "Fashion and Clothes",
+  fashionCategoryDescription:
+    "The most popular brands with the most reasonable prices",
+  beautyCategoryTitle: "Cosmetic Products",
+  beautyCategoryDescription:
+    "Anti-allergy products suitable for all skin types from reputable brands",
+  sportCategoryTitle: "Sport and Trip",
+  sportCategoryDescription: "High-quality and durable products",
+  houseCategoryTitle: "Furniture and kitchen",
+  houseCategoryDescription: "In accordance with the designs of the day",
+  toyCategoryTitle: "Toys and Baby",
+  toyCategoryDescription: "A combination of entertainment and creativity",
+  stationeryCategoryTitle: "Books, Stationery and Art",
+  stationeryCategoryDescription: "Variety in choice",
+  seeAllProducts: "See All Products",
 };
 export default en;

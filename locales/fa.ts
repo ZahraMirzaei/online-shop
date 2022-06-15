@@ -88,5 +88,21 @@ const fa: { [key: string]: string } = {
   offers: "پیشنهادات ویژه",
   newest: "جدیدترین کالا‌ها",
   seeAll: "دیدن همه",
+  digitalCategoryTitle: "محصولات دیجیتال",
+  digitalCategoryDescription: "به‌روزترین محصولات با مناسب‌ترین قیمت",
+  fashionCategoryTitle: "مد و پوشاک",
+  fashionCategoryDescription: "محبوب‌ترین برندها با مناسب‌ترین قیمت",
+  beautyCategoryTitle: "آرایشی و بهداشتی",
+  beautyCategoryDescription:
+    "محصولات ضد حساسیت مناسب انواع پوست از برندهای معتبر",
+  sportCategoryTitle: "ورزش و سفر",
+  sportCategoryDescription: "محصولات مرغوب و مقاوم",
+  houseCategoryTitle: "خانه و آشپزخانه",
+  houseCategoryDescription: "مطابق با طراحی‌های روز دنیا",
+  toyCategoryTitle: "اسباب‌بازی، کودک و نوزاد",
+  toyCategoryDescription: "سرگرمی در کنار پرورش خلاقیت",
+  stationeryCategoryTitle: "کتاب، لوازم تحریر و هنر",
+  stationeryCategoryDescription: "تنوع در انتخاب",
+  seeAllProducts: "دیدن همه محصولات",
 };
 export default fa;
