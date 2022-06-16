@@ -9,6 +9,7 @@ import { client } from "../lib/client";
 import Benefits from "../components/Benefits";
 import Carousel from "../components/carousel";
 import Offers from "../components/Offers/Offers";
+import Category from "../components/category/Category";
 
 import { IProduct } from "../lib/interface/products";
 import { ICategory } from "../lib/interface/categories";
@@ -18,6 +19,7 @@ const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
   categories,
 }) => {
   const dispatch = useDispatch();
+  console.log(products);
 
   useEffect(() => {
     const offersProducts = products.filter((item) => item.discount);
@@ -29,6 +31,7 @@ const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
       <Carousel />
       <Benefits />
       <Offers />
+      <Category />
     </div>
   );
 };
