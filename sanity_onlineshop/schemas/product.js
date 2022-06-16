@@ -37,6 +37,16 @@ export default {
       type: "number",
     },
     {
+      name: "irrPrice",
+      title: "IRRPrice",
+      type: "number",
+    },
+    {
+      name: "irrDiscount",
+      title: "IRRDiscount",
+      type: "number",
+    },
+    {
       name: "details",
       title: "Details",
       type: "object",
