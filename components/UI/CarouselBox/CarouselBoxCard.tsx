@@ -9,10 +9,6 @@ interface Props {
   product: IProduct;
 }
 
-//exchangerate-api.com for convert currency pound to riyal
-const APIKEY = "230967b967bfa5f86ca99d6c";
-const BASE_URL = `https://v6.exchangerate-api.com/v6/${APIKEY}/pair/GBP/IRR`;
-
 const CarouselBoxCard: React.FC<Props> = ({ product }) => {
   const { locale } = useLanguage();
   const [IRRPrice, setIRRPrice] = useState<string>();
@@ -22,32 +18,22 @@ const CarouselBoxCard: React.FC<Props> = ({ product }) => {
     /*useEffects do its job just if locale === 'fa' */
   }
   useEffect(() => {
-    if (locale === "fa" && product?.price) {
-      fetch(`${BASE_URL}/${product?.price}`)
-        .then((res) => res.json())
-        .then((data) => {
-          let roundedNum = Math.trunc(data.conversion_result); //remove float part of price
-          let formattedPrice = new Intl.NumberFormat("fa-IR").format(
-            //convert to farsi format
-            roundedNum
-          );
-          setIRRPrice(formattedPrice);
-        });
+    if (locale === "fa" && product?.irrprice) {
+      let formattedPrice = new Intl.NumberFormat("fa-IR").format(
+        //convert to farsi format
+        product?.irrprice
+      );
+      setIRRPrice(formattedPrice);
     }
-  }, [locale, product?.price]);
+  }, [locale, product?.irrprice]);
   useEffect(() => {
-    if (locale === "fa" && product?.discount) {
-      fetch(`${BASE_URL}/${product?.discount}`)
-        .then((res) => res.json())
-        .then((data) => {
-          let roundedNum = Math.trunc(data.conversion_result);
-          let formattedDiscount = new Intl.NumberFormat("fa-IR").format(
-            roundedNum
-          );
-          setIRRDiscount(formattedDiscount);
-        });
+    if (locale === "fa" && product?.irrdiscount) {
+      let formattedDiscount = new Intl.NumberFormat("fa-IR").format(
+        product?.irrdiscount
+      );
+      setIRRDiscount(formattedDiscount);
     }
-  }, [locale, product?.discount]);
+  }, [locale, product?.irrdiscount]);
 
   return (
     <div className="w-full px-2 my-2">
@@ -63,7 +49,7 @@ const CarouselBoxCard: React.FC<Props> = ({ product }) => {
         )}
         <p className="truncate">{product?.name}</p>
         <span>
-          <del className="text-sm text-rose-600">
+          <del className="text-[10px] md:text-sm text-rose-600">
             <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
             {product?.price
               ? locale === "fa"
@@ -75,7 +61,7 @@ const CarouselBoxCard: React.FC<Props> = ({ product }) => {
           {product?.discount && (
             <>
               <br />
-              <ins className="text-[16px]  self-end mt-6 font-bold">
+              <ins className="text-[12px] md:text-[16px] font-bold self-end mt-6 ">
                 <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
                 {product?.discount
                   ? locale === "fa"

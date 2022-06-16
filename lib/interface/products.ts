@@ -37,7 +37,9 @@ export interface IProduct {
   name: string;
   slug: TSlug;
   price: number;
+  irrprice: number;
   discount?: number;
+  irrdiscount?: number;
   details: IProductDetails[];
   brand: string;
   category: TCategory[];
