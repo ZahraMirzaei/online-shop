@@ -8,7 +8,7 @@ const Offers = () => {
   );
 
   return (
-    <div>
+    <div className="md:mt-10">
       <CarouselBox
         title="offers"
         className="bg-offersBG"
