@@ -75,13 +75,6 @@ module.exports = {
         dropDownExit: "dropDown 0.3s reverse forwards",
       },
       backgroundImage: {
-        digitalBG: "url('/images/slider-img/digital-banner.jpg')",
-        stationeryBG: "url('/images/slider-img/stationery-banner.jpg')",
-        toyBG: "url('/images/slider-img/toy-banner.jpg')",
-        houseBG: "url('/images/slider-img/house-banner.jpg')",
-        fashionBG: "url('/images/slider-img/fashion-banner.jpg')",
-        beautyBG: "url('/images/slider-img/beauty-banner.jpg')",
-
         offersBG: "url('/images/carouselBox-bg/offersbg.png')",
       },
     },
