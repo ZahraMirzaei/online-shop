@@ -20,7 +20,7 @@ const Benefits = () => {
               alt={benefitItem.title}
               className=""
             />
-            <p className="py-2 text-[0.6rem] md:text-[0.75rem] text-palette-mute">
+            <p className="py-2 text-[0.6rem] md:text-[0.75rem] lg:text-base text-palette-mute">
               {t[`${benefitItem.title}`]}
             </p>
           </div>
