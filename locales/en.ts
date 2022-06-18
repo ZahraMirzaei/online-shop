@@ -88,6 +88,7 @@ const en: { [key: string]: string } = {
   offers: "Special Offers",
   newest: "Newest Goods",
   seeAll: "See All",
+  seeAllNewProducts: "See All New Products",
   digitalCategoryTitle: "Digital Products",
   digitalCategoryDescription:
     "We offer the newest products at the most competitive prices",

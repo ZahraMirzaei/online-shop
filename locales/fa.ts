@@ -88,6 +88,7 @@ const fa: { [key: string]: string } = {
   offers: "پیشنهادات ویژه",
   newest: "جدیدترین کالا‌ها",
   seeAll: "دیدن همه",
+  seeAllNewProducts: "دیدن تمام محصولات جدید",
   digitalCategoryTitle: "محصولات دیجیتال",
   digitalCategoryDescription: "به‌روزترین محصولات با مناسب‌ترین قیمت",
   fashionCategoryTitle: "مد و پوشاک",
