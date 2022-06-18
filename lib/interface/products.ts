@@ -45,4 +45,6 @@ export interface IProduct {
   category: TCategory[];
   isOffer: boolean;
   registerDate: string;
+  timeStamp?: number;
+  starRating: number;
 }
