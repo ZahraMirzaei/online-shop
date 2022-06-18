@@ -37,12 +37,12 @@ export default {
       type: "number",
     },
     {
-      name: "irrPrice",
+      name: "irrprice",
       title: "IRRPrice",
       type: "number",
     },
     {
-      name: "irrDiscount",
+      name: "irrdiscount",
       title: "IRRDiscount",
       type: "number",
     },
@@ -62,6 +62,25 @@ export default {
         { name: "back_camera", title: "BCamera", type: "string" },
         { name: "front_camera", title: "FCamera", type: "string" },
         { name: "battery", title: "Battery", type: "string" },
+        {
+          name: "frequency_response",
+          title: "Frequency Response",
+          type: "string",
+        },
+        { name: "microphone", title: "Microphone", type: "boolean" },
+        { name: "wireless", title: "Wireless", type: "boolean" },
+        {
+          name: "wireless_standby_time",
+          title: "Wireless Standby Time",
+          type: "string",
+        },
+        { name: "bluetooth", title: "Bluetooth", type: "boolean" },
+        {
+          name: "noise_cancelling",
+          title: "Noise Cancelling",
+          type: "boolean",
+        },
+        { name: "sound_isolating", title: "Sound Isolation", type: "boolean" },
       ],
     },
     {
