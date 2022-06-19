@@ -9,7 +9,7 @@ import { IProduct } from "../../lib/types/products";
 const Newest = () => {
   const { t } = useLanguage();
   const { width } = useWindowDimensions();
-  let numProductToShow = width >= 1280 ? 12 : 8;
+  let numProductToShow = width >= 1536 ? 12 : 8;
 
   const newestProducts = useSelector(
     (state: any) => state.newestProductsList.newestProducts
@@ -27,7 +27,7 @@ const Newest = () => {
 
       <div className="text-center">
         <Link href="/">
-          <a className="inline-block py-3 px-12 my-4 bg-palette-primary text-palette-side rounded-xl shadow-lg">
+          <a className="inline-block py-3 px-8 md:px-12 my-4 text-sm md:text-base bg-palette-primary text-palette-side rounded-xl shadow-lg">
             {t.seeAllNewProducts}
           </a>
         </Link>
