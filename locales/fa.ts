@@ -105,5 +105,18 @@ const fa: { [key: string]: string } = {
   stationeryCategoryTitle: "کتاب، لوازم تحریر و هنر",
   stationeryCategoryDescription: "تنوع در انتخاب",
   seeAllProducts: "دیدن همه محصولات",
+  expireDiscount: "مدت زمان تخفیف برای این محصول به پایان رسیده.",
+  days: "روز",
+  hours: "ساعت",
+  mins: "دقیقه",
+  seconds: "ثانیه",
+  larisaTitle: "مبلمان لاریسا",
+  larisaDescription:
+    "مبل زیبای لاریسا با طراحی به خصوصی خود می تواند زیبایی بی نظیری به دکوراسیون پذیرایی شما ببخشد.",
+  byNow: "اضافه به سبد خرید",
+  see: "مشاهده محصول",
+  romanoTitle: "مبلمان رومانو",
+  romanoDescription:
+    "مبل راحتی رومانو زیبایی چشم گیری دارد و می تواند جذابیت دکوراسیون منزل شما را چند برابر کند.",
 };
 export default fa;

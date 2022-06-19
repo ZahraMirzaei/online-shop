@@ -107,5 +107,18 @@ const en: { [key: string]: string } = {
   stationeryCategoryTitle: "Books, Stationery and Art",
   stationeryCategoryDescription: "Variety in choice",
   seeAllProducts: "See All Products",
+  expireDiscount: "Discount for this Product was Expire.",
+  days: "Days",
+  hours: "Hours",
+  mins: "Mins",
+  seconds: "Seconds",
+  larisaTitle: "Larissa Furniture",
+  larisaDescription:
+    "Larissa beautiful sofa with its private design can give a unique beauty to your reception decoration.",
+  byNow: "Add to cart",
+  see: "See Product",
+  romanoTitle: "Romano furniture",
+  romanoDescription:
+    "Romano sofa has an impressive beauty and can multiply the charm of your home decoration.",
 };
 export default en;
