@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import dynamic from "next/dynamic";
 import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
@@ -12,7 +13,11 @@ import Carousel from "../components/carousel";
 import Offers from "../components/Offers/Offers";
 import Category from "../components/category/Category";
 import Newest from "../components/newest/Newest";
-import Banners from "../components/banners";
+
+// import Banners from "../components/banners";
+//used dynamic to import Banners because I use setInterval for countdown component and
+//I get Error in console (Error:"text content did not match. server client nextjs")
+const Banners = dynamic(() => import("../components/banners"), { ssr: false });
 
 import { IProduct } from "../lib/types/products";
 import { ICategory } from "../lib/types/categories";
@@ -66,7 +71,7 @@ const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
 
 export default Home;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const productQuery = `*[_type=='product']`;
   const products = await client.fetch(productQuery);
 
