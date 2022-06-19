@@ -12,9 +12,10 @@ import Carousel from "../components/carousel";
 import Offers from "../components/Offers/Offers";
 import Category from "../components/category/Category";
 import Newest from "../components/newest/Newest";
+import Banners from "../components/banners";
 
-import { IProduct } from "../lib/interface/products";
-import { ICategory } from "../lib/interface/categories";
+import { IProduct } from "../lib/types/products";
+import { ICategory } from "../lib/types/categories";
 
 const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
   products,
@@ -58,6 +59,7 @@ const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
       <Offers />
       <Category />
       <Newest />
+      <Banners />
     </div>
   );
 };

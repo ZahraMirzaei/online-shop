@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { urlFor } from "../../../lib/client";
-import { IProduct } from "../../../lib/interface/products";
+import { IProduct } from "../../../lib/types/products";
 
 interface Props {
   product: IProduct;

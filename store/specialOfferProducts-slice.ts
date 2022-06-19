@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { IProduct } from "../lib/interface/products";
-import { IOfferProducts } from "../lib/interface/offerProductsState";
+import { IProduct } from "../lib/types/products";
+import { IOfferProducts } from "../lib/types/offerProductsState";
 
 const initialState: IOfferProducts = {
   specialOfferProducts: [],

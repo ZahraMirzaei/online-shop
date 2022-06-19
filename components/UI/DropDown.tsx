@@ -4,7 +4,7 @@ import { HiChevronUp, HiChevronDown } from "react-icons/hi";
 import { useRouter } from "next/router";
 import { Transition } from "react-transition-group";
 
-import { IDropDown } from "../../lib/interface/dropDown";
+import { IDropDown } from "../../lib/types/dropDown";
 import en from "../../locales/en";
 import fa from "../../locales/fa";
 

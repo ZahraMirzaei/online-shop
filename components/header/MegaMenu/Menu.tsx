@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import menuItems from "../../../mock/menuItems";
 import MenuItems from "../../UI/MenuItems";
-import { IDropDown } from "../../../lib/interface/dropDown";
+import { IDropDown } from "../../../lib/types/dropDown";
 import Submenu from "./Submenu";
 import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
 const Menu = () => {

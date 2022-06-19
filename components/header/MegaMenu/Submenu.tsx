@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useLanguage } from "../../../hooks/useLanguage";
-import { IDropDown } from "../../../lib/interface/dropDown";
+import { IDropDown } from "../../../lib/types/dropDown";
 
 interface Props {
   subMenu: IDropDown[] | undefined;

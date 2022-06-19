@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useLanguage } from "../../hooks/useLanguage";
 import menuItems from "../../mock/menuItems";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
-import { IDropDown } from "../../lib/interface/dropDown";
+import { IDropDown } from "../../lib/types/dropDown";
 import ActiveMenuItemContext from "../../store/context/activeMenuItemContext";
 
 interface Props {

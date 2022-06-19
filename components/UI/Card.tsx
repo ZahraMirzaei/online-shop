@@ -5,7 +5,7 @@ import { useLanguage } from "../../hooks/useLanguage";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { IoShareSocialOutline } from "react-icons/io5";
 import StarRatingComponent from "react-star-rating-component";
-import { IProduct } from "../../lib/interface/products";
+import { IProduct } from "../../lib/types/products";
 import { urlFor } from "../../lib/client";
 import {
   gbpCurrencyFormat,

@@ -5,7 +5,7 @@ import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import menuItems from "../../../mock/menuItems";
 import { extraMenu } from "../../../mock/menuItems";
 import SidebarContext from "../../../store/context/NavContext";
-import { IDropDown } from "../../../lib/interface/dropDown";
+import { IDropDown } from "../../../lib/types/dropDown";
 import MenuItems from "../../UI/MenuItems";
 
 const SideNavContent = () => {

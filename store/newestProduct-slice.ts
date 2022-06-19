@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { IProduct } from "../lib/interface/products";
-import { INewestProducts } from "../lib/interface/newestProductsState";
+import { IProduct } from "../lib/types/products";
+import { INewestProducts } from "../lib/types/newestProductsState";
 
 const initialState: INewestProducts = {
   newestProducts: [],

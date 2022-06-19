@@ -4,7 +4,7 @@ import { useLanguage } from "../../hooks/useLanguage";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import Link from "next/link";
 import Card from "../UI/Card";
-import { IProduct } from "../../lib/interface/products";
+import { IProduct } from "../../lib/types/products";
 
 const Newest = () => {
   const { t } = useLanguage();

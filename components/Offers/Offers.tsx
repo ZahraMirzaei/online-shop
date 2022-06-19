@@ -2,7 +2,7 @@ import React from "react";
 import CarouselBox from "../UI/CarouselBox/CarouselBox";
 import { useSelector } from "react-redux";
 import Slider from "react-slick";
-import { IProduct } from "../../lib/interface/products";
+import { IProduct } from "../../lib/types/products";
 import CarouselBoxCard from "../UI/CarouselBox/CarouselBoxCard";
 import { NextArrow, PrevArrow } from "../UI/CarouselBox/CarouselBoxArrows";
 
