@@ -20,19 +20,19 @@ interface Props {
 const Card: React.FC<Props> = ({ href, product }) => {
   const { t, locale } = useLanguage();
   return (
-    <div className="col-span-6 sm:col-span-3 md:col-span-4 lg:col-span-3 xl:col-span-2 shadow-xl my-4 ltr:mr-2 rtl:ml-1 md:mx-6  bg-palette-card rounded-xl">
+    <div className="col-span-6 sm:col-span-3 md:col-span-4 lg:col-span-3 2xl:col-span-2 shadow-xl my-4 ltr:mr-2 rtl:ml-1 md:mx-6  bg-palette-card rounded-xl flex">
       <Link href={href}>
-        <a className="flex md:items-center md:flex-col relative">
-          <div className="w-full bg-slate-400/30 px-1 md:px-6 py-2 rounded-bl-xl rounded-tl-xl md:rounded-tr-xl md:rounded-bl-none rtl:order-2 rtl:md:order-none">
+        <a className="flex md:items-center md:flex-col relative w-full">
+          <div className="w-full relative bg-slate-400/30 px-1 md:px-6 py-2 rounded-bl-xl rounded-tl-xl md:rounded-tr-xl md:rounded-bl-none rtl:order-2 rtl:md:order-none flex flex-col justify-between items-center">
             <Image
               src={urlFor(product?.image[0]).url()}
               width={280}
               height={300}
               alt={product.name}
-              className=" drop-shadow-xl object-contain hover:scale-110 transition-transform !py-2"
+              className=" drop-shadow-xl object-contain hover:scale-110 transition-transform duration-300 ease-in-out !py-2"
             />
             {product?.discount ? (
-              <span className="block absolute -top-2 -right-2">
+              <span className="w-8 sm:w-auto block absolute -top-2 -right-2">
                 <Image
                   src="/images/discount-icon/discount.png"
                   width={40}
@@ -41,7 +41,7 @@ const Card: React.FC<Props> = ({ href, product }) => {
                 />
               </span>
             ) : null}
-            <div className="md:w-auto md:h-[130px] mt-2 p-2 flex md:flex-col justify-around self-center md:absolute bottom-0 md:bottom-auto md:-top-2 left-0  md:-left-1 rounded-lg md:rounded-full shadow-lg backdrop-filter backdrop-blur-[8px] bg-palette-card/20">
+            <div className="w-full md:w-auto md:h-[130px] mt-2 p-2 flex md:flex-col justify-around self-center absolute bottom-2 md:-top-2 md:bottom-auto left-0  md:-left-1 rounded-lg md:rounded-full shadow-lg backdrop-filter backdrop-blur-[8px] bg-palette-card/20  ">
               <div className="hover:text-rose-600 transition-colors sm:px-3 md:px-0">
                 <AiOutlineHeart style={{ fontSize: "1.2rem" }} />
               </div>
