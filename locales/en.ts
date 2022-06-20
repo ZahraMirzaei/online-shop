@@ -120,5 +120,25 @@ const en: { [key: string]: string } = {
   romanoTitle: "Romano furniture",
   romanoDescription:
     "Romano sofa has an impressive beauty and can multiply the charm of your home decoration.",
+  popularBrands: "Popular Brands",
+  zishopMap: "Zishop Map",
+  aboutUs: "About Us",
+  contactUs: "Contact Us",
+  saleInZishop: "Sale In Zishop",
+  careerOpportunities: "Career Opportunities",
+  customerServices: "Customer Services",
+  commonQuestions: "Common Questions",
+  returnProcedures: "Return Procedures",
+  privacy: "Privacy",
+  shoppingGuide: "Shopping Guide",
+  howToPlaceAnOrder: "How To Place An Order?",
+  orderSubmissionProcedure: "Order Submission Procedure",
+  paymentMethods: "Payment Methods",
+  beWithUs: "Be With Us!",
+  emailRegister: "Stay up to date with the latest discounts by emailing us",
+  yourEmail: "Please Enter Your Email",
+  register: "Register",
+  copyRight:
+    "© 2022 ZiShop. All rights reserved. Design and Developed by Zahra Mirzaei",
 };
 export default en;
