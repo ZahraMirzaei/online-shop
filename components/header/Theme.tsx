@@ -42,7 +42,7 @@ const Theme = () => {
   };
 
   return (
-    <div className="rtl:ml-1 ltr:ml-1 border-[1px] border-gray-200 shadow-md p-1 rounded-full">
+    <div className="rtl:ml-1 ltr:ml-1  shadow-md p-1 rounded-full">
       {renderThemeChanger()}
     </div>
   );
