@@ -13,6 +13,7 @@ import Carousel from "../components/carousel";
 import Offers from "../components/Offers/Offers";
 import Category from "../components/category/Category";
 import Newest from "../components/newest/Newest";
+import Brands from "../components/brands";
 
 // import Banners from "../components/banners";
 //used dynamic to import Banners because I use setInterval for countdown component and
@@ -65,6 +66,7 @@ const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
       <Category />
       <Newest />
       <Banners />
+      <Brands />
     </div>
   );
 };
