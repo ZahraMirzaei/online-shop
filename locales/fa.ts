@@ -136,6 +136,6 @@ const fa: { [key: string]: string } = {
   emailRegister: "با ثبت ایمیل، از جدید‌ترین تخفیف‌ها با‌خبر شوید",
   yourEmail: "لطفاً ایمیل خود را وارد کنید",
   register: "ثبت",
-  copyRight: " © تمام حقوق این سایت محفوظ است.",
+  copyRight: " © تمام حقوق این سایت محفوظ است - طراحی و توسعه با",
 };
 export default fa;

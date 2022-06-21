@@ -139,6 +139,6 @@ const en: { [key: string]: string } = {
   yourEmail: "Please Enter Your Email",
   register: "Register",
   copyRight:
-    "© 2022 ZiShop. All rights reserved. Design and Developed by Zahra Mirzaei",
+    "© 2022 ZiShop. All rights reserved - Designed and Developed with ",
 };
 export default en;
