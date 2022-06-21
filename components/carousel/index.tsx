@@ -28,7 +28,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className=" md:mt-40">
+    <div>
       <Slider {...settings}>
         {sliderContent.map((slideContent) => {
           return <Slide key={slideContent.ID} {...slideContent} />;
