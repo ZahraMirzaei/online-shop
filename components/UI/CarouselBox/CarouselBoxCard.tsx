@@ -3,20 +3,14 @@ import Image from "next/image";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { urlFor } from "../../../lib/client";
 import { IProduct } from "../../../lib/types/products";
+import {
+  gbpCurrencyFormat,
+  irrCurrencyFormat,
+} from "../../../utilities/currencyFormat";
 
 interface Props {
   product: IProduct;
 }
-
-// Rial currency format
-export const irrCurrencyFormat = (price: number | undefined) => {
-  return price ? new Intl.NumberFormat("fa-IR").format(price) : null;
-};
-
-//pound currency format
-export const gbpCurrencyFormat = (price: number | undefined) => {
-  return price ? new Intl.NumberFormat("en-GB").format(price) : null;
-};
 
 const CarouselBoxCard: React.FC<Props> = ({ product }) => {
   const { locale } = useLanguage();

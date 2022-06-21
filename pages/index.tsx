@@ -22,6 +22,7 @@ const Banners = dynamic(() => import("../components/banners"), { ssr: false });
 
 import { IProduct } from "../lib/types/products";
 import { ICategory } from "../lib/types/categories";
+import { getTimeStamp, sortByTimeStamp } from "../utilities/sortByTimeStamp";
 
 const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
   products,
@@ -34,19 +35,6 @@ const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
     const offersProducts = products.filter((item) => item.discount);
     dispatch(specialOfferProductsActions.addProducts(offersProducts));
   }, [dispatch, products]);
-
-  //newest products
-  function getTimeStamp(date: string) {
-    const creationProductDate = new Date(date);
-    return creationProductDate.getTime();
-  }
-
-  const sortByTimeStamp = (product1: IProduct, product2: IProduct): number => {
-    if (product2?.timeStamp && product1?.timeStamp) {
-      return product2?.timeStamp - product1?.timeStamp;
-    }
-    return 0;
-  };
 
   //add products to newest list
   useEffect(() => {
