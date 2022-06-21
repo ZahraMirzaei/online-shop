@@ -3,12 +3,14 @@ import BrandBox from "./BrandBox";
 import { brandContent } from "../../mock/brand";
 import Slider from "react-slick";
 import { NextArrow, PrevArrow } from "../UI/CarouselBox/CarouselBoxArrows";
+import { useLanguage } from "../../hooks/useLanguage";
 const Brands = () => {
+  const { t } = useLanguage();
   const settings = {
     infinite: true,
     speed: 6000,
-    slidesToShow: 12,
-    slidesToScroll: 6,
+    slidesToShow: 8,
+    slidesToScroll: 4,
     autoplay: true,
     autoplaySpeed: 8000,
     cssEase: "linear",
@@ -17,28 +19,29 @@ const Brands = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 10,
-          slidesToScroll: 8,
+          slidesToShow: 6,
+          slidesToScroll: 3,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 8,
-          slidesToScroll: 8,
+          slidesToShow: 6,
+          slidesToScroll: 3,
         },
       },
       {
         breakpoint: 640,
         settings: {
           slidesToShow: 6,
-          slidesToScroll: 6,
+          slidesToScroll: 3,
         },
       },
     ],
   };
   return (
-    <div className="bg-white">
+    <div className="p-1 text-center">
+      <h2 className="mx-auto my-4 md:text-xl lg:text-2xl">{t.popularBrands}</h2>
       <Slider {...settings}>
         {brandContent.map((brandItem) => {
           return (
