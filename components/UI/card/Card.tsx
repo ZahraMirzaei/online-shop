@@ -1,16 +1,15 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useLanguage } from "../../hooks/useLanguage";
-import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
-import { IoShareSocialOutline } from "react-icons/io5";
+import { useLanguage } from "../../../hooks/useLanguage";
 import StarRatingComponent from "react-star-rating-component";
-import { IProduct } from "../../lib/types/products";
-import { urlFor } from "../../lib/client";
+import { IProduct } from "../../../lib/types/products";
+import { urlFor } from "../../../lib/client";
 import {
   gbpCurrencyFormat,
   irrCurrencyFormat,
-} from "./CarouselBox/CarouselBoxCard";
+} from "../../../utilities/currencyFormat";
+import CardActions from "./CardActions";
 
 interface Props {
   href: string;
@@ -18,7 +17,7 @@ interface Props {
 }
 
 const Card: React.FC<Props> = ({ href, product }) => {
-  const { t, locale } = useLanguage();
+  const { locale } = useLanguage();
   return (
     <div className="col-span-6 sm:col-span-3 md:col-span-4 lg:col-span-3 2xl:col-span-2 shadow-xl my-4 ltr:mr-2 rtl:ml-1 md:mx-6  bg-palette-card rounded-xl flex">
       <Link href={href}>
@@ -41,17 +40,7 @@ const Card: React.FC<Props> = ({ href, product }) => {
                 />
               </span>
             ) : null}
-            <div className="w-full md:w-auto md:h-[130px] mt-2 p-2 flex md:flex-col justify-around self-center absolute bottom-2 md:-top-2 md:bottom-auto left-0  md:-left-1 rounded-lg md:rounded-full shadow-lg backdrop-filter backdrop-blur-[8px] bg-palette-card/20  ">
-              <div className="hover:text-rose-600 transition-colors sm:px-3 md:px-0">
-                <AiOutlineHeart style={{ fontSize: "1.2rem" }} />
-              </div>
-              <div className="hover:text-rose-600 transition-colors sm:px-3 md:px-0">
-                <IoShareSocialOutline style={{ fontSize: "1.2rem" }} />
-              </div>
-              <div className="hover:text-rose-600 transition-colors sm:px-3 md:px-0">
-                <AiOutlineShoppingCart style={{ fontSize: "1.2rem" }} />
-              </div>
-            </div>
+            <CardActions />
           </div>
           <div className="flex flex-col justify-between  flex-grow  w-[90%]  px-1 md:px-3 py-2 md:py-4">
             <div className="flex justify-center flex-col  flex-grow overflow-hidden">
@@ -64,7 +53,7 @@ const Card: React.FC<Props> = ({ href, product }) => {
                   emptyStarColor={"gray"}
                 />
               </div>
-              <h4 className="text-sm sm:text-[12px] md:text-sm text-center text-palette-mute md:h-10">
+              <h4 className="text-sm sm:text-[12px] md:text-sm text-center text-palette-mute  ">
                 {product.name}
               </h4>
             </div>

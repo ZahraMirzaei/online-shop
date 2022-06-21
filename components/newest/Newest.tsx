@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { useLanguage } from "../../hooks/useLanguage";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import Link from "next/link";
-import Card from "../UI/Card";
+import Card from "../UI/card/Card";
 import { IProduct } from "../../lib/types/products";
 
 const Newest = () => {
