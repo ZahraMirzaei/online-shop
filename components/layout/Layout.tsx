@@ -15,15 +15,11 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
           <title>ZiShop</title>
         </Head>
         <div className="flex flex-col min-h-[100vh]">
-          <header>
-            <SidebarContextProvider>
-              <Header />
-            </SidebarContextProvider>
-          </header>
+          <SidebarContextProvider>
+            <Header />
+          </SidebarContextProvider>
           <main className="flex-grow  md:mt-40">{children}</main>
-          <footer>
-            <Footer />
-          </footer>
+          <Footer />
         </div>
       </ThemeProvider>
     </Provider>

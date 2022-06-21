@@ -15,7 +15,7 @@ import { ActiveMenuItemProvider } from "../../store/context/activeMenuItemContex
 
 const Header = () => {
   return (
-    <div className="md:fixed left-0 right-0 top-0 md:bg-palette-fill shadow-sm pt-4 z-[1000]">
+    <header className="md:fixed left-0 right-0 top-0 md:bg-palette-fill shadow-sm pt-4 z-[1000]">
       {/* 📱 sm break point */}
       <div className="md:hidden">
         <div className="flex justify-between mb-2">
@@ -88,7 +88,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 
