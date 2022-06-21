@@ -5,7 +5,7 @@ Date.prototype.addDays = function (days: number): Date {
   date.setDate(date.getDate() + days);
   return date;
 };
-//when I declared date in useCountdown it isn't work because every time a new date declared.
+
 var date = new Date();
 
 const getReturnValues = (countDown: number) => {
