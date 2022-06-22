@@ -43,7 +43,7 @@ const Card: React.FC<Props> = ({ href, product }) => {
             <CardActions />
           </div>
           <div className="flex flex-col justify-between  flex-grow  w-[90%]  px-1 md:px-3 py-2 md:py-4">
-            <div className="flex justify-center flex-col  flex-grow overflow-hidden">
+            <div className="flex justify-center md:justify-start flex-col  flex-grow overflow-hidden">
               <div className="self-center">
                 <StarRatingComponent
                   name="product_rate"
