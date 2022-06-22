@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { MdLanguage } from "react-icons/md";
 import { HiChevronUp, HiChevronDown } from "react-icons/hi";
 import { useLanguage } from "../../hooks/useLanguage";
 const Language = () => {
   const { t, locale } = useLanguage();
   const [lang, setLang] = useState(locale);
+  const route = useRouter();
 
   const [openLang, setOpenLang] = useState(false);
   let ArrowDirection = !openLang ? HiChevronDown : HiChevronUp;
@@ -45,7 +47,7 @@ const Language = () => {
           <div
             className={`absolute top-9 ltr:right-0 rtl:left-0 bg-palette-card py-3 px-6 shadow-md rounded-md z-10`}
           >
-            <Link href="/" locale="fa">
+            <Link href={`${route.asPath}`} locale="fa">
               <a className="whitespace-nowrap flex justify-between items-center">
                 <div onClick={() => setOpenLang(false)}>
                   <input
@@ -64,7 +66,7 @@ const Language = () => {
               </a>
             </Link>
 
-            <Link href="/" locale="en">
+            <Link href={`${route.asPath}`} locale="en">
               <a className="whitespace-nowrap flex justify-start items-center mt-3">
                 <div onClick={() => setOpenLang(false)}>
                   <input
