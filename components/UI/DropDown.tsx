@@ -1,12 +1,14 @@
-import React, { useState, forwardRef, useRef } from "react";
+import React, { useState, forwardRef, useRef, useContext } from "react";
 import Link from "next/link";
 import { HiChevronUp, HiChevronDown } from "react-icons/hi";
 import { useRouter } from "next/router";
 import { Transition } from "react-transition-group";
 
+import ActiveMenuItemContext from "../../store/context/activeMenuItemContext";
 import { IDropDown } from "../../lib/types/dropDown";
 import en from "../../locales/en";
 import fa from "../../locales/fa";
+import SidebarContext from "../../store/context/NavContext";
 
 interface Props {
   dropDown: IDropDown;
@@ -14,6 +16,8 @@ interface Props {
 }
 const DropDown = forwardRef<HTMLDivElement, Props>(({ dropDown }, ref) => {
   const [openDropdown, setOpenDropDown] = useState(false);
+  const activeItemCtx = useContext(ActiveMenuItemContext);
+  const sideBarCtx = useContext(SidebarContext);
   const { locale } = useRouter();
   const t = locale === "en" ? en : fa;
   let ArrowDirection = !openDropdown ? HiChevronDown : HiChevronUp;
@@ -57,8 +61,14 @@ const DropDown = forwardRef<HTMLDivElement, Props>(({ dropDown }, ref) => {
                     ref={ref}
                     key={`${item}-${index}`}
                   >
-                    <Link href="/">
-                      <a>{t[`${item}`]}</a>
+                    <Link
+                      href={`/${activeItemCtx.activeMenuItemText}/${dropDown.title}/${item}`}
+                    >
+                      <a>
+                        <div onClick={sideBarCtx.closeNavbar}>
+                          {t[`${item}`]}
+                        </div>
+                      </a>
                     </Link>
                   </div>
                 );

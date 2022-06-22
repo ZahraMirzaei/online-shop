@@ -1,19 +1,23 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import { useLanguage } from "../../../hooks/useLanguage";
-import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
-import menuItems from "../../../mock/menuItems";
 import { extraMenu } from "../../../mock/menuItems";
 import SidebarContext from "../../../store/context/NavContext";
+import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
 import { IDropDown } from "../../../lib/types/dropDown";
 import MenuItems from "../../UI/MenuItems";
 
 const SideNavContent = () => {
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
   const sideNavCtx = useContext(SidebarContext);
-  const ArrowDirection = locale === "en" ? HiChevronRight : HiChevronLeft;
-  const openNav = (sidebarSideContent: IDropDown[] = []) => {
+  const activeMenuItemCtx = useContext(ActiveMenuItemContext);
+  const openNav = (
+    sidebarSideContent: IDropDown[] = [],
+    activeItemName: string
+  ) => {
     sideNavCtx.setDropDownList(sidebarSideContent);
+
+    activeMenuItemCtx.setActiveMenuItemText(activeItemName);
     sideNavCtx.openSidebar();
   };
   return (
@@ -38,28 +42,6 @@ const SideNavContent = () => {
         {t.CategoryOfGoods}
       </h2>
       <MenuItems onClick={openNav} />
-      {/* {menuItems.map((item) => {
-        return (
-          <div key={item.category}>
-            <div
-              className="flex items-center mt-3 py-3 ltr:px-5 rtl:px-5  cursor-pointer  hover:ltr:md:translate-x-2 hover:rtl:md:-translate-x-2 transition-transform"
-              onClick={() => openNav(item.productsGroup)}
-            >
-              <item.icon className="w-6 h-6 " />
-              <div
-                className={`mx-4 grow ${
-                  !item.productsGroup ? "text-gray-400 font-normal" : ""
-                }`}
-              >
-                {t[item.category]}
-              </div>
-              {item.productsGroup ? (
-                <ArrowDirection style={{ fontSize: "1.5rem" }} />
-              ) : null}
-            </div>
-          </div>
-        );
-      })} */}
     </div>
   );
 };

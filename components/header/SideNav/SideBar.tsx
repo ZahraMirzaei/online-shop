@@ -1,31 +1,26 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useRef, useContext } from "react";
 import { Transition } from "react-transition-group";
 import { GoGrabber } from "react-icons/go";
 import SidebarContext from "../../../store/context/NavContext";
 import SideNav from "./SideNav";
 
 const SideBar = () => {
-  const [navOpen, setNavOpen] = useState(false);
   const nodeRef = useRef<HTMLDivElement>(null);
   const sidebarCtx = useContext(SidebarContext);
 
-  const openNav = () => {
-    setNavOpen(true);
-  };
-
   const closeNav = () => {
-    setNavOpen(false);
+    sidebarCtx.closeNavbar();
     sidebarCtx.closeSidebar();
   };
 
   return (
     <div className="md:hidden">
-      <div onClick={openNav}>
+      <div onClick={sidebarCtx.openNavbar}>
         <GoGrabber style={{ fontSize: "2rem" }} />
       </div>
       <Transition
         nodeRef={nodeRef}
-        in={navOpen}
+        in={sidebarCtx.isNavbarOpen}
         timeout={300}
         mountOnEnter
         unmountOnExit

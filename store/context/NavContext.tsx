@@ -2,19 +2,25 @@ import React, { createContext, useState } from "react";
 import { IDropDown } from "../../lib/types/dropDown";
 
 type SidebarContextObj = {
-  isOpen: boolean;
+  isSidebarOpen: boolean;
+  isNavbarOpen: boolean;
   dropDownList: IDropDown[];
   setDropDownList: (entries: IDropDown[]) => void;
   openSidebar: () => void;
+  openNavbar: () => void;
   closeSidebar: () => void;
+  closeNavbar: () => void;
 };
 
 const SidebarContext = createContext<SidebarContextObj>({
-  isOpen: false,
+  isSidebarOpen: false,
+  isNavbarOpen: false,
   dropDownList: [],
   setDropDownList: (entries: IDropDown[]) => {},
   openSidebar: () => {},
+  openNavbar: () => {},
   closeSidebar: () => {},
+  closeNavbar: () => {},
 });
 
 export default SidebarContext;
@@ -22,15 +28,25 @@ export default SidebarContext;
 export const SidebarContextProvider: React.FC<{ children: React.ReactNode }> = (
   props
 ) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [sidebarContent, setSidebarContent] = useState<IDropDown[]>([]);
 
   function openSidebar() {
-    setIsOpen(true);
+    setIsSidebarOpen(true);
+  }
+
+  function openNavbar() {
+    setIsNavbarOpen(true);
   }
 
   function closeSidebar() {
-    setIsOpen(false);
+    setIsSidebarOpen(false);
+  }
+
+  function closeNavbar() {
+    setIsSidebarOpen(false);
+    setIsNavbarOpen(false);
   }
 
   function setSidebarEntries(entries: IDropDown[]) {
@@ -38,11 +54,14 @@ export const SidebarContextProvider: React.FC<{ children: React.ReactNode }> = (
   }
 
   const contextValue: SidebarContextObj = {
-    isOpen,
+    isSidebarOpen,
+    isNavbarOpen,
     dropDownList: sidebarContent,
     setDropDownList: setSidebarEntries,
     openSidebar,
+    openNavbar,
     closeSidebar,
+    closeNavbar,
   };
 
   return (

@@ -10,16 +10,19 @@ const Menu = () => {
 
   function activeItem(
     submenuList: IDropDown[] | undefined,
-    activeItemIndex: number
+    activeItemIndex: number,
+    activeItemName: string
   ) {
     setSubmenu(submenuList);
     activeItemCtx.setActiveMenuItemIndex(activeItemIndex);
+    activeItemCtx.setActiveMenuItemText(activeItemName);
   }
 
   useEffect(() => {
     setSubmenu(menuItems[0].productsGroup);
     return () => {
       activeItemCtx.setActiveMenuItemIndex(0);
+      activeItemCtx.setActiveMenuItemText("digital");
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
