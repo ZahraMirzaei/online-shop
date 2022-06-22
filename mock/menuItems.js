@@ -1,50 +1,58 @@
 import { BsLaptop, BsBook } from "react-icons/bs";
-import { IoShirtOutline } from "react-icons/io5";
+import { IoShirtOutline, IoShirtSharp } from "react-icons/io5";
 import { MdOutlineToys } from "react-icons/md";
-import { RiHeartPulseLine } from "react-icons/ri";
-import { AiOutlineHome } from "react-icons/ai";
+import { RiHeartPulseLine, RiFireLine } from "react-icons/ri";
+import { AiOutlineHome, AiOutlinePercentage } from "react-icons/ai";
 import { BiFootball } from "react-icons/bi";
-import { RiFireLine } from "react-icons/ri";
-import { AiOutlinePercentage } from "react-icons/ai";
+
+import { ImMobile } from "react-icons/im";
+import { FiMonitor, FiHeadphones } from "react-icons/fi";
+
+import { GiLargeDress } from "react-icons/gi";
+import { FaBaby, FaRedhat } from "react-icons/fa";
 
 const menuItems = [
   {
-    category: "Digital",
+    category: "digital",
     icon: BsLaptop,
     productsGroup: [
       {
-        title: "Laptop",
+        title: "laptop",
+        icon: BsLaptop,
         subtitles: [
-          "Asus",
-          "Apple",
-          "Dell",
-          "Lenovo",
-          "Samsung",
-          "HP",
-          "HUAWEI",
-          "Acer",
-          "MSI",
+          "asus",
+          "apple",
+          "dell",
+          "lenovo",
+          "samsung",
+          "hp",
+          "huawei",
+          "acer",
+          "msi",
         ],
       },
       {
-        title: "Mobile",
+        title: "mobile",
+        icon: ImMobile,
         subtitles: [
-          "Samsung",
-          "Apple",
-          "Nokia",
-          "Xiaomi",
-          "Motorola",
-          "LG",
-          "Sony",
+          "samsung",
+          "apple",
+          "nokia",
+          "xiaomi",
+          "motorola",
+          "lg",
+          "sony",
         ],
       },
       {
-        title: "Computer",
-        subtitles: ["Monitor", "Mouse", "Keyboard", "Hard"],
+        title: "computer",
+        icon: FiMonitor,
+        subtitles: ["monitor", "mouse", "keyboard", "hard"],
       },
       {
-        title: "Other",
-        subtitles: ["Tablet", "PowerBank", "Speaker", "Headphone"],
+        title: "other",
+        icon: FiHeadphones,
+        subtitles: ["tablet", "powerBank", "speaker", "headphones"],
       },
     ],
   },
@@ -54,35 +62,39 @@ const menuItems = [
     productsGroup: [
       {
         title: "women",
+        icon: GiLargeDress,
         subtitles: [
           "dress",
           "skirt",
           "jeans",
           "pants",
-          "TShirt",
-          "Shoes",
+          "tShirt",
+          "shoes",
           "scarf",
         ],
       },
       {
         title: "men",
-        subtitles: ["shirt", "pants", "tie", "TShirt", "Shoes", "jeans"],
+        icon: IoShirtSharp,
+        subtitles: ["shirt", "pants", "tie", "tShirt", "shoes", "jeans"],
       },
       {
         title: "child",
-        subtitles: ["Overalls", "Mittens", "BabyApron", "Shoes", "TShirt"],
+        icon: FaBaby,
+        subtitles: ["overalls", "mittens", "babyApron", "shoes", "tShirt"],
       },
       {
-        title: "Other",
+        title: "other",
+        icon: FaRedhat,
         subtitles: ["watch", "wallet", "hat", "belt"],
       },
     ],
   },
   { category: "toys", icon: MdOutlineToys },
-  { category: "Cosmetic", icon: RiHeartPulseLine },
-  { category: "Home", icon: AiOutlineHome },
-  { category: "Sport", icon: BiFootball },
-  { category: "Stationery", icon: BsBook },
+  { category: "cosmetic", icon: RiHeartPulseLine },
+  { category: "home", icon: AiOutlineHome },
+  { category: "sport", icon: BiFootball },
+  { category: "stationery", icon: BsBook },
 ];
 
 export default menuItems;
