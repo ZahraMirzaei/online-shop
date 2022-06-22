@@ -92,12 +92,7 @@ export default {
       name: "category",
       title: "Category",
       type: "array",
-      of: [
-        {
-          type: "reference",
-          to: { type: "category" },
-        },
-      ],
+      of: [{ type: "string" }],
     },
     {
       name: "isOffer",
