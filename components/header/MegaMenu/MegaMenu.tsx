@@ -1,27 +1,20 @@
-import React, { useState, useRef } from "react";
+import React, { useRef, useContext } from "react";
 import { Transition } from "react-transition-group";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { GoGrabber } from "react-icons/go";
 import Menu from "./Menu";
+import MegaMenuContext from "../../../store/context/megaMenuContext";
 
 const MegaMenu = () => {
-  const [isOpenMenu, setIsOpenMenu] = useState(false);
   const nodeRef = useRef<HTMLDivElement>(null);
   const { t } = useLanguage();
-
-  const openNav = () => {
-    setIsOpenMenu(true);
-  };
-
-  const closeNav = () => {
-    setIsOpenMenu(false);
-  };
+  const megaMenuCtx = useContext(MegaMenuContext);
 
   return (
     <div
       className="flex items-center"
-      onMouseOver={openNav}
-      onMouseOut={closeNav}
+      onMouseOver={megaMenuCtx.openMegaMenu}
+      onMouseOut={megaMenuCtx.closeMegaMenu}
     >
       <div className="flex items-center font-bold cursor-pointer">
         <GoGrabber style={{ fontSize: "2rem" }} />
@@ -30,7 +23,7 @@ const MegaMenu = () => {
 
       <Transition
         nodeRef={nodeRef}
-        in={isOpenMenu}
+        in={megaMenuCtx.isMegaMenuOpen}
         timeout={300}
         mountOnEnter
         unmountOnExit
@@ -48,7 +41,7 @@ const MegaMenu = () => {
                     : "animate-fadeExit"
                 }
                 `}
-                onClick={closeNav}
+                onClick={megaMenuCtx.closeMegaMenu}
               ></div>
               <div className="absolute top-full left-0 right-0 bg-palette-card z-[110] shadow-md rounded-br-lg rounded-bl-lg">
                 <Menu />
