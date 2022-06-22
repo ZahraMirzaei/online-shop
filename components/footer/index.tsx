@@ -12,7 +12,7 @@ const Footer = () => {
         <FooterColumns />
         <SocialPart />
       </div>
-      <div className="flex items-center justify-center border-t-[1px] border-slate-500/30 py-4 text-center">
+      <div className="flex items-center justify-center flex-wrap border-t-[1px] border-slate-500/30 py-4 text-center text-sm md:text-base">
         {t.copyRight}
         <BsFillSuitHeartFill
           style={{
