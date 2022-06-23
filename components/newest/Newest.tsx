@@ -11,8 +11,8 @@ const Newest = () => {
   const { width } = useWindowDimensions();
   let numProductToShow = width >= 1536 ? 12 : 8;
 
-  const newestProducts = useSelector(
-    (state: any) => state.newestProductsList.newestProducts
+  const newestProducts: IProduct[] = useSelector(
+    (state: any) => state.newestProductsList.productsList
   );
 
   return (
@@ -20,9 +20,13 @@ const Newest = () => {
       <h2 className="mt-4 mx-auto py-8 md:text-xl lg:text-2xl">{t.newest}</h2>
 
       <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 max-w-[1700px]">
-        {newestProducts.slice(0, numProductToShow).map((product: IProduct) => {
-          return <Card key={product.name} href="/" product={product} />;
-        })}
+        {newestProducts
+          ? newestProducts
+              .slice(0, numProductToShow)
+              .map((product: IProduct) => {
+                return <Card key={product.name} href="/" product={product} />;
+              })
+          : null}
       </div>
 
       <div className="text-center">
