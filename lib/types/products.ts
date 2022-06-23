@@ -48,3 +48,20 @@ export interface IProduct {
   timeStamp?: number;
   starRating: number;
 }
+export interface IProductWithSubCategory {
+  image: any;
+  name: string;
+  slug: TSlug;
+  price: number;
+  irrprice: number;
+  discount?: number;
+  irrdiscount?: number;
+  details: IProductDetails[];
+  brand: string;
+  category: string;
+  subCategory: string;
+  isOffer: boolean;
+  registerDate: string;
+  timeStamp?: number;
+  starRating: number;
+}
