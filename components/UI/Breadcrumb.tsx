@@ -51,7 +51,9 @@ const Breadcrumb = () => {
                 <span>/</span>
                 <Link href={breadcrumb.href}>
                   <a className="inline-block px-2">
-                    {t[convertBreadcrumb(breadcrumb.breadcrumb)]}
+                    {t[convertBreadcrumb(breadcrumb.breadcrumb)]
+                      ? t[convertBreadcrumb(breadcrumb.breadcrumb)]
+                      : convertBreadcrumb(breadcrumb.breadcrumb)}
                   </a>
                 </Link>
               </li>
