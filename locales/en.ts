@@ -143,5 +143,11 @@ const en: { [key: string]: string } = {
   register: "Register",
   copyRight:
     "© 2022 ZiShop. All rights reserved - Designed and Developed with ",
+  sort: "Sort based on: ",
+  all: "All",
+  newestProducts: "Newest",
+  cheapest: "Cheapest",
+  popular: "The Most Popular",
+  expensive: "The Most Expensive",
 };
 export default en;

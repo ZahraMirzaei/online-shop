@@ -140,5 +140,11 @@ const fa: { [key: string]: string } = {
   yourEmail: "لطفاً ایمیل خود را وارد کنید",
   register: "ثبت",
   copyRight: " © تمام حقوق این سایت محفوظ است - طراحی و توسعه با",
+  sort: "مرتب‌سازی: ",
+  all: "همه",
+  newestProducts: "جدیدترین",
+  cheapest: "ارزان‌ترین",
+  popular: "محبوب‌ترین",
+  expensive: "گران‌ترین",
 };
 export default fa;
