@@ -3,6 +3,7 @@ import React from "react";
 import ProductDetails from "../../../../../components/productDetails";
 import { client } from "../../../../../lib/client";
 import { IProduct } from "../../../../../lib/types/products";
+import { IProductWithSubCategory } from "../../../../../lib/types/products";
 
 const productDetailsPage: NextPage<{
   product: IProduct;
@@ -17,12 +18,34 @@ const productDetailsPage: NextPage<{
 
 export default productDetailsPage;
 
+export const getStaticPaths: GetStaticPaths = async () => {
+  const query = `*[_type=="product"]{
+    slug{current},
+    "category":category[0],
+    "subCategory":category[1],
+    brand,
+  }`;
+  const products = await client.fetch(query);
+  const paths = products.map((product: IProductWithSubCategory) => ({
+    params: {
+      slug: product.slug.current,
+      category: product.category.toString(),
+      subCategory: product.subCategory.toString(),
+      brand: product.brand,
+    },
+  }));
+  return {
+    fallback: "blocking",
+    paths,
+  };
+};
+
 export const getStaticProps: GetStaticProps = async (context) => {
   const subCategory = context.params?.subCategory;
   const category = context.params?.category;
   const brand = context.params?.brand;
   const slug = context.params?.slug;
-  const productQuery = `*[_type=='product'&& category[0]=="${category}" &&category[1]=="${subCategory}" && brand=="${brand}" && slug.current=="${slug}"] `;
+  const productQuery = `*[_type=='product'&& slug.current=="${slug}"][0]`;
   const productsQuery = `*[_type=='product'&& category[0]=="${category}" &&category[1]=="${subCategory}"]`;
 
   const product = await client.fetch(productQuery);
@@ -30,72 +53,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   return {
     props: {
-      product: product[0],
+      product,
       products,
     }, // will be passed to the page component as props
-  };
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    fallback: true,
-    paths: [
-      {
-        params: {
-          category: "digital",
-          subCategory: "mobile",
-          brand: "xiaomi",
-          slug: "xiaomi-redmi-note-11-128-gb-graphite-gray",
-        },
-      },
-      {
-        params: {
-          category: "digital",
-          subCategory: "mobile",
-          brand: "apple",
-          slug: "apple-iphone-13-128-gb-midnight",
-        },
-      },
-      {
-        params: {
-          category: "digital",
-          subCategory: "mobile",
-          brand: "samsung",
-          slug: "samsung-galaxy-a32-5g-64-gb-awesome-black",
-        },
-      },
-      {
-        params: {
-          category: "digital",
-          subCategory: "laptop",
-          brand: "lenovo",
-          slug: "lenovo-thinkbook-15-g2-intel-core-i5-8gb-ram-256gb-ssd-windows-11-pro-15-6-laptop",
-        },
-      },
-      {
-        params: {
-          category: "digital",
-          subCategory: "laptop",
-          brand: "samsung",
-          slug: "samsung-galaxy-book-intel-core-i7-8gb-ram-512gb-ssd-windows-10-home-15-6-laptop",
-        },
-      },
-      {
-        params: {
-          category: "digital",
-          subCategory: "laptop",
-          brand: "asus",
-          slug: "asus-zenbook-14-intel-core-i7-16gb-ram-512gb-ssd-14-ips-laptop",
-        },
-      },
-      {
-        params: {
-          category: "digital",
-          subCategory: "other",
-          brand: "JBL",
-          slug: "jbl-tune-750-btnc-wireless-over-ear-bluetooth-headphones-with-active-noise-cancellation",
-        },
-      },
-    ],
   };
 };
