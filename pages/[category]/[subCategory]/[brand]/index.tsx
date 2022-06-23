@@ -21,7 +21,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const subCategory = context.params?.subCategory;
   const productQuery = `*[_type=='product'&& category[1]=="${subCategory}" && brand=="${brand}"]`;
   const products = await client.fetch(productQuery);
-  console.log(brand);
 
   return {
     props: {
