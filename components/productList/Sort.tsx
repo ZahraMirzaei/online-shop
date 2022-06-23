@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React, { ChangeEvent } from "react";
 import { useLanguage } from "../../hooks/useLanguage";
 import { BsFilterLeft, BsArrowDown } from "react-icons/bs";
 import { radioBtnValue } from "../../mock/sortRadioInput";
 
-const Sort = () => {
-  const [selectedRadioBtn, setSelectedRadioBtn] = useState("all");
+interface Props {
+  selectedBtn: string;
+  onChangeSelectedBtn: (e: ChangeEvent<HTMLInputElement>) => void;
+}
+const Sort: React.FC<Props> = ({
+  selectedBtn: selectedRadioBtn,
+  onChangeSelectedBtn,
+}) => {
   const { t } = useLanguage();
 
   const isRadioSelected = (value: string): boolean =>
     value === selectedRadioBtn ? true : false;
 
-  function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
-    setSelectedRadioBtn(e.currentTarget.id);
-  }
-
-  console.log(selectedRadioBtn);
   return (
     <div className="my-4 pb-2 flex flex-wrap border-b-2 border-slate-300">
       <div className="flex items-center">
@@ -46,7 +47,7 @@ const Sort = () => {
                 value={selectedRadioBtn}
                 name="sortProduct"
                 checked={isRadioSelected(radioInput)}
-                onChange={onChangeHandler}
+                onChange={onChangeSelectedBtn}
               />
             </div>
           );
