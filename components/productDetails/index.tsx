@@ -1,6 +1,7 @@
 import React from "react";
 import { IProduct } from "../../lib/types/products";
 import Breadcrumb from "../UI/Breadcrumb";
+import ImageSection from "./ImageSection";
 
 interface Props {
   product: IProduct;
@@ -8,9 +9,11 @@ interface Props {
 }
 const ProductDetails: React.FC<Props> = ({ product, products }) => {
   return (
-    <div>
+    <div className="flex flex-col">
       <Breadcrumb />
-      {product.name}
+      <div>
+        <ImageSection imgArray={product.image} />
+      </div>
     </div>
   );
 };
