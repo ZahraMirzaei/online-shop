@@ -13,7 +13,7 @@ export const benefitContent = [
   },
   {
     imgSrc: "/images/benefit-icons/006-best-seller.png",
-    title: "warranty",
+    title: "warrantyBenefit",
   },
   // {
   //   imgSrc: "/images/benefit-icons/007-return.png",
