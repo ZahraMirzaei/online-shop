@@ -74,6 +74,18 @@ export default {
           title: "Wireless Standby Time",
           type: "string",
         },
+        {
+          name: "connectionType",
+          title: "Connection Type",
+          type: "array",
+          of: [{ type: "string" }],
+        },
+        {
+          name: "connectors",
+          title: "Connectors",
+          type: "array",
+          of: [{ type: "string" }],
+        },
         { name: "bluetooth", title: "Bluetooth", type: "boolean" },
         {
           name: "noise_cancelling",
