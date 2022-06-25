@@ -156,6 +156,8 @@ const fa: { [key: string]: string } = {
   screen: "صفحه نمایش",
   true: "بله",
   bluetooth: "بلوتوث",
+  frequency_response: "پاسخ فرکانس",
+  sound_isolating: "عایق صدا",
   microphone: "میکروفن",
   noise_cancelling: "قابلیت حذف نویز",
   wireless: "بی‌سیم",
@@ -169,5 +171,6 @@ const fa: { [key: string]: string } = {
   addToCart: "اضافه به سبد خرید",
   stars: "ستاره",
   price: "قیمت محصول",
+  similarProducts: "محصولات مشابه",
 };
 export default fa;

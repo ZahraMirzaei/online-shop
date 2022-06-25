@@ -159,6 +159,8 @@ const en: { [key: string]: string } = {
   screen: "Screen",
   true: "yes",
   bluetooth: "Bluetooth",
+  frequency_response: "Frequency Response",
+  sound_isolating: "Sound Isolating",
   microphone: "Microphone",
   noise_cancelling: "Noise Cancelling",
   wireless: "Wireless",
@@ -172,5 +174,6 @@ const en: { [key: string]: string } = {
   addToCart: "ADD TO CART",
   stars: "Star",
   price: "Product price",
+  similarProducts: "Similar Products",
 };
 export default en;
