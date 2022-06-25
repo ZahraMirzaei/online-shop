@@ -14,3 +14,13 @@ export const sortByTimeStamp = (
   }
   return 0;
 };
+
+export const newestProductsFn = (products: IProduct[]) => {
+  const productsWithTimeStamp = products.map((product) => {
+    return {
+      ...product,
+      timeStamp: getTimeStamp(product.registerDate),
+    };
+  });
+  return productsWithTimeStamp.sort(sortByTimeStamp);
+};
