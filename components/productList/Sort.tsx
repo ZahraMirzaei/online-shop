@@ -32,10 +32,10 @@ const Sort: React.FC<Props> = ({
             <div key={radioInput} className="px-1 md:px-2 mx-2 my-1 sm:my-0">
               <label
                 htmlFor={radioInput}
-                className={`text-sm ${
+                className={`text-sm  cursor-pointer ${
                   radioInput === selectedRadioBtn
                     ? "text-palette-primary font-bold"
-                    : "text-palette-mute/80 hover:text-palette-base transition-all "
+                    : "text-palette-mute/80 hover:text-palette-base transition-all"
                 }`}
               >
                 {t[radioInput]}
