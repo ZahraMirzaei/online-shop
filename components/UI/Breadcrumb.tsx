@@ -37,9 +37,9 @@ const Breadcrumb = () => {
   }
 
   return (
-    <div className="flex text-[12px] sm:text-sm text-palette-mute mt-4 md:-mt-4 mb-3 md:my-none">
+    <div className="flex text-[11px] sm:text-sm text-palette-mute mt-4 md:-mt-4 mb-3 md:my-none overflow-auto whitespace-nowrap">
       <nav className="flex py-3 px-2 sm:px-5 leading-6">
-        <ul className="flex items-center flex-wrap space-x-1 md:space-x-3">
+        <ul className="flex items-center space-x-1 md:space-x-3">
           <li className="cursor-pointer">
             <Link href="/">
               <a className="inline-block ltr:pr-2 rtl:pl-2">{t.mainPage}</a>
