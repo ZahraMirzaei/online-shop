@@ -40,7 +40,7 @@ const CallToAction: React.FC<Props> = ({
   const { t, locale } = useLanguage();
 
   return (
-    <div className="flex flex-col items-center rtl:mr-auto ltr:ml-auto flex-grow  px-6 py-4 sm:p-4 xl:p-6 mt-4 lg:mt-0 xl:rtl:ml-2 border-2 shadow-lg max-w-[350px]">
+    <div className="flex flex-col items-center flex-grow max-w-[350px] mt-4 lg:mt-0 rtl:mr-auto ltr:ml-auto xl:rtl:ml-2 px-6 py-4 sm:p-4 xl:p-6 border-2 shadow-lg">
       <div className="flex flex-col w-full ">
         <p className="text-lg">{t.price}</p>
         <div className="rtl:self-end ltr:self-start text-left mt-2">
