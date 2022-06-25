@@ -5,6 +5,7 @@ import { IProduct } from "../lib/types/products";
 import { getTimeStamp, sortByTimeStamp } from "../utilities/sortByTimeStamp";
 import { sortByPoPularity } from "../utilities/sortByPopularity";
 import { sortByCheapest, sortByExpensive } from "../utilities/sortByCost";
+import { newestProductsFn } from "../utilities/sortByTimeStamp";
 
 const initialState: IProductList = {
   productsList: [],
@@ -23,13 +24,7 @@ const SortedProductsListSlice = createSlice({
           state.productsList = action.payload.productsList;
           break;
         case "newestProducts": {
-          const productsWithTimeStamp = state.productsList.map((product) => {
-            return {
-              ...product,
-              timeStamp: getTimeStamp(product.registerDate),
-            };
-          });
-          state.productsList = productsWithTimeStamp.sort(sortByTimeStamp);
+          state.productsList = newestProductsFn(state.productsList);
           break;
         }
         case "popular": {
