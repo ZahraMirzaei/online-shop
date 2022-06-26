@@ -1,9 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-export interface ICartUI {
-  cartBoxIsVisible: boolean;
-  cartPageIsVisible: boolean;
-}
+import { ICartUI } from "../lib/types/cart";
 
 const initialState: ICartUI = {
   cartBoxIsVisible: false,
