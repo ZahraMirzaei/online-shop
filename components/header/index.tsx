@@ -5,7 +5,7 @@ import Image from "next/image";
 import SearchBar from "./SearchBar";
 import Theme from "./Theme";
 import Language from "./Language";
-import Basket from "./Basket";
+import CartIcon from "../cart/CartIcon";
 import LoginBtn from "./LoginBtn";
 import SideBar from "./SideNav/SideBar";
 import SideNavSide from "./SideNav/SideNavSide";
@@ -49,7 +49,7 @@ const Header = () => {
             <SearchBar />
             <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ltr:w-[4.1rem] rtl:w-[4.3rem] ">
               <LoginBtn />
-              <Basket />
+              <CartIcon />
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ const Header = () => {
             </div>
             <div className="hidden md:flex items-center justify-between font-bold ltr:ml-4 rtl:mr-4">
               <LoginBtn modifier="md" />
-              <Basket />
+              <CartIcon />
             </div>
           </div>
           <div className="hidden md:flex justify-between items-center my-4">
