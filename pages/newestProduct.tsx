@@ -27,7 +27,7 @@ export default NewestProduct;
 export const getStaticProps: GetStaticProps = async () => {
   const productQuery = `*[_type=='product' && slug.current != "asus-zenbook-14-intel-core-i7-16gb-ram-512gb-ssd-14-ips-laptop"]`;
   const products = await client.fetch(productQuery);
-  console.log(products);
+
   return {
     props: {
       products: products,
