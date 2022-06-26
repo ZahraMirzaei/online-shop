@@ -1,20 +1,21 @@
 import React, { useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { cartUiActions, ICartUI } from "../../store/cartUI-slice";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import Link from "next/link";
-import CartBox from "./CartBox";
+import { useDispatch, useSelector } from "react-redux";
 import { Transition } from "react-transition-group";
-
-interface RootState {
-  cartUi: ICartUI;
-}
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { cartUiActions } from "../../store/cartUi-slice";
+import CartBox from "./CartBox";
+import { ICartUiRootState, ICartRootState } from "../../lib/types/cart";
 
 const Basket = () => {
   const dispatch = useDispatch();
   const showCartBox = useSelector(
-    (state: RootState) => state.cartUi.cartBoxIsVisible
+    (state: ICartUiRootState) => state.cartUi.cartBoxIsVisible
   );
+  const cartItemQuantity = useSelector(
+    (state: ICartRootState) => state.cart.totalQuantity
+  );
+
   const nodeRef = useRef<HTMLDivElement>(null);
 
   function onMouseHoverHandler() {
@@ -28,8 +29,8 @@ const Basket = () => {
         onMouseOut={onMouseHoverHandler}
       >
         <AiOutlineShoppingCart style={{ fontSize: "1.6rem" }} />
-        <span className="absolute -top-3 rtl:-right-[0.3rem] rtl:md:right-[1rem] ltr:-left-[0.3rem] ltr:md:left-[1rem] flex items-center justify-center w-5 h-5 rtl:pt-[0.1rem] rounded-full bg-palette-primary text-[0.75rem] leading-3 text-white shadow-lg">
-          0
+        <span className="absolute -top-3 -right-[0.3rem] rtl:md:right-[1rem]  flex items-center justify-center w-5 h-5 rtl:pt-[0.1rem] rounded-full bg-palette-primary text-[0.75rem] leading-3 text-white shadow-lg">
+          {cartItemQuantity}
         </span>
         <Transition
           nodeRef={nodeRef}
