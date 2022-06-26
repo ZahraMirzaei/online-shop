@@ -56,12 +56,7 @@ const DetailsSection: React.FC<Props> = ({ product }) => {
             })}
           </div>
         </div>
-        <CallToAction
-          price={product.price}
-          discount={product.isOffer ? product.discount : undefined}
-          irrprice={product.irrprice}
-          irrdiscount={product.isOffer ? product.irrdiscount : undefined}
-        />
+        <CallToAction product={product} />
       </div>
     </div>
   );

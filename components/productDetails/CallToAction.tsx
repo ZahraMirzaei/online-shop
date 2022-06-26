@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { HiOutlinePlusSm, HiMinusSm } from "react-icons/hi";
 import { BsCartPlus } from "react-icons/bs";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -6,20 +6,25 @@ import {
   gbpCurrencyFormat,
   irrCurrencyFormat,
 } from "../../utilities/currencyFormat";
+import { useDispatch } from "react-redux";
+import { cartActions } from "../../store/cart-slice";
+import { IProduct } from "../../lib/types/products";
 
 interface Props {
-  price: number;
-  discount?: number | undefined;
-  irrprice: number;
-  irrdiscount?: number | undefined;
+  product: IProduct;
 }
-const CallToAction: React.FC<Props> = ({
-  price,
-  discount,
-  irrprice,
-  irrdiscount,
-}) => {
+const CallToAction: React.FC<Props> = ({ product }) => {
+  const { price, discount, irrprice, irrdiscount } = product;
   const [counter, setCounter] = useState(1);
+
+  const dispatch = useDispatch();
+
+  function addToCartHandler() {
+    dispatch(
+      cartActions.addItemToCart({ product: product, quantity: counter })
+    );
+  }
+
   function increment() {
     if (counter < 10) {
       setCounter((prev) => prev + 1);
@@ -89,7 +94,10 @@ const CallToAction: React.FC<Props> = ({
         </div>
       </div>
       <br />
-      <button className="border-none bg-palette-primary/90 hover:bg-palette-primary/100 transition-colors duration-200 shadow-lg px-3 lg:px-8 py-4 text-palette-side flex items-center rounded-lg cursor-pointer  text-[12px] sm:text-base">
+      <button
+        className="border-none bg-palette-primary/90 hover:bg-palette-primary/100 transition-colors duration-200 shadow-lg px-3 lg:px-8 py-4 text-palette-side flex items-center rounded-lg cursor-pointer  text-[12px] sm:text-base"
+        onClick={addToCartHandler}
+      >
         <BsCartPlus style={{ fontSize: "1.2rem", margin: "0 0.4rem" }} />
         {t.addToCart}
       </button>
