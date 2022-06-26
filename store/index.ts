@@ -3,7 +3,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import specialOfferProductsReducer from "./specialOfferProducts-slice";
 import newestProductReducer from "./newestProduct-slice";
 import SortedProductsListReducer from "./sortedProductList-slice";
-import cartUiReducer from "./cartUI-slice";
+import cartUiReducer from "./cartUi-slice";
+import cartSliceReducer from "./cart-slice";
 
 const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ const store = configureStore({
     newestProductsList: newestProductReducer,
     sortedProductsList: SortedProductsListReducer,
     cartUi: cartUiReducer,
+    cart: cartSliceReducer,
   },
 });
 
