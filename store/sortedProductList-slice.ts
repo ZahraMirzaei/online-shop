@@ -2,7 +2,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import { IProductList } from "../lib/types/productList";
 import { IProduct } from "../lib/types/products";
-import { getTimeStamp, sortByTimeStamp } from "../utilities/sortByTimeStamp";
 import { sortByPoPularity } from "../utilities/sortByPopularity";
 import { sortByCheapest, sortByExpensive } from "../utilities/sortByCost";
 import { newestProductsFn } from "../utilities/sortByTimeStamp";
