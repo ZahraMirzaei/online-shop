@@ -24,13 +24,13 @@ const Newest = () => {
           ? newestProducts
               .slice(0, numProductToShow)
               .map((product: IProduct) => {
-                return <Card key={product.name} href="/" product={product} />;
+                return <Card key={product.name} product={product} href="/" />;
               })
           : null}
       </div>
 
       <div className="text-center">
-        <Link href="/newestProduct">
+        <Link href="/newestProducts">
           <a className="inline-block py-3 px-8 md:px-12 my-4 text-sm md:text-base bg-palette-primary text-palette-side rounded-xl shadow-lg">
             {t.seeAllNewProducts}
           </a>
