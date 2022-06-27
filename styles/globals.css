@@ -157,3 +157,17 @@ a {
     padding-bottom: 40px !important;
   }
 }
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(var(--color-bg));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ee384e;
+  border-radius: 100vw;
+}
