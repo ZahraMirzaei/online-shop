@@ -9,6 +9,9 @@ import {
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { IProduct } from "../../lib/types/products";
+import { useExchangeRateGBPToIRR } from "../../hooks/useExchangeRateGBPToIRR";
+import { calculateDiscountPercentage } from "../../utilities/calculateDiscountPercentage";
+import { changeNumbersFormatEnToFa } from "../../utilities/changeNumbersFormatEnToFa";
 
 interface Props {
   product: IProduct;
@@ -17,13 +20,19 @@ const CallToAction: React.FC<Props> = ({ product }) => {
   const { price, discount, irrprice, irrdiscount } = product;
   const [counter, setCounter] = useState(1);
 
+  const irPrice = useExchangeRateGBPToIRR(price);
+  const discountPrice = discount
+    ? calculateDiscountPercentage(price, discount)
+    : 0;
+  const irDiscountPrice = useExchangeRateGBPToIRR(discountPrice);
+
   const dispatch = useDispatch();
 
-  function addToCartHandler() {
-    dispatch(
-      cartActions.addItemToCart({ product: product, quantity: counter })
-    );
-  }
+  // function addToCartHandler() {
+  //   dispatch(
+  //     cartActions.addItemToCart({ product: product, quantity: counter })
+  //   );
+  // }
 
   function increment() {
     if (counter < 10) {
@@ -50,28 +59,34 @@ const CallToAction: React.FC<Props> = ({ product }) => {
         <p className="text-lg">{t.price}</p>
         <div className="rtl:self-end ltr:self-start text-left mt-2">
           {discount ? (
-            <span className="flex flex-col">
-              <del className="text-md md:text-xl text-rose-600">
-                <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-                <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                {locale === "en"
-                  ? gbpCurrencyFormat(price)
-                  : irrCurrencyFormat(irrprice)}
-              </del>
-              <ins className="text-xl md:text-3xl font-bold self-end no-underline mt-2">
-                <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-                <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                {locale === "en"
-                  ? gbpCurrencyFormat(discount)
-                  : irrCurrencyFormat(irrdiscount)}
-              </ins>
-            </span>
+            <div className="flex flex-row-reverse items-end">
+              <span className="flex flex-col">
+                <del className="text-md md:text-xl text-rose-600">
+                  <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
+                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
+                  {locale === "en" ? gbpCurrencyFormat(price) : irPrice}
+                </del>
+                <ins className="text-xl md:text-3xl font-bold self-end no-underline mt-2">
+                  <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
+                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
+                  {locale === "en"
+                    ? gbpCurrencyFormat(discountPrice)
+                    : irDiscountPrice}
+                </ins>
+              </span>
+              <span
+                className="text-green-700 ml-2 text-sm inline-block"
+                style={{ direction: "ltr" }}
+              >{`(-%${
+                locale === "en"
+                  ? product.discount
+                  : changeNumbersFormatEnToFa(product.discount!)
+              })`}</span>
+            </div>
           ) : (
             <span className="text-xl md:text-3xl font-bold underline">
               <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-              {locale === "en"
-                ? gbpCurrencyFormat(price)
-                : irrCurrencyFormat(irrprice)}
+              {locale === "en" ? gbpCurrencyFormat(price) : irPrice}
               <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
             </span>
           )}
@@ -96,7 +111,7 @@ const CallToAction: React.FC<Props> = ({ product }) => {
       <br />
       <button
         className="border-none bg-palette-primary/90 hover:bg-palette-primary/100 transition-colors duration-200 shadow-lg px-3 lg:px-8 py-4 text-palette-side flex items-center rounded-lg cursor-pointer  text-[12px] sm:text-base"
-        onClick={addToCartHandler}
+        // onClick={addToCartHandler}
       >
         <BsCartPlus style={{ fontSize: "1.2rem", margin: "0 0.4rem" }} />
         {t.addToCart}

@@ -2,22 +2,28 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLanguage } from "../../../hooks/useLanguage";
+import { useExchangeRateGBPToIRR } from "../../../hooks/useExchangeRateGBPToIRR";
 import StarRatingComponent from "react-star-rating-component";
 import { IProduct } from "../../../lib/types/products";
 import { urlFor } from "../../../lib/client";
-import {
-  gbpCurrencyFormat,
-  irrCurrencyFormat,
-} from "../../../utilities/currencyFormat";
+import { gbpCurrencyFormat } from "../../../utilities/currencyFormat";
+import { calculateDiscountPercentage } from "../../../utilities/calculateDiscountPercentage";
 import CardActions from "./CardActions";
+import { changeNumbersFormatEnToFa } from "../../../utilities/changeNumbersFormatEnToFa";
 
 interface Props {
   href: string;
   product: IProduct;
 }
 
-const Card: React.FC<Props> = ({ href, product }) => {
+const Card: React.FC<Props> = ({ product }) => {
   const { locale } = useLanguage();
+  const irPrice = useExchangeRateGBPToIRR(product.price);
+  const discountPrice = product.discount
+    ? calculateDiscountPercentage(product.price, product.discount)
+    : 0;
+  const irDiscountPrice = useExchangeRateGBPToIRR(discountPrice);
+
   return (
     <div className="col-span-6 sm:col-span-3 md:col-span-4 lg:col-span-3 2xl:col-span-2 shadow-xl my-4 ltr:mr-2 rtl:ml-1 md:mx-6  bg-palette-card rounded-xl flex relative">
       <Link
@@ -62,29 +68,37 @@ const Card: React.FC<Props> = ({ href, product }) => {
             </div>
             <div className=" ltr:self-start rtl:self-end mt-4 text-left">
               {product?.discount ? (
-                <span className="flex flex-col">
-                  <del className="text-[10px] md:text-sm text-rose-600">
-                    <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-                    {locale === "en"
-                      ? gbpCurrencyFormat(product?.price)
-                      : irrCurrencyFormat(product?.irrprice)}
+                <div className="flex flex-row-reverse items-end">
+                  <span className="flex flex-col">
+                    <del className="text-[10px] md:text-sm text-rose-600">
+                      <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
+                      {locale === "en"
+                        ? gbpCurrencyFormat(product?.price)
+                        : irPrice}
 
-                    <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                  </del>
-                  <ins className="text-base md:text-[16px] font-bold self-end">
-                    <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-                    {locale === "en"
-                      ? gbpCurrencyFormat(product?.discount)
-                      : irrCurrencyFormat(product?.irrdiscount)}
-                    <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                  </ins>
-                </span>
+                      <sub className="ml-1">
+                        {locale === "fa" ? "تومان" : ""}
+                      </sub>
+                    </del>
+                    <ins className="text-base md:text-[16px] font-bold self-end">
+                      <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
+                      {locale === "en" ? discountPrice : irDiscountPrice}
+                      <sub className="ml-1">
+                        {locale === "fa" ? "تومان" : ""}
+                      </sub>
+                    </ins>
+                  </span>
+                  <span
+                    className="text-green-700 ml-2 text-sm inline-block"
+                    style={{ direction: "ltr" }}
+                  >{`(-%${changeNumbersFormatEnToFa(product.discount)})`}</span>
+                </div>
               ) : (
                 <span className="font-bold underline">
                   <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
                   {locale === "en"
                     ? gbpCurrencyFormat(product?.price)
-                    : irrCurrencyFormat(product?.irrprice)}
+                    : irPrice}
                   <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
                 </span>
               )}

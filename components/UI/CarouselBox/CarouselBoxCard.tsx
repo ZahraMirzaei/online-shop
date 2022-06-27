@@ -3,11 +3,11 @@ import Image from "next/image";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { urlFor } from "../../../lib/client";
 import { IProduct } from "../../../lib/types/products";
-import {
-  gbpCurrencyFormat,
-  irrCurrencyFormat,
-} from "../../../utilities/currencyFormat";
+import { gbpCurrencyFormat } from "../../../utilities/currencyFormat";
 import Link from "next/link";
+import { useExchangeRateGBPToIRR } from "../../../hooks/useExchangeRateGBPToIRR";
+import { calculateDiscountPercentage } from "../../../utilities/calculateDiscountPercentage";
+import { changeNumbersFormatEnToFa } from "../../../utilities/changeNumbersFormatEnToFa";
 
 interface Props {
   product: IProduct;
@@ -15,6 +15,11 @@ interface Props {
 
 const CarouselBoxCard: React.FC<Props> = ({ product }) => {
   const { locale } = useLanguage();
+  const irPrice = useExchangeRateGBPToIRR(product.price);
+  const discountPrice = product.discount
+    ? calculateDiscountPercentage(product.price, product.discount)
+    : 0;
+  const irDiscountPrice = useExchangeRateGBPToIRR(discountPrice);
 
   return (
     <div className="w-full px-2 my-2">
@@ -46,30 +51,38 @@ const CarouselBoxCard: React.FC<Props> = ({ product }) => {
           <p className="truncate">{product?.name}</p>
           <div className="w-full ltr:self-start rtl:self-end mt-4 text-left">
             {product?.discount ? (
-              <span className="flex flex-col">
-                <del className="text-[12px] md:text-sm text-rose-600 ">
-                  <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-                  {locale === "en"
-                    ? gbpCurrencyFormat(product?.price)
-                    : irrCurrencyFormat(product?.irrprice)}
+              <div className="flex items-end">
+                <span className="flex flex-col">
+                  <del className="text-[12px] md:text-sm text-rose-600 ">
+                    <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
+                    {locale === "en"
+                      ? gbpCurrencyFormat(product?.price)
+                      : irPrice}
 
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </del>
-                <ins className="text-base md:text-[16px] font-bold">
-                  <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-                  {locale === "en"
-                    ? gbpCurrencyFormat(product?.discount)
-                    : irrCurrencyFormat(product?.irrdiscount)}
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                </ins>
-              </span>
+                    <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
+                  </del>
+                  <ins className="text-base md:text-[16px] font-bold">
+                    <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
+                    {locale === "en"
+                      ? gbpCurrencyFormat(discountPrice)
+                      : irDiscountPrice}
+                    <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
+                  </ins>
+                </span>
+                <span
+                  className="text-green-700 ml-2 text-sm inline-block"
+                  style={{ direction: "ltr" }}
+                >{`(-%${
+                  locale === "en"
+                    ? product.discount
+                    : changeNumbersFormatEnToFa(product.discount)
+                })`}</span>
+              </div>
             ) : (
               <span className="font-bold underline">
                 <span className="block h-5"></span>
                 <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-                {locale === "en"
-                  ? gbpCurrencyFormat(product?.price)
-                  : irrCurrencyFormat(product?.irrprice)}
+                {locale === "en" ? gbpCurrencyFormat(product?.price) : irPrice}
                 <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
               </span>
             )}
