@@ -5,17 +5,12 @@ export interface ICartProduct {
   name: string;
   slug: TSlug;
   price: number;
-  irrprice: number;
   discount?: number;
-  irrdiscount?: number;
   brand: string;
   category: string[];
-  isOffer: boolean;
-  registerDate: string;
   starRating: number;
   quantity: number;
-  totalEnPrice: number;
-  totalFaPrice: number;
+  totalPrice: number;
 }
 
 export interface ICartUI {
