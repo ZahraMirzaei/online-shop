@@ -33,17 +33,7 @@ export default {
     },
     {
       name: "discount",
-      title: "Discount",
-      type: "number",
-    },
-    {
-      name: "irrprice",
-      title: "IRRPrice",
-      type: "number",
-    },
-    {
-      name: "irrdiscount",
-      title: "IRRDiscount",
+      title: "Discount(%)",
       type: "number",
     },
     {
