@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { HiOutlinePlusSm, HiMinusSm } from "react-icons/hi";
 import { BsCartPlus } from "react-icons/bs";
 import { useLanguage } from "../../hooks/useLanguage";
-import {
-  gbpCurrencyFormat,
-  irrCurrencyFormat,
-} from "../../utilities/currencyFormat";
+import { gbpCurrencyFormat } from "../../utilities/currencyFormat";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { IProduct } from "../../lib/types/products";
@@ -28,11 +25,27 @@ const CallToAction: React.FC<Props> = ({ product }) => {
 
   const dispatch = useDispatch();
 
-  // function addToCartHandler() {
-  //   dispatch(
-  //     cartActions.addItemToCart({ product: product, quantity: counter })
-  //   );
-  // }
+  const productInfoAddToCart = {
+    image: product.image,
+    name: product.name,
+    slug: product.slug,
+    price: product.price,
+    discount: product.discount ? product.discount : undefined,
+    brand: product.brand,
+    category: product.category,
+    starRating: product.starRating,
+    quantity: 1,
+    totalPrice: product.price,
+  };
+
+  function addToCartHandler() {
+    dispatch(
+      cartActions.addItemToCart({
+        product: productInfoAddToCart,
+        quantity: counter,
+      })
+    );
+  }
 
   function increment() {
     if (counter < 10) {
@@ -111,7 +124,7 @@ const CallToAction: React.FC<Props> = ({ product }) => {
       <br />
       <button
         className="border-none bg-palette-primary/90 hover:bg-palette-primary/100 transition-colors duration-200 shadow-lg px-3 lg:px-8 py-4 text-palette-side flex items-center rounded-lg cursor-pointer  text-[12px] sm:text-base"
-        // onClick={addToCartHandler}
+        onClick={addToCartHandler}
       >
         <BsCartPlus style={{ fontSize: "1.2rem", margin: "0 0.4rem" }} />
         {t.addToCart}
