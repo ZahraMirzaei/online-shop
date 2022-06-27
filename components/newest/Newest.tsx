@@ -24,7 +24,7 @@ const Newest = () => {
           ? newestProducts
               .slice(0, numProductToShow)
               .map((product: IProduct) => {
-                return <Card key={product.name} product={product} href="/" />;
+                return <Card key={product.name} product={product} />;
               })
           : null}
       </div>

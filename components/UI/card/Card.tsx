@@ -12,7 +12,6 @@ import CardActions from "./CardActions";
 import { changeNumbersFormatEnToFa } from "../../../utilities/changeNumbersFormatEnToFa";
 
 interface Props {
-  href: string;
   product: IProduct;
 }
 
