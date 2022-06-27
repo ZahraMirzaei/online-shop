@@ -9,6 +9,7 @@ const en: { [key: string]: string } = {
   payableAmount: "Payable Amount",
   loginAndOrder: "Login and Order",
   order: "Order",
+  cartIsEmpty: "Cart is empty",
   CategoryOfGoods: "Category of Goods",
   categories: "Categories",
   seeAllProduct: "See All product in this category",

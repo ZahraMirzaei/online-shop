@@ -9,6 +9,7 @@ const fa: { [key: string]: string } = {
   payableAmount: "مبلغ قابل پرداخت",
   loginAndOrder: "ورود و ثبت سفارش",
   order: "ثبت سفارش",
+  cartIsEmpty: "سبد خرید شما خالی است",
   farsi: "فارسی - fa",
   CategoryOfGoods: "دسته‌بندی کالا‌ها",
   categories: "دسته‌بندی‌ها",
