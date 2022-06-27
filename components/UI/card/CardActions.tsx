@@ -4,6 +4,7 @@ import { cartActions } from "../../../store/cart-slice";
 import { AiOutlineHeart, AiOutlineShoppingCart } from "react-icons/ai";
 import { IoShareSocialOutline } from "react-icons/io5";
 import { IProduct } from "../../../lib/types/products";
+import { ICartProduct } from "../../../lib/types/cart";
 
 interface Props {
   product: IProduct;
@@ -12,8 +13,23 @@ interface Props {
 const CardActions: React.FC<Props> = ({ product }) => {
   const dispatch = useDispatch();
 
+  const productInfoAddToCart: ICartProduct = {
+    image: product.image,
+    name: product.name,
+    slug: product.slug,
+    price: product.price,
+    discount: product.discount ? product.discount : undefined,
+    brand: product.brand,
+    category: product.category,
+    starRating: product.starRating,
+    quantity: 1,
+    totalPrice: product.price,
+  };
+
   function addToCartHandler() {
-    dispatch(cartActions.addItemToCart({ product: product, quantity: 1 }));
+    dispatch(
+      cartActions.addItemToCart({ product: productInfoAddToCart, quantity: 1 })
+    );
   }
 
   return (
