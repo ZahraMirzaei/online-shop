@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICartUI } from "../lib/types/cart";
 
 const initialState: ICartUI = {
@@ -10,8 +10,8 @@ const cartUiSlice = createSlice({
   name: "cartUi",
   initialState,
   reducers: {
-    toggleCartBox(state) {
-      state.cartBoxIsVisible = !state.cartBoxIsVisible;
+    toggleCartBox(state, action: PayloadAction<boolean>) {
+      state.cartBoxIsVisible = action.payload;
     },
     toggleCartPage(state) {
       state.cartPageIsVisible = !state.cartPageIsVisible;
