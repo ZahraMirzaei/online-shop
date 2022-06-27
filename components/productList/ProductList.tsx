@@ -7,12 +7,17 @@ import Breadcrumb from "../UI/Breadcrumb";
 import Sort from "./Sort";
 import { useDispatch, useSelector } from "react-redux";
 import { SortedProductsListActions } from "../../store/sortedProductList-slice";
+import { useRouter } from "next/router";
 
 interface Props {
   productList: IProduct[];
 }
 const ProductList: React.FC<Props> = ({ productList }) => {
-  const [selectedRadioBtn, setSelectedRadioBtn] = useState("all");
+  const router = useRouter();
+  const { t } = useLanguage();
+  const firstSortBased =
+    router.pathname === "/newestProducts" ? "newestProducts" : "all";
+  const [selectedRadioBtn, setSelectedRadioBtn] = useState(firstSortBased);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,11 +33,10 @@ const ProductList: React.FC<Props> = ({ productList }) => {
     (state: any) => state.sortedProductsList.productsList
   );
 
-  const { t } = useLanguage();
-
   function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setSelectedRadioBtn(e.currentTarget.id);
   }
+
   return (
     <div>
       <Breadcrumb />
@@ -50,7 +54,7 @@ const ProductList: React.FC<Props> = ({ productList }) => {
                     <Card
                       key={product.slug.current}
                       product={product}
-                      href={`/`}
+                      href="/"
                     />
                   );
                 })
@@ -70,7 +74,7 @@ const ProductList: React.FC<Props> = ({ productList }) => {
                     <Card
                       key={product.slug.current}
                       product={product}
-                      href={`/`}
+                      href="/"
                     />
                   );
                 })
