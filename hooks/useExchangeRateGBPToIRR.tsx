@@ -30,7 +30,7 @@ export const useExchangeRateGBPToIRR = (price: number) => {
     if (price > 0) {
       // fetchExchangeRate();
       const priceWithHardRateExchange = price * hardRateExchange;
-      const irToman = Math.floor(priceWithHardRateExchange / 1000) * 1000;
+      const irToman = Math.ceil(priceWithHardRateExchange / 1000) * 1000;
       setExchangePrice(irToman);
     }
   }, [price]);
