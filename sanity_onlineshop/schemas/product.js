@@ -43,6 +43,18 @@ export default {
       fields: [
         { name: "processor", title: "CPU", type: "string" },
         { name: "screen", title: "screen", type: "string" },
+        { name: "resolution", title: "Resolution", type: "string" },
+        { name: "display_type", title: "Display Type", type: "string" },
+        { name: "viewing_angle", title: "Viewing Angle", type: "string" },
+        { name: "response_time", title: "Response Time(ms)", type: "string" },
+        { name: "refresh_rate", title: "Refresh Rate(Hz)", type: "string" },
+        { name: "panel_technology", title: "Panel Technology", type: "string" },
+        {
+          name: "input_output_types",
+          title: "Input/Output Types",
+          type: "string",
+        },
+
         { name: "operating_system", title: "OS", type: "string" },
         { name: "ram", title: "RAM", type: "string" },
         { name: "ssd", title: "SSD", type: "string" },
@@ -57,8 +69,7 @@ export default {
           title: "Frequency Response",
           type: "string",
         },
-        { name: "microphone", title: "Microphone", type: "boolean" },
-        { name: "wireless", title: "Wireless", type: "boolean" },
+
         {
           name: "wireless_standby_time",
           title: "Wireless Standby Time",
@@ -76,6 +87,23 @@ export default {
           type: "array",
           of: [{ type: "string" }],
         },
+
+        { name: "multimedia_keys", title: "Multimedia Keys", type: "number" },
+        {
+          name: "number_of_buttons",
+          title: "Number of Buttons",
+          type: "number",
+        },
+
+        { name: "width", title: "Width", type: "string" },
+        { name: "height", title: "Height", type: "string" },
+        { name: "depth", title: "Depth", type: "string" },
+        { name: "curved", title: "Curved(monitor)", type: "boolean" },
+        {
+          name: "built_in_speakers",
+          title: "Built-in Speakers",
+          type: "boolean",
+        },
         { name: "bluetooth", title: "Bluetooth", type: "boolean" },
         {
           name: "noise_cancelling",
@@ -83,6 +111,24 @@ export default {
           type: "boolean",
         },
         { name: "sound_isolating", title: "Sound Isolation", type: "boolean" },
+        { name: "mechanical_keys", title: "Mechanical Keys", type: "boolean" },
+        {
+          name: "backlit_keys",
+          title: "Backlit Keys",
+          type: "boolean",
+        },
+        { name: "microphone", title: "Microphone", type: "boolean" },
+        { name: "wireless", title: "Wireless", type: "boolean" },
+        {
+          name: "ergonomic_design",
+          title: "Ergonomic Design",
+          type: "boolean",
+        },
+        {
+          name: "designed_for_gaming",
+          title: "Designed For Gaming",
+          type: "boolean",
+        },
       ],
     },
     {
