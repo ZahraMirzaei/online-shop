@@ -161,7 +161,17 @@ const fa: { [key: string]: string } = {
   processor: "پردازنده",
   ram: "حافظه داخلی",
   screen: "صفحه نمایش",
+
+  resolution: "رزولوشن",
+  display_type: "نوع صفحه‌نمایش",
+  viewing_angle: "زاویه دید",
+  response_time: "زمان پاسخگویی",
+  refresh_rate: "نرخ تازه‌سازی",
+  panel_technology: "فناوری پنل",
+  input_output_types: "انواع ورودی/خروجی",
+
   true: "بله",
+  false: "خیر",
   bluetooth: "بلوتوث",
   frequency_response: "پاسخ فرکانس",
   sound_isolating: "عایق صدا",
@@ -171,6 +181,19 @@ const fa: { [key: string]: string } = {
   wireless_standby_time: "عمر باتری در حالت استندبای",
   connectionType: "نوع اتصال",
   connectors: "رابط‌ها",
+
+  multimedia_keys: "کلیدهای چندرسانه‌ای",
+  number_of_buttons: "تعداد دکمه‌ها(شامل Scroll Wheel)",
+  width: "عرض",
+  height: "ارتفاع",
+  depth: "عمق",
+  curved: "منحنی",
+  built_in_speakers: "بلندگوهای داخلی",
+  mechanical_keys: "کلیدهای مکانیکی",
+  backlit_keys: "کلیدهای دارای نور پس‌زمینه",
+  ergonomic_design: "طراحی ارگونومیک",
+  designed_for_gaming: "طراحی شده برای بازی",
+
   graphic: "کارت گرافیک",
   ports: "پورت‌ها",
   ssd: "هارد SSD ",
@@ -178,6 +201,7 @@ const fa: { [key: string]: string } = {
   addToCart: "اضافه به سبد خرید",
   stars: "ستاره",
   price: "قیمت محصول",
-  similarProducts: "محصولات مشابه",
+  similarProducts: "ممکن است علاقه مند باشید",
+  cart: "سبد خرید",
 };
 export default fa;

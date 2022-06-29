@@ -164,7 +164,17 @@ const en: { [key: string]: string } = {
   processor: "CPU",
   ram: "RAM",
   screen: "Screen",
-  true: "yes",
+
+  resolution: "Resolution",
+  display_type: "Display Type",
+  viewing_angle: "Viewing Angle",
+  response_time: "Response Time",
+  refresh_rate: "Refresh Rate",
+  panel_technology: "Panel Technology",
+  input_output_types: "Input/Output Types",
+
+  true: "Yes",
+  false: "No",
   bluetooth: "Bluetooth",
   frequency_response: "Frequency Response",
   sound_isolating: "Sound Isolating",
@@ -174,6 +184,19 @@ const en: { [key: string]: string } = {
   wireless_standby_time: "Battery life in standby mode",
   connectionType: "Connection Type",
   connectors: "Connectors",
+
+  multimedia_keys: "Multimedia Keys",
+  number_of_buttons: "Number Of Buttons(Including Scroll Wheel)",
+  width: "Width",
+  height: "Height",
+  depth: "Depth",
+  curved: "Curved",
+  built_in_speakers: "Built-in Speakers",
+  mechanical_keys: "Mechanical Keys",
+  backlit_keys: "Backlit Keys",
+  ergonomic_design: "Ergonomic Design",
+  designed_for_gaming: "Designed For Gaming",
+
   graphic: "Graphic",
   ports: "Ports",
   ssd: "SSD Hard",
@@ -181,6 +204,7 @@ const en: { [key: string]: string } = {
   addToCart: "ADD TO CART",
   stars: "Star",
   price: "Product price",
-  similarProducts: "Similar Products",
+  similarProducts: "You May Be Interested In",
+  cart: "Shopping Cart",
 };
 export default en;
