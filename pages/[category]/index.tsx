@@ -3,6 +3,7 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { client } from "../../lib/client";
 import { IProduct } from "../../lib/types/products";
 import ProductList from "../../components/productList/ProductList";
+import { ICategoryPathsParams } from "../../lib/types/pagePathsParams";
 
 const categoryPage: NextPage<{
   products: IProduct[];
@@ -16,6 +17,22 @@ const categoryPage: NextPage<{
 
 export default categoryPage;
 
+export const getStaticPaths: GetStaticPaths = async () => {
+  const query = `*[_type=="product"]{
+    "category":category[0]
+  }`;
+  const products = await client.fetch(query);
+  const paths = products.map((product: ICategoryPathsParams) => ({
+    params: {
+      category: product.category,
+    },
+  }));
+  return {
+    fallback: "blocking",
+    paths,
+  };
+};
+
 export const getStaticProps: GetStaticProps = async (context) => {
   const category = context.params?.category;
   const productQuery = `*[_type=='product'&& category[0]=="${category}"]`;
@@ -24,19 +41,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
   return {
     props: {
       products: products,
-    }, // will be passed to the page component as props
-  };
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    fallback: true,
-    paths: [
-      {
-        params: {
-          category: "digital",
-        },
-      },
-    ],
+    },
   };
 };
