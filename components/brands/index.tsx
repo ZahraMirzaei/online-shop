@@ -26,14 +26,14 @@ const Brands = () => {
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 6,
-          slidesToScroll: 3,
+          slidesToShow: 4,
+          slidesToScroll: 4,
         },
       },
       {
         breakpoint: 640,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 3,
           slidesToScroll: 3,
         },
       },
