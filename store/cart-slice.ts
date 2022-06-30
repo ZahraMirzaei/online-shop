@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICart } from "../lib/types/cart";
-import { IProduct } from "../lib/types/products";
 import { ICartProduct } from "../lib/types/cart";
 import { calculateDiscountPercentage } from "../utilities/calculateDiscountPercentage";
 
@@ -106,7 +105,7 @@ const cartSlice = createSlice({
       }
     },
 
-    clearCart(state) {
+    clearCart(state: ICart) {
       state = initialState;
     },
   },
