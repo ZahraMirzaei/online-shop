@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import dynamic from "next/dynamic";
 import { useEffect } from "react";
+import dynamic from "next/dynamic";
 
 import { useDispatch } from "react-redux";
 import { specialOfferProductsActions } from "../store/specialOfferProducts-slice";
@@ -16,18 +16,14 @@ import Newest from "../components/newest/Newest";
 import Brands from "../components/brands";
 
 // import Banners from "../components/banners";
-//used dynamic to import Banners because I use setInterval for countdown component and
-//I get Error in console (Error:"text content did not match. server client nextjs")
+//used dynamic() to import Banners because I use setInterval for countdown component and
+//I got Error in console (Error:"text content did not match. server client nextjs")
 const Banners = dynamic(() => import("../components/banners"), { ssr: false });
 
 import { IProduct } from "../lib/types/products";
-import { ICategory } from "../lib/types/categories";
-import { getTimeStamp, sortByTimeStamp } from "../utilities/sortByTimeStamp";
+import { newestProductsFn } from "../utilities/sortByTimeStamp";
 
-const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
-  products,
-  categories,
-}) => {
+const Home: NextPage<{ products: IProduct[] }> = ({ products }) => {
   const dispatch = useDispatch();
 
   //add products to offers list
@@ -38,11 +34,7 @@ const Home: NextPage<{ products: IProduct[]; categories: ICategory[] }> = ({
 
   //add products to newest list
   useEffect(() => {
-    const productsWithTimeStamp = products.map((product) => {
-      return { ...product, timeStamp: getTimeStamp(product.registerDate) };
-    });
-    const sortedProductsByTimeStamp =
-      productsWithTimeStamp.sort(sortByTimeStamp);
+    const sortedProductsByTimeStamp = newestProductsFn(products);
     dispatch(newestProductsActions.addProducts(sortedProductsByTimeStamp));
   }, [products, dispatch]);
 
@@ -65,12 +57,9 @@ export const getStaticProps = async () => {
   const productQuery = `*[_type=='product']`;
   const products = await client.fetch(productQuery);
 
-  const categoryQuery = `*[_type=='category']`;
-  const categories = await client.fetch(categoryQuery);
   return {
     props: {
       products,
-      categories,
     },
   };
 };
