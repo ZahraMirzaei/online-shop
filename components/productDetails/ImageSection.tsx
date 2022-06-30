@@ -26,7 +26,7 @@ const ImageSection: React.FC<Props> = ({ imgArray }) => {
           />
         </div>
 
-        <div className="flex mt-4  md:p-4 max-w-[350px] overflow-auto">
+        <div className="flex mt-4  md:p-4 w-full max-w-[350px] overflow-auto">
           {imgArray.map((imgItem: TImage, index: number) => {
             return (
               <div
