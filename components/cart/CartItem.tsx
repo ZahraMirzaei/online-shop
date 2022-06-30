@@ -46,13 +46,13 @@ const CartItem: React.FC<Props> = ({ product }) => {
     }
   }
   return (
-    <div className="flex flex-wrap my-4 py-4 px-2 border-b-2">
-      <div className="w-1/2 min-w-[290px]">
+    <div className="flex items-center flex-wrap sm:my-4 sm:py-4 px-2 border-b-2">
+      <div className="lg:w-1/2 sm:min-w-[290px]">
         <Link
           href={`/${product.category[0]}/${product.category[1]}/${product.category[2]}/${product.slug.current}`}
         >
-          <a className="flex items-center flex-grow">
-            <div className="min-w-[130px]">
+          <a className="flex flex-wrap sm:flex-nowrap items-center flex-grow">
+            <div className="sm:min-w-[100px] md:min-w-[130px]">
               <Image
                 src={urlFor(product?.image[0]).url()}
                 width={200}
@@ -62,7 +62,7 @@ const CartItem: React.FC<Props> = ({ product }) => {
               />
             </div>
             <div
-              className=" flex-grow text-sm font-normal w-full"
+              className=" flex-grow text-sm font-normal mb-2 sm:mb-0 w-full rtl:ml-2 ltr:mr-2"
               style={{ direction: "ltr" }}
             >
               {product.name}
@@ -70,9 +70,9 @@ const CartItem: React.FC<Props> = ({ product }) => {
           </a>
         </Link>
       </div>
-      <div className="flex flex-grow items-center">
-        <div className="flex-grow">
-          <div className="flex items-center justify-center cursor-pointer">
+      <div className="flex flex-wrap flex-grow md:items-center mb-4 sm:mb-0">
+        <div className="flex-grow my-2 sm:my-0">
+          <div className="flex items-center justify-start lg:justify-center cursor-pointer">
             <div
               className="p-2"
               onClick={() => increment(productInfoAddToCart)}
@@ -105,7 +105,7 @@ const CartItem: React.FC<Props> = ({ product }) => {
           </div>
         </div>
         <div className="flex flex-col flex-grow font-normal rtl:mr-1 lrt:ml-1">
-          <p>{t.totalAmount}</p>
+          <p className="self-center lg:self-start">{t.totalAmount}</p>
           <ProductPrice
             price={product.price * counter}
             discount={product.discount}
