@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { HiOutlinePlusSm, HiMinusSm } from "react-icons/hi";
 import { BsCartPlus } from "react-icons/bs";
 import { useLanguage } from "../../hooks/useLanguage";
-import { gbpCurrencyFormat } from "../../utilities/currencyFormat";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { IProduct } from "../../lib/types/products";
 import { useExchangeRateGBPToIRR } from "../../hooks/useExchangeRateGBPToIRR";
 import { calculateDiscountPercentage } from "../../utilities/calculateDiscountPercentage";
-import { changeNumbersFormatEnToFa } from "../../utilities/changeNumbersFormatEnToFa";
+import ProductPrice from "../UI/ProductPrice";
 
 interface Props {
   product: IProduct;
@@ -16,12 +15,6 @@ interface Props {
 const CallToAction: React.FC<Props> = ({ product }) => {
   const { price, discount, irrprice, irrdiscount } = product;
   const [counter, setCounter] = useState(1);
-
-  const irPrice = useExchangeRateGBPToIRR(price);
-  const discountPrice = discount
-    ? calculateDiscountPercentage(price, discount)
-    : 0;
-  const irDiscountPrice = useExchangeRateGBPToIRR(discountPrice);
 
   const dispatch = useDispatch();
 
@@ -64,46 +57,13 @@ const CallToAction: React.FC<Props> = ({ product }) => {
     }
   }
 
-  const { t, locale } = useLanguage();
+  const { t } = useLanguage();
 
   return (
     <div className="flex flex-col items-center flex-grow max-w-[350px] mt-4 lg:mt-0 rtl:mr-auto ltr:ml-auto xl:rtl:ml-2 px-6 py-4 sm:p-4 xl:p-6 border-2 shadow-lg">
       <div className="flex flex-col w-full ">
         <p className="text-lg">{t.price}</p>
-        <div className="rtl:self-end ltr:self-start text-left mt-2">
-          {discount ? (
-            <div className="flex flex-row-reverse items-end">
-              <span className="flex flex-col">
-                <del className="text-md md:text-xl text-rose-600">
-                  <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                  {locale === "en" ? gbpCurrencyFormat(price) : irPrice}
-                </del>
-                <ins className="text-xl md:text-3xl font-bold self-end no-underline mt-2">
-                  <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-                  <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-                  {locale === "en"
-                    ? gbpCurrencyFormat(discountPrice)
-                    : irDiscountPrice}
-                </ins>
-              </span>
-              <span
-                className="text-green-700 ml-2 text-sm inline-block"
-                style={{ direction: "ltr" }}
-              >{`(-%${
-                locale === "en"
-                  ? product.discount
-                  : changeNumbersFormatEnToFa(product.discount!)
-              })`}</span>
-            </div>
-          ) : (
-            <span className="text-xl md:text-3xl font-bold underline">
-              <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
-              {locale === "en" ? gbpCurrencyFormat(price) : irPrice}
-              <sub className="ml-1">{locale === "fa" ? "تومان" : ""}</sub>
-            </span>
-          )}
-        </div>
+        <ProductPrice price={price} discount={discount} isLargeSize={true} />
       </div>
       <div className="flex items-center justify-between mt-6 cursor-pointer">
         <div className="p-2" onClick={increment}>
