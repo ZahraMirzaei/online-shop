@@ -8,6 +8,7 @@ export interface ISubCategoryPathsParams {
 }
 
 export interface ITitlePathsParams {
+  category: string;
   subCategory: string;
   title: string;
 }

@@ -19,12 +19,14 @@ export default brandPage;
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const query = `*[_type=="product"]{
+    "category":category[0],
     "subCategory":category[1],
     "title":category[2],
   }`;
   const products = await client.fetch(query);
   const paths = products.map((product: ITitlePathsParams) => ({
     params: {
+      category: product.category,
       subCategory: product.subCategory,
       title: product.title,
     },
