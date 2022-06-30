@@ -5,15 +5,13 @@ import { useLanguage } from "../../hooks/useLanguage";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { IProduct } from "../../lib/types/products";
-import { useExchangeRateGBPToIRR } from "../../hooks/useExchangeRateGBPToIRR";
-import { calculateDiscountPercentage } from "../../utilities/calculateDiscountPercentage";
 import ProductPrice from "../UI/ProductPrice";
 
 interface Props {
   product: IProduct;
 }
 const CallToAction: React.FC<Props> = ({ product }) => {
-  const { price, discount, irrprice, irrdiscount } = product;
+  const { price, discount } = product;
   const [counter, setCounter] = useState(1);
 
   const dispatch = useDispatch();
@@ -60,7 +58,7 @@ const CallToAction: React.FC<Props> = ({ product }) => {
   const { t } = useLanguage();
 
   return (
-    <div className="flex flex-col items-center flex-grow max-w-[350px] mt-4 lg:mt-0 rtl:mr-auto ltr:ml-auto xl:rtl:ml-2 px-6 py-4 sm:p-4 xl:p-6 border-2 shadow-lg">
+    <div className="flex flex-col items-center flex-grow sticky top-10 md:top-36 max-w-[350px] mt-8 rtl:mr-auto ltr:ml-auto xl:rtl:ml-2 px-6 py-4 sm:p-4 xl:p-6 border-2 shadow-lg">
       <div className="flex flex-col w-full ">
         <p className="text-lg">{t.price}</p>
         <ProductPrice price={price} discount={discount} isLargeSize={true} />

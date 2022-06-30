@@ -11,12 +11,12 @@ const DetailsSection: React.FC<Props> = ({ product }) => {
   const { t } = useLanguage();
 
   return (
-    <div className="bg-palette-card md:bg-transparent w-[100vw] md:w-auto px-5 flex-grow self-center lg:self-start mt-8 md:mt-0 !-mx-[1rem] lg:ltr:ml-4 lg:rtl:mr-4 py-5 md:py-0 rounded-tl-[4rem] rounded-tr-[3rem] flex flex-col  z-10">
+    <div className="bg-palette-card md:bg-transparent w-[100vw] md:w-auto px-5 flex-grow self-center lg:self-start mt-8 md:mt-0 !-mx-[1rem] lg:ltr:ml-4 lg:rtl:mr-4 py-5 md:py-0 rounded-tl-[4rem] rounded-tr-[3rem] flex flex-col z-10">
       <h2 className="text-palette-mute whitespace-normal text-center rtl:md:text-right ltr:md:text-left">
         {product.name}
       </h2>
       <hr className="mt-1 hidden md:block" />
-      <div className="flex items-center flex-wrap">
+      <div className="flex items-start flex-wrap relative">
         <div className="flex-grow mt-6">
           <div className="flex items-center self-center">
             <StarRatingComponent
@@ -37,6 +37,8 @@ const DetailsSection: React.FC<Props> = ({ product }) => {
                 ? [...product.details[key]].join(" - ")
                 : product.details[key] === true
                 ? t.true
+                : product.details[key] === false
+                ? t.false
                 : product.details[key];
 
               return (
