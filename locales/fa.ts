@@ -205,5 +205,18 @@ const fa: { [key: string]: string } = {
   price: "قیمت محصول",
   similarProducts: "ممکن است علاقه مند باشید",
   cart: "سبد خرید",
+  hi: "سلام!",
+  loginExplanation:
+    ".برای بررسی قالب میتونید علاوه بر ثبت‌نام از اطلاعات اکانت تست هم استفاده کنید(نام کاربری:test. رمز عبور:123456)",
+  testAccount: "اکانت test",
+  userName: "نام کاربری",
+  password: "رمز عبور",
+  email: "ایمیل",
+  enterYourUserName: "لطفاً نام کاربری خود را وارد کنید",
+  enterYourPassword: "لطفاً رمز عبور خود را وارد کنید",
+  enterYourEmail: "لطفاً ایمیل خود را وارد کنید",
+  doHaveAnAccount: "هنوز حساب کاربری ندارید؟ ",
+  alreadyHaveAnAccount: "حساب کاربری دارید؟ ",
+  signUp: "ثبت‌نام",
 };
 export default fa;

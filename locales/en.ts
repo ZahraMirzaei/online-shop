@@ -208,5 +208,18 @@ const en: { [key: string]: string } = {
   price: "Product price",
   similarProducts: "You May Be Interested In",
   cart: "Shopping Cart",
+  hi: "Hi!",
+  loginExplanation:
+    "Besides registering, you can also test the template with test account information(UserName: test, Password: 123456)",
+  testAccount: "test account",
+  userName: "User Name",
+  password: "Password",
+  email: "Email",
+  enterYourUserName: "Please Enter Your UserName",
+  enterYourPassword: "Please Enter Your Password",
+  enterYourEmail: "Please Enter Your Email",
+  doHaveAnAccount: "Don't You Have An Account? ",
+  alreadyHaveAnAccount: "Already You Have An Account? ",
+  signUp: " Sign Up",
 };
 export default en;
