@@ -220,6 +220,6 @@ const en: { [key: string]: string } = {
   enterYourEmail: "Please Enter Your Email",
   doHaveAnAccount: "Don't You Have An Account? ",
   alreadyHaveAnAccount: "Already You Have An Account? ",
-  signUp: " Sign Up",
+  signUp: "Sign Up",
 };
 export default en;
