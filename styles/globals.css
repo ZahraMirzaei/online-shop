@@ -171,3 +171,8 @@ a {
   background-color: #ee384e;
   border-radius: 100vw;
 }
+
+::placeholder {
+  color: #b9b9b9;
+  font-size: 14px;
+}
