@@ -44,7 +44,7 @@ const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
           {title === "login" ? (
             <>
               <br />
-              <span className="inline-block text-palette-mute text-[12px] mt-2 p-1 bg-slate-300/30">
+              <span className="inline-block text-palette-mute dark:text-palette-base/80 text-[12px] mt-2 bg-palette-fill p-2">
                 {t.loginExplanation}
               </span>
             </>
