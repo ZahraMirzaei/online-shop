@@ -63,7 +63,7 @@ const Input = React.forwardRef<IImperativeHandler, Props>((props, ref) => {
         onChange={inputChangeHandler}
         autoComplete={props.autocomplete || "off"}
         className="w-full py-4 px-6 border-[1px] border-gainsboro bg-palette-card outline-none rounded-lg shadow-md"
-        title={props.title}
+        title={props.title || ""}
         required={props.required || false}
       />
     </div>
