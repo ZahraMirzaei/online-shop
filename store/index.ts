@@ -5,6 +5,7 @@ import newestProductReducer from "./newestProduct-slice";
 import SortedProductsListReducer from "./sortedProductList-slice";
 import cartUiReducer from "./cartUi-slice";
 import cartSliceReducer from "./cart-slice";
+import userInfoReducer from "./user-slice";
 
 const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ const store = configureStore({
     sortedProductsList: SortedProductsListReducer,
     cartUi: cartUiReducer,
     cart: cartSliceReducer,
+    userInfo: userInfoReducer,
   },
 });
 
