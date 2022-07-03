@@ -9,9 +9,9 @@ interface Props {
   submitHandler: (user: IUser) => void;
 }
 const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
-  const userNameRef = useRef<HTMLInputElement>(null);
-  const passwordRef = useRef<HTMLInputElement>(null);
-  const emailRef = useRef<HTMLInputElement>(null);
+  const userNameRef = useRef<HTMLInputElement | null>(null);
+  const passwordRef = useRef<HTMLInputElement | null>(null);
+  const emailRef = useRef<HTMLInputElement | null>(null);
   const { t } = useLanguage();
 
   function onSubmitHandler(e: React.FormEvent) {
@@ -28,9 +28,9 @@ const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
         isAdmin: false,
       };
       submitHandler(user);
-      userNameRef.current.value = "";
-      passwordRef.current.value = "";
-      emailRef.current.value = "";
+      // userNameRef.current.changeValue('');
+      // passwordRef.current.changeValue('');
+      // emailRef.current.changeValue('');
     }
   }
   const linkHref = title === "login" ? "signUp" : "login";
@@ -57,7 +57,7 @@ const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
               type="text"
               id="userName"
               placeholder="enterYourUserName"
-              title="text"
+              title={title === "login" ? "test" : undefined}
               required={true}
             />
             <Input
@@ -65,7 +65,7 @@ const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
               type="password"
               id="password"
               placeholder="enterYourPassword"
-              title="123456"
+              title={title === "login" ? "123456" : undefined}
               required={true}
             />
             {title === "signUp" ? (
@@ -74,7 +74,6 @@ const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
                 type="email"
                 id="email"
                 placeholder="enterYourEmail"
-                title="123456"
                 required={true}
               />
             ) : null}
@@ -89,7 +88,7 @@ const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
         <Link href={`/${linkHref}`}>
           <a className="block my-4">
             <span className="text-sm text-palette-mute">
-              {t.doHaveAnAccount}
+              {title === "login" ? t.doHaveAnAccount : t.alreadyHaveAnAccount}
             </span>
             <span className="text-cyan-500">{t[`${linkHref}`]}</span>
           </a>
