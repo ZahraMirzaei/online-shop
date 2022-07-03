@@ -16,13 +16,13 @@ const ImageSection: React.FC<Props> = ({ imgArray }) => {
     <div className="flex items-start rounded-lg w-full md:w-auto">
       <ProductPageActions />
       <div className="flex flex-col items-center w-full md:w-auto">
-        <div className="flex flex-grow">
+        <div className="flex flex-grow md:ltr:mr-3 md:rtl:ml-3">
           <Image
             src={urlFor(imgArray[selectedImg]).url()}
             alt="product img"
             width={450}
             height={330}
-            className="object-contain md:drop-shadow-xl"
+            className="object-contain md:drop-shadow-xl dark:bg-palette-card"
           />
         </div>
 
