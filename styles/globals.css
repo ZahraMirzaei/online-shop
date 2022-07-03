@@ -172,6 +172,34 @@ a {
   border-radius: 100vw;
 }
 
+/* input */
+
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+input:focus,
+select:focus {
+  background-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 ::placeholder {
   color: #b9b9b9;
   font-size: 14px;
