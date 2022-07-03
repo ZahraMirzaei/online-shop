@@ -43,7 +43,7 @@ const Header = () => {
                 </a>
               </Link>
             </div>
-            <div className="flex rtl:w-[9rem] ltr:w-[9rem] justify-between items-center ">
+            <div className="flex justify-between items-center ">
               <Language />
               <Theme />
             </div>
@@ -88,7 +88,7 @@ const Header = () => {
               </MegaMenuContextProvider>
               <ExtraMenu />
             </div>
-            <div className="flex items-center justify-between ltr:w-[10rem] rtl:w-[9.3rem]">
+            <div className="flex items-center justify-between ">
               <Language />
               <Theme />
             </div>
