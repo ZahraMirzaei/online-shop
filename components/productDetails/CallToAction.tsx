@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiOutlinePlusSm, HiMinusSm } from "react-icons/hi";
 import { BsCartPlus } from "react-icons/bs";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -13,6 +13,12 @@ interface Props {
 const CallToAction: React.FC<Props> = ({ product }) => {
   const { price, discount } = product;
   const [counter, setCounter] = useState(1);
+
+  useEffect(() => {
+    return () => {
+      setCounter(1);
+    };
+  }, [product]);
 
   const dispatch = useDispatch();
 
