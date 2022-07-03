@@ -2,6 +2,8 @@ const en: { [key: string]: string } = {
   mainPage: "ZiShop Main Page",
   search: "Search",
   login: "Login",
+  logout: "Logout",
+  favorites: "Favorites",
   signIn: "Sign in",
   seeCart: "See Cart",
   product: "Product",

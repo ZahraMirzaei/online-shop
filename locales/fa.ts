@@ -3,6 +3,8 @@ const fa: { [key: string]: string } = {
   search: "جستجو",
   login: "ورود",
   signIn: "ثبت‌نام",
+  logout: "خروج",
+  favorites: "علاقه‌مندی‌ها",
   seeCart: "مشاهدۀ سبد خرید",
   product: "کالا",
   totalAmount: "قیمت کل",
