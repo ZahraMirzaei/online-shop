@@ -41,7 +41,7 @@ const ProductPrice: React.FC<Props> = ({
         style={{ justifyContent }}
       >
         {discount ? (
-          <div className="flex items-end" style={{ flexDirection }}>
+          <div className="flex items-end flex-wrap" style={{ flexDirection }}>
             <span className="flex flex-col">
               <del className={`${textDiscountPriceSize} text-rose-600`}>
                 <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
@@ -63,7 +63,7 @@ const ProductPrice: React.FC<Props> = ({
               </ins>
             </span>
             <span
-              className="text-green-700 ml-1 text-[10px] md:text-[12px] inline-block"
+              className="text-green-700 ml-1 text-[12px] inline-block"
               style={{ direction: "ltr" }}
             >{`(-%${
               locale === "en" ? discount : changeNumbersFormatEnToFa(discount!)
