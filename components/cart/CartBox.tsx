@@ -9,6 +9,7 @@ import { gbpCurrencyFormat } from "../../utilities/currencyFormat";
 import { ICartProduct } from "../../lib/types/cart";
 import CartItem from "./CartItem";
 import { useExchangeRateGBPToIRR } from "../../hooks/useExchangeRateGBPToIRR";
+import { IUserInfoRootState } from "../../lib/types/user";
 
 const CartBox = () => {
   const { t, locale } = useLanguage();
@@ -27,6 +28,12 @@ const CartBox = () => {
       return state.cart.items;
     }
   );
+
+  const userInfo = useSelector((state: IUserInfoRootState) => {
+    return state.userInfo.userInformation;
+  });
+
+  console.log(userInfo);
 
   function onSeeCartClickHandler() {
     dispatch(cartUiActions.toggleCartBox(false));
@@ -74,11 +81,19 @@ const CartBox = () => {
                   : `تومان ${irPrice}`}
               </p>
             </div>
-            <Link href={"/"}>
-              <a className="py-2 px-3 bg-palette-primary text-[12px] text-palette-side rounded-lg">
-                {t.loginAndOrder}
-              </a>
-            </Link>
+            {!userInfo ? (
+              <Link href={"/login"}>
+                <a className="py-2 px-3 bg-palette-primary text-[12px] text-palette-side rounded-lg">
+                  {t.loginAndOrder}
+                </a>
+              </Link>
+            ) : (
+              <Link href={"/"}>
+                <a className="py-2 px-10 bg-palette-primary text-[12px] text-palette-side rounded-lg">
+                  {t.order}
+                </a>
+              </Link>
+            )}
           </div>
         ) : null}
       </div>
