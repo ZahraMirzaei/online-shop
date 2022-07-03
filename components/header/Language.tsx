@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import { MdLanguage } from "react-icons/md";
 import { HiChevronUp, HiChevronDown } from "react-icons/hi";
 import { useLanguage } from "../../hooks/useLanguage";
-import { IoLanguage } from "react-icons/io5";
 const Language = () => {
   const { t, locale } = useLanguage();
   const [lang, setLang] = useState(locale);
@@ -32,7 +31,7 @@ const Language = () => {
             {locale === "en" ? "En" : "Fa"}
           </p>
 
-          <MdLanguage style={{ fontSize: "1.2rem" }} />
+          <MdLanguage style={{ fontSize: "1.4rem" }} />
         </div>
       </div>
       {openLang ? (
