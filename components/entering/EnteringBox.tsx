@@ -1,16 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import Link from "next/link";
 import Input from "../UI/Input";
 import { useLanguage } from "../../hooks/useLanguage";
+import { IUser } from "../../lib/types/user";
 
 interface Props {
   title: string;
+  submitHandler: (user: IUser) => void;
 }
-const EnteringBox: React.FC<Props> = ({ title }) => {
+const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
+  const userNameRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
   const { t } = useLanguage();
 
-  function loginHandler(e: React.FormEvent) {
+  function onSubmitHandler(e: React.FormEvent) {
     e.preventDefault();
+    if (
+      userNameRef.current?.value &&
+      passwordRef.current?.value &&
+      emailRef.current?.value
+    ) {
+      const user: IUser = {
+        name: userNameRef.current?.value,
+        password: passwordRef.current?.value,
+        email: emailRef.current?.value,
+        isAdmin: false,
+      };
+      submitHandler(user);
+      userNameRef.current.value = "";
+      passwordRef.current.value = "";
+      emailRef.current.value = "";
+    }
   }
   const linkHref = title === "login" ? "signUp" : "login";
 
@@ -29,9 +50,10 @@ const EnteringBox: React.FC<Props> = ({ title }) => {
             </>
           ) : null}
         </p>
-        <form onSubmit={loginHandler}>
+        <form onSubmit={onSubmitHandler}>
           <div className="mt-8">
             <Input
+              ref={userNameRef}
               type="text"
               id="userName"
               placeholder="enterYourUserName"
@@ -39,6 +61,7 @@ const EnteringBox: React.FC<Props> = ({ title }) => {
               required={true}
             />
             <Input
+              ref={passwordRef}
               type="password"
               id="password"
               placeholder="enterYourPassword"
@@ -47,6 +70,7 @@ const EnteringBox: React.FC<Props> = ({ title }) => {
             />
             {title === "signUp" ? (
               <Input
+                ref={emailRef}
                 type="email"
                 id="email"
                 placeholder="enterYourEmail"
