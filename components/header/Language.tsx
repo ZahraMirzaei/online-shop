@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { MdLanguage } from "react-icons/md";
 import { HiChevronUp, HiChevronDown } from "react-icons/hi";
 import { useLanguage } from "../../hooks/useLanguage";
+import { IoLanguage } from "react-icons/io5";
 const Language = () => {
   const { t, locale } = useLanguage();
   const [lang, setLang] = useState(locale);
@@ -21,21 +22,17 @@ const Language = () => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative rtl:ml-2 rtl:pl-2 ltr:mr-2 ltr:pr-2">
       <div
         className="flex items-center cursor-pointer"
         onClick={() => setOpenLang((prevState) => !prevState)}
       >
-        <div className="flex items-center  rounded-md py-1 px-2 border-[1px] border-gray-200 dark:border-gray-200/40 shadow-sm">
-          <MdLanguage
-            style={{ fontSize: "1.4rem", margin: "0 0.1rem 0 0.1rem" }}
-          />
-          <p className="mx-[0.3rem] text-xs font-bold">
-            {locale === "en" ? "English" : "فارسی"}
+        <div className="flex items-center ">
+          <p className="mx-[0.3rem] text-sm font-bold font-english">
+            {locale === "en" ? "En" : "Fa"}
           </p>
-          <div>
-            <ArrowDirection />
-          </div>
+
+          <MdLanguage style={{ fontSize: "1.2rem" }} />
         </div>
       </div>
       {openLang ? (
@@ -45,7 +42,7 @@ const Language = () => {
             onClick={() => setOpenLang(false)}
           ></div>
           <div
-            className={`absolute top-9 ltr:right-0 rtl:left-0 bg-palette-card py-3 px-6 shadow-md rounded-md z-10`}
+            className={`absolute top-6 ltr:right-0 rtl:left-0 bg-palette-card py-3 px-6 shadow-md rounded-md z-10`}
           >
             <Link href={`${route.asPath}`} locale="fa">
               <a className="whitespace-nowrap flex justify-between items-center">
