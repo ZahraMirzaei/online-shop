@@ -24,7 +24,7 @@ export interface ICart {
   totalAmount: number;
 }
 
-//RootState => use for state in useSelector
+//RootState interface => use for state type in useSelector hook
 
 export interface ICartUiRootState {
   cartUi: ICartUI;
