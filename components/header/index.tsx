@@ -6,13 +6,17 @@ import SearchBar from "./SearchBar";
 import Theme from "./Theme";
 import Language from "./Language";
 import CartIcon from "../cart/CartIcon";
-import LoginBtn from "./LoginBtn";
 import SideBar from "./SideNav/SideBar";
 import SideNavSide from "./SideNav/SideNavSide";
 import MegaMenu from "./MegaMenu/MegaMenu";
 import ExtraMenu from "./MegaMenu/ExtraMenu";
 import { ActiveMenuItemProvider } from "../../store/context/activeMenuItemContext";
 import { MegaMenuContextProvider } from "../../store/context/megaMenuContext";
+import dynamic from "next/dynamic";
+// import UserBox from "./user";
+const UserBox = dynamic(() => import("./user"), {
+  ssr: false,
+});
 
 const Header = () => {
   return (
@@ -48,7 +52,7 @@ const Header = () => {
           <div className="mb-2 mt-4 flex items-center">
             <SearchBar />
             <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ltr:w-[4.1rem] rtl:w-[4.3rem] ">
-              <LoginBtn />
+              <UserBox />
               <CartIcon />
             </div>
           </div>
@@ -73,7 +77,7 @@ const Header = () => {
               <SearchBar />
             </div>
             <div className="hidden md:flex items-center justify-between font-bold ltr:ml-4 rtl:mr-4">
-              <LoginBtn modifier="md" />
+              <UserBox />
               <CartIcon />
             </div>
           </div>
