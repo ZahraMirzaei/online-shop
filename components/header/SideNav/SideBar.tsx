@@ -37,7 +37,7 @@ const SideBar = () => {
             <>
               <SideNav ref={nodeRef} state={state} onClose={closeNav} />
               <div
-                className={`fixed inset-0 z-50 bg-black/60
+                className={`fixed inset-0 z-[999] bg-black/60
                   ${
                     state === "entering"
                       ? "animate-fadeEntering"
