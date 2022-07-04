@@ -9,7 +9,7 @@ import { IDropDown } from "../../lib/types/dropDown";
 import en from "../../locales/en";
 import fa from "../../locales/fa";
 import { useDispatch } from "react-redux";
-import { sideNavBarActions } from "../../store/sidebarNav-slice";
+import { sideNavBarActions } from "../../store/sideNavBar-slice";
 
 interface Props {
   dropDown: IDropDown;

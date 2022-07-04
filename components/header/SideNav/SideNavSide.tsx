@@ -8,7 +8,7 @@ import {
 } from "react-icons/hi";
 import DropDown from "../../UI/DropDown";
 import { useDispatch, useSelector } from "react-redux";
-import { sideNavBarActions } from "../../../store/sidebarNav-slice";
+import { sideNavBarActions } from "../../../store/sideNavBar-slice";
 import { ISideNavBarRootState } from "../../../lib/types/sidebar";
 import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
 import { useLanguage } from "../../../hooks/useLanguage";

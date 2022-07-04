@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { extraMenu } from "../../../mock/menuItems";
 import { useDispatch } from "react-redux";
-import { sideNavBarActions } from "../../../store/sidebarNav-slice";
+import { sideNavBarActions } from "../../../store/sideNavBar-slice";
 import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
 import { IDropDown } from "../../../lib/types/dropDown";
 import MenuItems from "../../UI/MenuItems";

@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { sideNavBarActions } from "../../../store/sidebarNav-slice";
+import { sideNavBarActions } from "../../../store/sideNavBar-slice";
 import { Transition } from "react-transition-group";
 import { GoGrabber } from "react-icons/go";
 import { ISideNavBarRootState } from "../../../lib/types/sidebar";
