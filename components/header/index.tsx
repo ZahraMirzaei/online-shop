@@ -49,9 +49,9 @@ const Header = () => {
             </div>
           </div>
           <hr />
-          <div className="mb-2 mt-4 flex items-center">
+          <div className="mb-2 mt-4 flex flex-wrap items-center">
             <SearchBar />
-            <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ltr:w-[4.1rem] rtl:w-[4.3rem] ">
+            <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ">
               <UserBox />
               <CartIcon />
             </div>

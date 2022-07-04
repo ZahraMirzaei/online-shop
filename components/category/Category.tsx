@@ -9,7 +9,7 @@ const Category = () => {
   const { t } = useLanguage();
   return (
     <div className="my-4 lg:my-10 flex flex-col">
-      <h2 className="mx-auto mt-4 py-8 md:text-xl lg:text-2xl">
+      <h2 className="mx-auto mt-4 py-8 text-2xl md:text-3xl">
         {t.CategoryOfGoods}
       </h2>
 

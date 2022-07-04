@@ -16,8 +16,8 @@ const Newest = () => {
   );
 
   return (
-    <div className="my-4 mx-auto lg:my-10 flex flex-col max-w-[1650px]">
-      <h2 className="mt-4 mx-auto py-8 md:text-xl lg:text-2xl">{t.newest}</h2>
+    <div className="my-4 mx-auto lg:mb-8 lg:mt-16 flex flex-col max-w-[1650px]">
+      <h2 className="my-4 mx-auto text-2xl md:text-3xl">{t.newest}</h2>
 
       <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 max-w-[1700px]">
         {newestProducts

@@ -41,7 +41,9 @@ const Brands = () => {
   };
   return (
     <div className="p-1 text-center">
-      <h2 className="mx-auto my-4 md:text-xl lg:text-2xl">{t.popularBrands}</h2>
+      <h2 className="mx-auto text-2xl md:text-3xl my-4 md:mt-8 mb-8">
+        {t.popularBrands}
+      </h2>
       <Slider {...settings}>
         {brandContent.map((brandItem) => {
           return (
