@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Link from "next/link";
 import Input from "../UI/Input";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -7,26 +7,42 @@ import { IUser } from "../../lib/types/user";
 interface Props {
   title: string;
   submitHandler: (user: IUser) => void;
+  errorMessage: string;
 }
-const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
+const EnteringBox: React.FC<Props> = ({
+  title,
+  submitHandler,
+  errorMessage,
+}) => {
   const userNameRef = useRef<HTMLInputElement | null>(null);
   const passwordRef = useRef<HTMLInputElement | null>(null);
   const emailRef = useRef<HTMLInputElement | null>(null);
+  const errorMessageRef = useRef<HTMLSpanElement | null>(null);
   const { t } = useLanguage();
+
+  if (errorMessage) {
+    title === "signUp" ? userNameRef.current?.focus() : null;
+    emailRef.current?.focus();
+    passwordRef.current?.focus();
+  }
 
   function onSubmitHandler(e: React.FormEvent) {
     e.preventDefault();
-    if (
-      userNameRef.current?.value &&
-      passwordRef.current?.value &&
-      emailRef.current?.value
-    ) {
-      const user: IUser = {
-        name: userNameRef.current?.value,
-        password: passwordRef.current?.value,
-        email: emailRef.current?.value,
-        isAdmin: false,
-      };
+    if (passwordRef.current?.value && emailRef.current?.value) {
+      let user: IUser | null = null;
+      if (userNameRef.current?.value && title === "signUp") {
+        user = {
+          name: userNameRef.current?.value,
+          password: passwordRef.current?.value,
+          email: emailRef.current?.value,
+          isAdmin: false,
+        };
+      } else {
+        user = {
+          password: passwordRef.current?.value,
+          email: emailRef.current?.value,
+        };
+      }
       submitHandler(user);
       // userNameRef.current.changeValue('');
       // passwordRef.current.changeValue('');
@@ -52,14 +68,25 @@ const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
         </p>
         <form onSubmit={onSubmitHandler}>
           <div className="mt-8">
+            {title === "signUp" ? (
+              <Input
+                ref={userNameRef}
+                type="text"
+                id="userName"
+                placeholder="enterYourUserName"
+                required={true}
+              />
+            ) : null}
+
             <Input
-              ref={userNameRef}
-              type="text"
-              id="userName"
-              placeholder="enterYourUserName"
-              title={title === "login" ? "test" : undefined}
+              ref={emailRef}
+              type="email"
+              id="email"
+              placeholder="enterYourEmail"
               required={true}
+              title={title === "login" ? "test@info.co" : undefined}
             />
+
             <Input
               ref={passwordRef}
               type="password"
@@ -68,16 +95,16 @@ const EnteringBox: React.FC<Props> = ({ title, submitHandler }) => {
               title={title === "login" ? "123456" : undefined}
               required={true}
             />
-            {title === "signUp" ? (
-              <Input
-                ref={emailRef}
-                type="email"
-                id="email"
-                placeholder="enterYourEmail"
-                required={true}
-              />
-            ) : null}
           </div>
+          {errorMessage && (
+            <span
+              ref={errorMessageRef}
+              className="text-rose-600 block -mt-4 mb-4"
+            >
+              {t[`${errorMessage}`] ? t[`${errorMessage}`] : errorMessage}
+            </span>
+          )}
+
           <button
             type="submit"
             className="bg-palette-primary w-full py-4 rounded-lg text-palette-side text-xl shadow-lg"

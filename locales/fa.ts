@@ -209,7 +209,7 @@ const fa: { [key: string]: string } = {
   cart: "سبد خرید",
   hi: "سلام!",
   loginExplanation:
-    ".برای بررسی قالب میتونید علاوه بر ثبت‌نام از اطلاعات اکانت تست هم استفاده کنید(نام کاربری:test. رمز عبور:123456)",
+    ".برای بررسی قالب میتونید علاوه بر ثبت‌نام از اطلاعات اکانت تست هم استفاده کنید(نام کاربری:test@info.com - رمز عبور:123456)",
   testAccount: "اکانت test",
   userName: "نام کاربری",
   password: "رمز عبور",
@@ -220,5 +220,7 @@ const fa: { [key: string]: string } = {
   doHaveAnAccount: "هنوز حساب کاربری ندارید؟ ",
   alreadyHaveAnAccount: "حساب کاربری دارید؟ ",
   signUp: "ثبت‌نام",
+  Invalid_email_or_password: "ایمیل یا رمزعبور اشتباه است.",
+  Email_already_exists: "در حال حاضر این ایمیل وجود دارد",
 };
 export default fa;

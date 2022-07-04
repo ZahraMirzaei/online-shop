@@ -7,11 +7,12 @@ import { IUser } from "../lib/types/user";
 import axios from "axios";
 import { getError } from "../utilities/error";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { IUserInfoRootState } from "../lib/types/user";
 const SignUp: NextPage = () => {
   const dispatch = useDispatch();
   const router = useRouter();
+  const [errorMessage, setErrorMessage] = useState("");
   const { redirect } = router.query;
   const userInfo = useSelector(
     (state: IUserInfoRootState) => state.userInfo.userInformation
@@ -38,11 +39,18 @@ const SignUp: NextPage = () => {
         dispatch(userInfoActions.userLogin(user));
         jsCookie.set("userInfo", JSON.stringify(user));
       }
+      setErrorMessage(getError(err));
       console.log(getError(err));
-      router.push("/");
+      // router.push("/");
     }
   }
-  return <EnteringBox title="signUp" submitHandler={signUpHandler} />;
+  return (
+    <EnteringBox
+      title="signUp"
+      submitHandler={signUpHandler}
+      errorMessage={errorMessage}
+    />
+  );
 };
 
 export default SignUp;

@@ -212,7 +212,7 @@ const en: { [key: string]: string } = {
   cart: "Shopping Cart",
   hi: "Hi!",
   loginExplanation:
-    "Besides registering, you can also test the template with test account information(UserName: test, Password: 123456)",
+    "Besides registering, you can also test the template with test account information(email: test@info.com - Password: 123456)",
   testAccount: "test account",
   userName: "User Name",
   password: "Password",
@@ -223,5 +223,7 @@ const en: { [key: string]: string } = {
   doHaveAnAccount: "Don't You Have An Account? ",
   alreadyHaveAnAccount: "Already You Have An Account? ",
   signUp: "Sign Up",
+  Invalid_email_or_password: "Invalid email or password",
+  Email_already_exists:"Email already exists"
 };
 export default en;
