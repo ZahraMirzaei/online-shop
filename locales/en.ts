@@ -102,6 +102,7 @@ const en: { [key: string]: string } = {
   offers: "Special Offers",
   newest: "Newest Goods",
   seeAll: "See All",
+  specialSale: "Special Sale",
   seeAllNewProducts: "See All New Products",
   digitalCategoryTitle: "Digital Products",
   digitalCategoryDescription:
@@ -224,6 +225,6 @@ const en: { [key: string]: string } = {
   alreadyHaveAnAccount: "Already You Have An Account? ",
   signUp: "Sign Up",
   Invalid_email_or_password: "Invalid email or password",
-  Email_already_exists:"Email already exists"
+  Email_already_exists: "Email already exists",
 };
 export default en;
