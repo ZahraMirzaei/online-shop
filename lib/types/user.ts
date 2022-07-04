@@ -1,9 +1,9 @@
 export interface IUser {
   _id?: any;
-  name: string;
+  name?: string;
   password?: string;
   email: string;
-  isAdmin: boolean;
+  isAdmin?: boolean;
   token?: string;
 }
 
