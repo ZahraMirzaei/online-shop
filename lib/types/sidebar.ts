@@ -5,3 +5,7 @@ export interface ISideNavBar {
   isNavbarOpen: boolean;
   dropDownList: IDropDown[];
 }
+
+export interface ISideNavBarRootState {
+  sideNavBar: ISideNavBar;
+}
