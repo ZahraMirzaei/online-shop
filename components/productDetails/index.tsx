@@ -11,6 +11,12 @@ interface Props {
   products: IProduct[];
 }
 const ProductDetails: React.FC<Props> = ({ product, products }) => {
+  const similarProductsList = products
+    .filter(
+      (similarProduct) => similarProduct.slug.current !== product.slug.current
+    )
+    .slice(0, 10);
+
   return (
     <div className="flex flex-col max-w-[1500px] mx-auto">
       <Breadcrumb />
@@ -21,7 +27,7 @@ const ProductDetails: React.FC<Props> = ({ product, products }) => {
       <div className="border-2 my-8">
         <Benefits />
       </div>
-      <SimilarProducts products={products} />
+      <SimilarProducts products={similarProductsList} />
     </div>
   );
 };
