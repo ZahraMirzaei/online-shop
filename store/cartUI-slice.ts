@@ -3,7 +3,6 @@ import { ICartUI } from "../lib/types/cart";
 
 const initialState: ICartUI = {
   cartBoxIsVisible: false,
-  cartPageIsVisible: false,
 };
 
 const cartUiSlice = createSlice({
@@ -12,9 +11,6 @@ const cartUiSlice = createSlice({
   reducers: {
     toggleCartBox(state, action: PayloadAction<boolean>) {
       state.cartBoxIsVisible = action.payload;
-    },
-    toggleCartPage(state) {
-      state.cartPageIsVisible = !state.cartPageIsVisible;
     },
   },
 });

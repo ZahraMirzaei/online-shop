@@ -15,7 +15,6 @@ export interface ICartProduct {
 
 export interface ICartUI {
   cartBoxIsVisible: boolean;
-  cartPageIsVisible: boolean;
 }
 
 export interface ICart {
