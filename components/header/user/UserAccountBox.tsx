@@ -5,6 +5,7 @@ import { userInfoActions } from "../../../store/user-slice";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { AiOutlineHeart } from "react-icons/ai";
 import { IoLogOutOutline } from "react-icons/io5";
+import jsCookie from "js-cookie";
 
 interface Props {
   onClose: () => void;
@@ -12,9 +13,9 @@ interface Props {
 const UserAccountBox: React.FC<Props> = ({ onClose }) => {
   const { t } = useLanguage();
   const dispatch = useDispatch();
-
   function onLogoutClickHandler() {
     dispatch(userInfoActions.userLogout());
+    jsCookie.remove("userInfo");
     onClose();
   }
   return (
@@ -36,7 +37,7 @@ const UserAccountBox: React.FC<Props> = ({ onClose }) => {
           </Link>
         </li>
         <li className="my-1 py-1" onClick={onLogoutClickHandler}>
-          <Link href={"/"}>
+          <Link href={`/`}>
             <a className="flex items-center hover:text-palette-primary">
               <IoLogOutOutline
                 style={{
