@@ -3,7 +3,6 @@ import { Provider } from "react-redux";
 import Head from "next/head";
 import { ThemeProvider } from "next-themes";
 import Header from "../header";
-import { SidebarContextProvider } from "../../store/context/NavContext";
 import store from "../../store/index";
 import Footer from "../footer";
 
@@ -15,9 +14,7 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
           <title>ZiShop</title>
         </Head>
         <div className="flex flex-col min-h-[100vh]">
-          <SidebarContextProvider>
-            <Header />
-          </SidebarContextProvider>
+          <Header />
           <main className="flex-grow  md:mt-40">{children}</main>
           <Footer />
         </div>
