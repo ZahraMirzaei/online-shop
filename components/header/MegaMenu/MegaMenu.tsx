@@ -21,8 +21,6 @@ const MegaMenu = () => {
     (state: IMegaMenuRootState) => state.megaMenu.isMegaMenuOpen
   );
 
-  console.log(isMegaMenuOpen);
-
   return (
     <div
       className="flex items-center"
