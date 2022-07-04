@@ -22,6 +22,10 @@ const store = configureStore({
     megaMenu: megaMenuReducer,
     activeMenuItem: activeMenuItemReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 
 export default store;
