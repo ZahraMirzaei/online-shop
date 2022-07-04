@@ -33,8 +33,6 @@ const CartBox = () => {
     return state.userInfo.userInformation;
   });
 
-  console.log(userInfo);
-
   function onSeeCartClickHandler() {
     dispatch(cartUiActions.toggleCartBox(false));
   }
