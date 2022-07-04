@@ -2,23 +2,23 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { extraMenu } from "../../../mock/menuItems";
-import SidebarContext from "../../../store/context/NavContext";
+import { useDispatch } from "react-redux";
+import { sideNavBarActions } from "../../../store/sidebarNav-slice";
 import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
 import { IDropDown } from "../../../lib/types/dropDown";
 import MenuItems from "../../UI/MenuItems";
 
 const SideNavContent = () => {
   const { t } = useLanguage();
-  const sideNavCtx = useContext(SidebarContext);
+  const dispatch = useDispatch();
   const activeMenuItemCtx = useContext(ActiveMenuItemContext);
   const openNav = (
     sidebarSideContent: IDropDown[] = [],
     activeItemName: string
   ) => {
-    sideNavCtx.setDropDownList(sidebarSideContent);
-
+    dispatch(sideNavBarActions.setSidebarEntries(sidebarSideContent));
     activeMenuItemCtx.setActiveMenuItemText(activeItemName);
-    sideNavCtx.openSidebar();
+    dispatch(sideNavBarActions.openSidebar());
   };
   return (
     <div className="absolute w-full h-full overflow-y-auto">
@@ -38,7 +38,7 @@ const SideNavContent = () => {
         })}
         <hr className="mt-6 mb-4 border-gray-200" />
       </div>
-      <h2 className="font-semibold text-lg py-3 ltr:px-5 rtl:px-5">
+      <h2 className="font-bold text-lg py-3 ltr:px-5 rtl:px-5">
         {t.CategoryOfGoods}
       </h2>
       <MenuItems onClick={openNav} />

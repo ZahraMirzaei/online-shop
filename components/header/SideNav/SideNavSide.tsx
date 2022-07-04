@@ -7,26 +7,44 @@ import {
   HiChevronLeft,
 } from "react-icons/hi";
 import DropDown from "../../UI/DropDown";
-import SidebarContext from "../../../store/context/NavContext";
+import { useDispatch, useSelector } from "react-redux";
+import { sideNavBarActions } from "../../../store/sidebarNav-slice";
+import { ISideNavBarRootState } from "../../../lib/types/sidebar";
 import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
 import { useLanguage } from "../../../hooks/useLanguage";
 import Link from "next/link";
 
 const SideNavSide = () => {
-  const sidebarCtx = useContext(SidebarContext);
   const activeMenuItemCtx = useContext(ActiveMenuItemContext);
+  const dispatch = useDispatch();
+
+  const dropDownList = useSelector(
+    (state: ISideNavBarRootState) => state.sideNavBar.dropDownList
+  );
+  const isSidebarOpen = useSelector(
+    (state: ISideNavBarRootState) => state.sideNavBar.isSidebarOpen
+  );
+
+  const closeSidebar = () => {
+    dispatch(sideNavBarActions.closeSidebar());
+  };
+
+  const closeNavbar = () => {
+    dispatch(sideNavBarActions.closeNavbar());
+  };
 
   const nodeRef = useRef<HTMLDivElement>(null);
   const { t, locale } = useLanguage();
+
   const BackArrow =
     locale === "en" ? HiOutlineArrowSmLeft : HiOutlineArrowSmRight;
 
   return (
     <>
-      {sidebarCtx.dropDownList.length ? (
+      {dropDownList.length ? (
         <Transition
           nodeRef={nodeRef}
-          in={sidebarCtx.isSidebarOpen}
+          in={isSidebarOpen}
           timeout={300}
           mountOnEnter
           unmountOnExit
@@ -49,7 +67,7 @@ const SideNavSide = () => {
               >
                 <div
                   className="flex items-center pt-4 pb-3 px-6 font-bold text-lg cursor-pointer"
-                  onClick={sidebarCtx.closeSidebar}
+                  onClick={closeSidebar}
                 >
                   <BackArrow style={{ fontSize: "1.5rem" }} />
                   <h3 className="ltr:ml-2 rtl:mr-2 py-1">{t.mainMenu}</h3>
@@ -60,10 +78,7 @@ const SideNavSide = () => {
                 <div className="flex items-center justify-between ltr:pr-6 rtl:pl-6 pb-6 mb-3 border-b-2 border-slate-400-600">
                   <Link href={`/${activeMenuItemCtx.activeMenuItemText}`}>
                     <a>
-                      <div
-                        className="font-bold mx-6"
-                        onClick={sidebarCtx.closeNavbar}
-                      >
+                      <div className="font-bold mx-6" onClick={closeNavbar}>
                         {t.seeAllProduct}
                       </div>
                     </a>
@@ -74,7 +89,7 @@ const SideNavSide = () => {
                     <HiChevronLeft style={{ fontSize: "1.5rem" }} />
                   )}
                 </div>
-                {sidebarCtx.dropDownList.map((item) => {
+                {dropDownList.map((item) => {
                   return (
                     <div key={item.title}>
                       <DropDown dropDown={item} />

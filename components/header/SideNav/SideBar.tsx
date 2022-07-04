@@ -1,26 +1,33 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { sideNavBarActions } from "../../../store/sidebarNav-slice";
 import { Transition } from "react-transition-group";
 import { GoGrabber } from "react-icons/go";
-import SidebarContext from "../../../store/context/NavContext";
+import { ISideNavBarRootState } from "../../../lib/types/sidebar";
 import SideNav from "./SideNav";
 
 const SideBar = () => {
   const nodeRef = useRef<HTMLDivElement>(null);
-  const sidebarCtx = useContext(SidebarContext);
-
+  const dispatch = useDispatch();
+  const isNavbarOpen = useSelector(
+    (state: ISideNavBarRootState) => state.sideNavBar.isNavbarOpen
+  );
   const closeNav = () => {
-    sidebarCtx.closeNavbar();
-    sidebarCtx.closeSidebar();
+    dispatch(sideNavBarActions.closeNavbar());
+  };
+
+  const openNavBar = () => {
+    dispatch(sideNavBarActions.openNavbar());
   };
 
   return (
     <div className="md:hidden">
-      <div onClick={sidebarCtx.openNavbar}>
+      <div onClick={openNavBar}>
         <GoGrabber style={{ fontSize: "2rem" }} />
       </div>
       <Transition
         nodeRef={nodeRef}
-        in={sidebarCtx.isNavbarOpen}
+        in={isNavbarOpen!}
         timeout={300}
         mountOnEnter
         unmountOnExit
