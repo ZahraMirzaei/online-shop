@@ -7,6 +7,7 @@ import cartUiReducer from "./cartUi-slice";
 import cartSliceReducer from "./cart-slice";
 import userInfoReducer from "./user-slice";
 import sideNavBarReducer from "./sideNavBar-slice";
+import megaMenuReducer from "./megaMenu-slice";
 
 const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ const store = configureStore({
     cart: cartSliceReducer,
     userInfo: userInfoReducer,
     sideNavBar: sideNavBarReducer,
+    megaMenu: megaMenuReducer,
   },
 });
 
