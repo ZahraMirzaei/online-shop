@@ -11,9 +11,7 @@ import SideNavSide from "./SideNav/SideNavSide";
 import MegaMenu from "./MegaMenu/MegaMenu";
 import ExtraMenu from "./MegaMenu/ExtraMenu";
 import { ActiveMenuItemProvider } from "../../store/context/activeMenuItemContext";
-import { MegaMenuContextProvider } from "../../store/context/megaMenuContext";
 import dynamic from "next/dynamic";
-// import UserBox from "./user";
 const UserBox = dynamic(() => import("./user"), {
   ssr: false,
 });
@@ -83,9 +81,7 @@ const Header = () => {
           </div>
           <div className="hidden md:flex justify-between items-center my-4">
             <div className="flex items-center grow">
-              <MegaMenuContextProvider>
-                <MegaMenu />
-              </MegaMenuContextProvider>
+              <MegaMenu />
               <ExtraMenu />
             </div>
             <div className="flex items-center justify-between ">

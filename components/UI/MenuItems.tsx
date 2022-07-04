@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { megaMenuActions } from "../../store/megaMenu-slice";
 import { useLanguage } from "../../hooks/useLanguage";
 import menuItems from "../../mock/menuItems";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
@@ -7,7 +9,6 @@ import { IDropDown } from "../../lib/types/dropDown";
 import ActiveMenuItemContext from "../../store/context/activeMenuItemContext";
 import { useRouter } from "next/router";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
-import MegaMenuContext from "../../store/context/megaMenuContext";
 
 interface Props {
   onClick?: (submenu: IDropDown[] | undefined, activeItemName: string) => void;
@@ -23,7 +24,7 @@ const MenuItems: React.FC<Props> = (props) => {
   const { width } = useWindowDimensions();
   const ArrowDirection = locale === "en" ? HiChevronRight : HiChevronLeft;
   const activeItemCtx = useContext(ActiveMenuItemContext);
-  const megaMenuCtx = useContext(MegaMenuContext);
+  const dispatch = useDispatch();
   return (
     <ul className="rounded-lg">
       {menuItems.map((item, index) => {
@@ -41,7 +42,7 @@ const MenuItems: React.FC<Props> = (props) => {
                 }`}
                 onClick={() => {
                   props.onClick?.(item.productsGroup, item.category);
-                  width >= 768 && megaMenuCtx.closeMegaMenu();
+                  width >= 768 && dispatch(megaMenuActions.closeMegaMenu());
                 }}
                 onMouseOver={() =>
                   props.onMouseOver?.(item.productsGroup, index, item.category)
