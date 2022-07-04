@@ -1,28 +1,28 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { activeMenuItemActions } from "../../../store/activeMenuItem-slice";
 import menuItems from "../../../mock/menuItems";
 import MenuItems from "../../UI/MenuItems";
 import { IDropDown } from "../../../lib/types/dropDown";
 import Submenu from "./Submenu";
-import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
 const Menu = () => {
   const [submenu, setSubmenu] = useState<IDropDown[]>();
-  const activeItemCtx = useContext(ActiveMenuItemContext);
-
+  const dispatch = useDispatch();
   function activeItem(
     submenuList: IDropDown[] | undefined,
     activeItemIndex: number,
     activeItemName: string
   ) {
     setSubmenu(submenuList);
-    activeItemCtx.setActiveMenuItemIndex(activeItemIndex);
-    activeItemCtx.setActiveMenuItemText(activeItemName);
+    dispatch(activeMenuItemActions.setActiveMenuItemIndex(activeItemIndex));
+    dispatch(activeMenuItemActions.setActiveMenuItemText(activeItemName));
   }
 
   useEffect(() => {
     setSubmenu(menuItems[0].productsGroup);
     return () => {
-      activeItemCtx.setActiveMenuItemIndex(0);
-      activeItemCtx.setActiveMenuItemText("digital");
+      dispatch(activeMenuItemActions.setActiveMenuItemIndex(0));
+      dispatch(activeMenuItemActions.setActiveMenuItemText("digital"));
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

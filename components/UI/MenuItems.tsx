@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { megaMenuActions } from "../../store/megaMenu-slice";
 import { useLanguage } from "../../hooks/useLanguage";
 import menuItems from "../../mock/menuItems";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import { IDropDown } from "../../lib/types/dropDown";
-import ActiveMenuItemContext from "../../store/context/activeMenuItemContext";
 import { useRouter } from "next/router";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
+import { IActiveMenuItemRootState } from "../../lib/types/activeMenuItem";
 
 interface Props {
   onClick?: (submenu: IDropDown[] | undefined, activeItemName: string) => void;
@@ -18,13 +18,18 @@ interface Props {
     activeItemName: string
   ) => void;
 }
+
 const MenuItems: React.FC<Props> = (props) => {
   const { t, locale } = useLanguage();
   const route = useRouter();
+  const dispatch = useDispatch();
   const { width } = useWindowDimensions();
   const ArrowDirection = locale === "en" ? HiChevronRight : HiChevronLeft;
-  const activeItemCtx = useContext(ActiveMenuItemContext);
-  const dispatch = useDispatch();
+
+  const activeMenuItemIndex = useSelector(
+    (state: IActiveMenuItemRootState) =>
+      state.activeMenuItem.activeMenuItemIndex
+  );
   return (
     <ul className="rounded-lg">
       {menuItems.map((item, index) => {
@@ -36,9 +41,7 @@ const MenuItems: React.FC<Props> = (props) => {
             <Link href={width >= 768 ? `/${item.category}` : route.asPath}>
               <a
                 className={`flex items-center mt-3 px-5  cursor-pointer text-sm ${
-                  index === activeItemCtx.activeMenuItemIndex
-                    ? "md:text-palette-primary"
-                    : ""
+                  index === activeMenuItemIndex ? "md:text-palette-primary" : ""
                 }`}
                 onClick={() => {
                   props.onClick?.(item.productsGroup, item.category);

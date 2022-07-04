@@ -1,24 +1,23 @@
-import React, { useContext } from "react";
+import React from "react";
 import Link from "next/link";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { extraMenu } from "../../../mock/menuItems";
 import { useDispatch } from "react-redux";
 import { sideNavBarActions } from "../../../store/sideNavBar-slice";
-import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
+import { activeMenuItemActions } from "../../../store/activeMenuItem-slice";
 import { IDropDown } from "../../../lib/types/dropDown";
 import MenuItems from "../../UI/MenuItems";
 
 const SideNavContent = () => {
   const { t } = useLanguage();
   const dispatch = useDispatch();
-  const activeMenuItemCtx = useContext(ActiveMenuItemContext);
   const openNav = (
     sidebarSideContent: IDropDown[] = [],
     activeItemName: string
   ) => {
     dispatch(sideNavBarActions.setSidebarEntries(sidebarSideContent));
-    activeMenuItemCtx.setActiveMenuItemText(activeItemName);
     dispatch(sideNavBarActions.openSidebar());
+    dispatch(activeMenuItemActions.setActiveMenuItemText(activeItemName));
   };
   return (
     <div className="absolute w-full h-full overflow-y-auto">

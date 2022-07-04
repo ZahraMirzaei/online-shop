@@ -1,15 +1,14 @@
-import React, { useState, forwardRef, useRef, useContext } from "react";
+import React, { useState, forwardRef, useRef } from "react";
 import Link from "next/link";
 import { HiChevronUp, HiChevronDown } from "react-icons/hi";
-import { useRouter } from "next/router";
 import { Transition } from "react-transition-group";
 
-import ActiveMenuItemContext from "../../store/context/activeMenuItemContext";
 import { IDropDown } from "../../lib/types/dropDown";
-import en from "../../locales/en";
-import fa from "../../locales/fa";
 import { useDispatch } from "react-redux";
 import { sideNavBarActions } from "../../store/sideNavBar-slice";
+import { useSelector } from "react-redux";
+import { IActiveMenuItemRootState } from "../../lib/types/activeMenuItem";
+import { useLanguage } from "../../hooks/useLanguage";
 
 interface Props {
   dropDown: IDropDown;
@@ -17,15 +16,19 @@ interface Props {
 }
 const DropDown = forwardRef<HTMLDivElement, Props>(({ dropDown }, ref) => {
   const [openDropdown, setOpenDropDown] = useState(false);
-  const activeItemCtx = useContext(ActiveMenuItemContext);
+  const nodeRef = useRef<HTMLDivElement>(null);
   const dispatch = useDispatch();
+  const { t } = useLanguage();
+  let ArrowDirection = !openDropdown ? HiChevronDown : HiChevronUp;
+
+  const activeMenuItemText = useSelector(
+    (state: IActiveMenuItemRootState) => state.activeMenuItem.activeMenuItemText
+  );
+
   const closeNavbar = () => {
     dispatch(sideNavBarActions.closeNavbar());
   };
-  const { locale } = useRouter();
-  const t = locale === "en" ? en : fa;
-  let ArrowDirection = !openDropdown ? HiChevronDown : HiChevronUp;
-  const nodeRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="origin-top" ref={ref}>
       <div
@@ -66,7 +69,7 @@ const DropDown = forwardRef<HTMLDivElement, Props>(({ dropDown }, ref) => {
                     key={`${item}-${index}`}
                   >
                     <Link
-                      href={`/${activeItemCtx.activeMenuItemText}/${dropDown.title}/${item}`}
+                      href={`/${activeMenuItemText}/${dropDown.title}/${item}`}
                     >
                       <a>
                         <div onClick={closeNavbar}>{t[`${item}`]}</div>

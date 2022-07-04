@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 import Link from "next/link";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { IDropDown } from "../../../lib/types/dropDown";
-import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { megaMenuActions } from "../../../store/megaMenu-slice";
+import { IActiveMenuItemRootState } from "../../../lib/types/activeMenuItem";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 
 interface Props {
@@ -12,15 +12,18 @@ interface Props {
 }
 const Submenu: React.FC<Props> = ({ subMenu }) => {
   const { t, locale } = useLanguage();
-  const activeItemCtx = useContext(ActiveMenuItemContext);
   const ArrowDirection = locale === "en" ? HiChevronRight : HiChevronLeft;
   const dispatch = useDispatch();
+
+  const activeMenuItemText = useSelector(
+    (state: IActiveMenuItemRootState) => state.activeMenuItem.activeMenuItemText
+  );
   return (
     <div className="flex flex-col px-6 py-5 w-full">
       <div className="flex items-center hover:text-palette-primary transition-color duration-300">
         {subMenu ? (
           <>
-            <Link href={`/${activeItemCtx.activeMenuItemText}`}>
+            <Link href={`/${activeMenuItemText}`}>
               <a className="block rtl:ml-4 lrt:mr-4 text-[16px] ">
                 <div onClick={() => dispatch(megaMenuActions.closeMegaMenu())}>
                   {t.seeAllProduct}
@@ -38,9 +41,7 @@ const Submenu: React.FC<Props> = ({ subMenu }) => {
             {subMenu.map((menuTitle, index) => {
               return (
                 <div className="py-3" key={`${menuTitle}-${index}`}>
-                  <Link
-                    href={`/${activeItemCtx.activeMenuItemText}/${menuTitle.title}`}
-                  >
+                  <Link href={`/${activeMenuItemText}/${menuTitle.title}`}>
                     <a className="block text-sm rtl:ml-10 ltr:mr-10 font-bold px-2 ltr:border-l-4 rtl:border-r-4 border-palette-primary rounded-sm hover:text-palette-primary transition-color duration-300">
                       <div
                         onClick={() =>
@@ -55,7 +56,7 @@ const Submenu: React.FC<Props> = ({ subMenu }) => {
                     return (
                       <div key={`${subTitle}-${index}`}>
                         <Link
-                          href={`/${activeItemCtx.activeMenuItemText}/${menuTitle.title}/${subTitle}`}
+                          href={`/${activeMenuItemText}/${menuTitle.title}/${subTitle}`}
                         >
                           <a className="block py-2 hover:text-palette-primary transition-color duration-200">
                             <div

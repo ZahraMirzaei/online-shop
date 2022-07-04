@@ -1,4 +1,4 @@
-import React, { useRef, useContext } from "react";
+import React, { useRef } from "react";
 import { Transition } from "react-transition-group";
 import {
   HiOutlineArrowSmRight,
@@ -10,12 +10,11 @@ import DropDown from "../../UI/DropDown";
 import { useDispatch, useSelector } from "react-redux";
 import { sideNavBarActions } from "../../../store/sideNavBar-slice";
 import { ISideNavBarRootState } from "../../../lib/types/sidebar";
-import ActiveMenuItemContext from "../../../store/context/activeMenuItemContext";
 import { useLanguage } from "../../../hooks/useLanguage";
 import Link from "next/link";
+import { IActiveMenuItemRootState } from "../../../lib/types/activeMenuItem";
 
 const SideNavSide = () => {
-  const activeMenuItemCtx = useContext(ActiveMenuItemContext);
   const dispatch = useDispatch();
 
   const dropDownList = useSelector(
@@ -23,6 +22,10 @@ const SideNavSide = () => {
   );
   const isSidebarOpen = useSelector(
     (state: ISideNavBarRootState) => state.sideNavBar.isSidebarOpen
+  );
+
+  const activeMenuItemText = useSelector(
+    (state: IActiveMenuItemRootState) => state.activeMenuItem.activeMenuItemText
   );
 
   const closeSidebar = () => {
@@ -76,7 +79,7 @@ const SideNavSide = () => {
                 <hr className="mb-6" />
 
                 <div className="flex items-center justify-between ltr:pr-6 rtl:pl-6 pb-6 mb-3 border-b-2 border-slate-400-600">
-                  <Link href={`/${activeMenuItemCtx.activeMenuItemText}`}>
+                  <Link href={`/${activeMenuItemText}`}>
                     <a>
                       <div className="font-bold mx-6" onClick={closeNavbar}>
                         {t.seeAllProduct}
