@@ -6,6 +6,7 @@ import SortedProductsListReducer from "./sortedProductList-slice";
 import cartUiReducer from "./cartUi-slice";
 import cartSliceReducer from "./cart-slice";
 import userInfoReducer from "./user-slice";
+import sideNavBarReducer from "./sidebarNav-slice";
 
 const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ const store = configureStore({
     cartUi: cartUiReducer,
     cart: cartSliceReducer,
     userInfo: userInfoReducer,
+    sideNavBar: sideNavBarReducer,
   },
 });
 
