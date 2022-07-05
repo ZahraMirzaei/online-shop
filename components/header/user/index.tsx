@@ -8,7 +8,9 @@ const User = () => {
   const userInfo = useSelector(
     (state: IUserInfoRootState) => state.userInfo.userInformation
   );
-  return <div>{userInfo ? <UserAccountBtn /> : <LoginBtn />}</div>;
+  return (
+    <div className="ml-4">{userInfo ? <UserAccountBtn /> : <LoginBtn />}</div>
+  );
 };
 
 export default User;
