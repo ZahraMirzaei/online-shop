@@ -6,7 +6,7 @@ import SearchBar from "./SearchBar";
 import Theme from "./Theme";
 import Language from "./Language";
 import CartIcon from "../cart/CartIcon";
-import SideBarMenu from "./SideBarMunue";
+import SideBarMenu from "./SideBarMenu";
 import MegaMenu from "./MegaMenu/MegaMenu";
 import ExtraMenu from "./MegaMenu/ExtraMenu";
 import dynamic from "next/dynamic";
