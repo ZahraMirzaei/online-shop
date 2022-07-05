@@ -6,8 +6,7 @@ import SearchBar from "./SearchBar";
 import Theme from "./Theme";
 import Language from "./Language";
 import CartIcon from "../cart/CartIcon";
-import SideBar from "./SideBarMunue/SideBar";
-import SideNavSide from "./SideBarMunue/SideNavSide";
+import SideBarMenu from "./SideBarMunue";
 import MegaMenu from "./MegaMenu/MegaMenu";
 import ExtraMenu from "./MegaMenu/ExtraMenu";
 import dynamic from "next/dynamic";
@@ -22,10 +21,7 @@ const Header = () => {
       <div className="md:hidden">
         <div className="flex justify-between mb-2">
           <div className="flex items-center">
-            <div className="">
-              <SideBar />
-              <SideNavSide />
-            </div>
+            <SideBarMenu />
             <Link href="/" className="">
               <a className="flex items-center w-full ">
                 <Image
