@@ -41,7 +41,7 @@ const Language = () => {
           {locale === "en" ? "En" : "Fa"}
         </p>
 
-        <MdLanguage style={{ fontSize: "1.4rem" }} />
+        <MdLanguage style={{ fontSize: "1.3rem" }} />
       </div>
       {openLang ? (
         <>
