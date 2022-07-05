@@ -20,6 +20,7 @@ const SideNavSide = () => {
   const dropDownList = useSelector(
     (state: ISideNavBarRootState) => state.sideNavBar.dropDownList
   );
+
   const isSidebarOpen = useSelector(
     (state: ISideNavBarRootState) => state.sideNavBar.isSidebarOpen
   );
@@ -56,7 +57,7 @@ const SideNavSide = () => {
             return (
               <div
                 ref={nodeRef}
-                className={`max-w-[380px] w-[80%] h-screen pb-4 fixed top-0 shadow-md z-[110]   bg-palette-card origin-left overflow-auto md:hidden
+                className={`max-w-[380px] w-[80%] h-screen pb-4 fixed top-0 shadow-md z-[1010]   bg-palette-card origin-left overflow-auto md:hidden
                 ${locale == "en" ? "left-0" : "right-0"} 
                 
                 ${
