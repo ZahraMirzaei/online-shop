@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { MdLanguage } from "react-icons/md";
 import { HiChevronUp, HiChevronDown } from "react-icons/hi";
-import { useLanguage } from "../../hooks/useLanguage";
+import { useLanguage } from "../../../hooks/useLanguage";
 const Language = () => {
   const { t, locale } = useLanguage();
   const [lang, setLang] = useState(locale);
@@ -26,7 +26,7 @@ const Language = () => {
         className="flex items-center cursor-pointer"
         onClick={() => setOpenLang((prevState) => !prevState)}
       >
-        <div className="flex items-center ">
+        <div className="flex items-center">
           <p className="mx-[0.3rem] text-sm font-bold font-english">
             {locale === "en" ? "En" : "Fa"}
           </p>
@@ -45,17 +45,25 @@ const Language = () => {
           >
             <Link href={`${route.asPath}`} locale="fa">
               <a className="whitespace-nowrap flex justify-between items-center">
-                <div onClick={() => setOpenLang(false)}>
+                <div
+                  className="flex items-center"
+                  onClick={() => setOpenLang(false)}
+                >
                   <input
                     type="radio"
                     id="fa"
                     name="language"
                     value={lang}
-                    className="accent-rose-600"
+                    className="hidden md:block accent-rose-600"
                     checked={locale === "fa" ? true : false}
                     onChange={onChangeHandler}
                   />
-                  <label htmlFor="fa" className="font-farsi mx-3 grow">
+                  <label
+                    htmlFor="fa"
+                    className={`font-farsi mx-3 grow ${
+                      locale === "fa" && "font-bold"
+                    }`}
+                  >
                     {t.farsi}
                   </label>
                 </div>
@@ -64,17 +72,23 @@ const Language = () => {
 
             <Link href={`${route.asPath}`} locale="en">
               <a className="whitespace-nowrap flex justify-start items-center mt-3">
-                <div onClick={() => setOpenLang(false)}>
+                <div
+                  className="flex items-center"
+                  onClick={() => setOpenLang(false)}
+                >
                   <input
                     type="radio"
                     id="en"
                     name="language"
                     value={lang}
-                    className="accent-rose-600"
+                    className="hidden md:block accent-rose-600"
                     checked={locale === "en" ? true : false}
                     onChange={onChangeHandler}
                   />
-                  <label htmlFor="en" className=" mx-3 grow">
+                  <label
+                    htmlFor="en"
+                    className={`mx-3 grow ${locale === "en" && "font-bold"}`}
+                  >
                     {t.english}
                   </label>
                 </div>

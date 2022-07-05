@@ -4,10 +4,11 @@ import Image from "next/image";
 
 import SearchBar from "./SearchBar";
 import Theme from "./Theme";
-import Language from "./Language";
+import Language from "./language/Language";
 import CartIcon from "../cart/CartIcon";
 import SideBarMenu from "./menu/SideBarMenu";
 import MegaMenu from "./menu/MegaMenu";
+import Settings from "./Settings";
 import dynamic from "next/dynamic";
 const UserBox = dynamic(() => import("./user"), {
   ssr: false,
@@ -18,26 +19,21 @@ const Header = () => {
     <header className="md:fixed left-0 right-0 top-0 md:bg-palette-fill shadow-sm pt-4 z-[1000]">
       {/* 📱 sm break point */}
       <div className="md:hidden">
-        <div className="flex justify-between mb-2">
-          <div className="flex items-center">
-            <SideBarMenu />
-            <Link href="/" className="">
-              <a className="flex items-center w-full ">
-                <Image
-                  src="/images/logo.png"
-                  alt="zishop-logo"
-                  width={120}
-                  height={25}
-                  objectFit="contain"
-                  className="cursor-pointer ltr:-mr-3 "
-                />
-              </a>
-            </Link>
-          </div>
-          <div className="flex justify-between items-center ">
-            <Language />
-            <Theme />
-          </div>
+        <div className="flex items-center justify-between">
+          <SideBarMenu />
+          <Link href="/" className="">
+            <a className="flex items-center justify-center w-full flex-grow">
+              <Image
+                src="/images/logo.png"
+                alt="zishop-logo"
+                width={120}
+                height={25}
+                objectFit="contain"
+                className="cursor-pointer"
+              />
+            </a>
+          </Link>
+          <Settings />
         </div>
         <hr />
         <div className="mb-2 mt-4 flex flex-wrap items-center">
