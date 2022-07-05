@@ -38,7 +38,7 @@ const Header = () => {
         <hr />
         <div className="mb-2 mt-4 flex flex-wrap items-center">
           <SearchBar />
-          <div className="ltr:ml-4 rtl:mr-4 flex items-center justify-between ">
+          <div className="ltr:ml-auto rtl:mr-auto mt-2 sm:mt-0 sm:ltr:ml-4 sm:rtl:mr-4 flex items-center justify-between">
             <UserBox />
             <CartIcon />
           </div>
