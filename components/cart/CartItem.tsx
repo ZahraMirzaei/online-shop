@@ -51,7 +51,7 @@ const CartItem: React.FC<Props> = ({ product }) => {
         <Link
           href={`/${product.category[0]}/${product.category[1]}/${product.category[2]}/${product.slug.current}`}
         >
-          <a className="flex flex-wrap sm:flex-nowrap items-center flex-grow">
+          <a className="flex flex-wrap sm:flex-nowrap justify-center items-center flex-grow">
             <div className="sm:min-w-[100px] md:min-w-[130px]">
               <Image
                 src={urlFor(product?.image[0]).url()}
