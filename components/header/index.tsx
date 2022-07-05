@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 import SearchBar from "./SearchBar";
-import Theme from "./Theme";
 import Language from "./language/Language";
 import CartIcon from "../cart/CartIcon";
 import SideBarMenu from "./menu/SideBarMenu";
@@ -11,6 +10,9 @@ import MegaMenu from "./menu/MegaMenu";
 import Settings from "./Settings";
 import dynamic from "next/dynamic";
 const UserBox = dynamic(() => import("./user"), {
+  ssr: false,
+});
+const Theme = dynamic(() => import("./theme/Theme"), {
   ssr: false,
 });
 

@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineSetting } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
 import { settingBoxActions } from "../../store/settingBox-slice";
-import Theme from "./Theme";
+import Theme from "./theme/Theme";
 import Language from "./language/Language";
 import { ISettingBoxRootState } from "../../lib/types/settingBox";
 
@@ -32,9 +32,9 @@ const Settings = () => {
             className="fixed inset-0 -z-1 bg-black/20"
             onClick={onCloseSettingBox}
           ></div>
-          <div className="absolute top-full ltr:right-0 rtl:left-0 bg-palette-card shadow-md rounded-lg px-3 py-3 ">
+          <div className="absolute top-8 ltr:right-0 rtl:left-0 bg-palette-card shadow-md rounded-lg px-6 py-3 ">
             <Language />
-            <hr />
+            <hr className="my-1" />
             <Theme />
           </div>
         </>
