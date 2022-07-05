@@ -11,7 +11,11 @@ import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 import { IActiveMenuItemRootState } from "../../lib/types/activeMenuItem";
 
 interface Props {
-  onClick?: (submenu: IDropDown[] | undefined, activeItemName: string) => void;
+  onClick?: (
+    submenu: IDropDown[] | undefined,
+    activeItemName: string,
+    index: number
+  ) => void;
   onMouseOver?: (
     submenu: IDropDown[] | undefined,
     index: number,
@@ -25,6 +29,15 @@ const MenuItems: React.FC<Props> = (props) => {
   const dispatch = useDispatch();
   const { width } = useWindowDimensions();
   const ArrowDirection = locale === "en" ? HiChevronRight : HiChevronLeft;
+
+  function onMenuItemClickHandler(
+    productsGroup: IDropDown[] | undefined,
+    category: string,
+    index: number
+  ) {
+    props.onClick && props.onClick(productsGroup, category, index);
+    width >= 768 && dispatch(megaMenuActions.closeMegaMenu());
+  }
 
   const activeMenuItemIndex = useSelector(
     (state: IActiveMenuItemRootState) =>
@@ -43,10 +56,13 @@ const MenuItems: React.FC<Props> = (props) => {
                 className={`flex items-center mt-3 px-5  cursor-pointer text-sm ${
                   index === activeMenuItemIndex ? "md:text-palette-primary" : ""
                 }`}
-                onClick={() => {
-                  props.onClick?.(item.productsGroup, item.category);
-                  width >= 768 && dispatch(megaMenuActions.closeMegaMenu());
-                }}
+                onClick={() =>
+                  onMenuItemClickHandler(
+                    item.productsGroup,
+                    item.category,
+                    index
+                  )
+                }
                 onMouseOver={() =>
                   props.onMouseOver?.(item.productsGroup, index, item.category)
                 }

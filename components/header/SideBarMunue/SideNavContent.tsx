@@ -13,11 +13,13 @@ const SideNavContent = () => {
   const dispatch = useDispatch();
   const openNav = (
     sidebarSideContent: IDropDown[] = [],
-    activeItemName: string
+    activeItemName: string,
+    activeItemIndex: number
   ) => {
     dispatch(sideNavBarActions.setSidebarEntries(sidebarSideContent));
     dispatch(sideNavBarActions.openSidebar());
     dispatch(activeMenuItemActions.setActiveMenuItemText(activeItemName));
+    dispatch(activeMenuItemActions.setActiveMenuItemIndex(activeItemIndex));
   };
   return (
     <div className="absolute w-full h-full overflow-y-auto">
