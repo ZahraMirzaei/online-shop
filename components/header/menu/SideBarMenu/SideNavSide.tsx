@@ -6,13 +6,13 @@ import {
   HiChevronRight,
   HiChevronLeft,
 } from "react-icons/hi";
-import DropDown from "../../UI/DropDown";
+import DropDown from "../../../UI/DropDown";
 import { useDispatch, useSelector } from "react-redux";
-import { sideNavBarActions } from "../../../store/sideNavBar-slice";
-import { ISideNavBarRootState } from "../../../lib/types/sidebar";
-import { useLanguage } from "../../../hooks/useLanguage";
+import { sideNavBarActions } from "../../../../store/sideNavBar-slice";
+import { ISideNavBarRootState } from "../../../../lib/types/sidebar";
+import { useLanguage } from "../../../../hooks/useLanguage";
 import Link from "next/link";
-import { IActiveMenuItemRootState } from "../../../lib/types/activeMenuItem";
+import { IActiveMenuItemRootState } from "../../../../lib/types/activeMenuItem";
 
 const SideNavSide = () => {
   const dispatch = useDispatch();

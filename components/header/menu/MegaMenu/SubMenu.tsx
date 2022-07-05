@@ -1,10 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { useLanguage } from "../../../hooks/useLanguage";
-import { IDropDown } from "../../../lib/types/dropDown";
+import { useLanguage } from "../../../../hooks/useLanguage";
+import { IDropDown } from "../../../../lib/types/dropDown";
 import { useDispatch, useSelector } from "react-redux";
-import { megaMenuActions } from "../../../store/megaMenu-slice";
-import { IActiveMenuItemRootState } from "../../../lib/types/activeMenuItem";
+import { megaMenuActions } from "../../../../store/megaMenu-slice";
+import { IActiveMenuItemRootState } from "../../../../lib/types/activeMenuItem";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 
 interface Props {

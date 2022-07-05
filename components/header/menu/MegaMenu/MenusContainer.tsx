@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { activeMenuItemActions } from "../../../store/activeMenuItem-slice";
-import menuItems from "../../../mock/menuItems";
-import MenuItems from "../../UI/MenuItems";
-import { IDropDown } from "../../../lib/types/dropDown";
+import { activeMenuItemActions } from "../../../../store/activeMenuItem-slice";
+import menuItems from "../../../../mock/menuItems";
+import MenuItems from "../../../UI/MenuItems";
+import { IDropDown } from "../../../../lib/types/dropDown";
 import SubMenu from "./SubMenu";
 const MenusContainer = () => {
   const [subMenuItems, setSubMenuItems] = useState<IDropDown[]>();

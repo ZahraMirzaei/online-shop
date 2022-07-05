@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { extraMenu } from "../../../mock/menuItems";
-import { useLanguage } from "../../../hooks/useLanguage";
+import { extraMenu } from "../../../../mock/menuItems";
+import { useLanguage } from "../../../../hooks/useLanguage";
 
 const ExtraMenu = () => {
   const { t } = useLanguage();

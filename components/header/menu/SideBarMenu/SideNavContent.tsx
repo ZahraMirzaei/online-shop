@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import { useLanguage } from "../../../hooks/useLanguage";
-import { extraMenu } from "../../../mock/menuItems";
+import { useLanguage } from "../../../../hooks/useLanguage";
+import { extraMenu } from "../../../../mock/menuItems";
 import { useDispatch } from "react-redux";
-import { sideNavBarActions } from "../../../store/sideNavBar-slice";
-import { activeMenuItemActions } from "../../../store/activeMenuItem-slice";
-import { IDropDown } from "../../../lib/types/dropDown";
-import MenuItems from "../../UI/MenuItems";
+import { sideNavBarActions } from "../../../../store/sideNavBar-slice";
+import { activeMenuItemActions } from "../../../../store/activeMenuItem-slice";
+import { IDropDown } from "../../../../lib/types/dropDown";
+import MenuItems from "../../../UI/MenuItems";
 
 const SideNavContent = () => {
   const { t } = useLanguage();

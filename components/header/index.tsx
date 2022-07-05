@@ -6,8 +6,8 @@ import SearchBar from "./SearchBar";
 import Theme from "./Theme";
 import Language from "./Language";
 import CartIcon from "../cart/CartIcon";
-import SideBarMenu from "./SideBarMenu";
-import MegaMenu from "./MegaMenu";
+import SideBarMenu from "./menu/SideBarMenu";
+import MegaMenu from "./menu/MegaMenu";
 import dynamic from "next/dynamic";
 const UserBox = dynamic(() => import("./user"), {
   ssr: false,
