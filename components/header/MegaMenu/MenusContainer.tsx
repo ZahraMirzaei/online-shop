@@ -5,7 +5,7 @@ import menuItems from "../../../mock/menuItems";
 import MenuItems from "../../UI/MenuItems";
 import { IDropDown } from "../../../lib/types/dropDown";
 import Submenu from "./Submenu";
-const Menu = () => {
+const MenusContainer = () => {
   const [submenu, setSubmenu] = useState<IDropDown[]>();
   const dispatch = useDispatch();
   function activeItem(
@@ -37,4 +37,4 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default MenusContainer;

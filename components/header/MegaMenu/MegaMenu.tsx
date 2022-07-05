@@ -4,7 +4,7 @@ import { megaMenuActions } from "../../../store/megaMenu-slice";
 import { Transition } from "react-transition-group";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { GoGrabber } from "react-icons/go";
-import Menu from "./Menu";
+import MenusContainer from "./MenusContainer";
 import { IMegaMenuRootState } from "../../../lib/types/megaMenu";
 
 const MegaMenu = () => {
@@ -55,7 +55,7 @@ const MegaMenu = () => {
                 onClick={closeMegaMenuHandler}
               ></div>
               <div className="absolute top-full left-0 right-0 bg-palette-card z-[110] shadow-md rounded-br-lg rounded-bl-lg">
-                <Menu />
+                <MenusContainer />
               </div>
             </div>
           );
