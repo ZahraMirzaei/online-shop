@@ -7,8 +7,7 @@ import Theme from "./Theme";
 import Language from "./Language";
 import CartIcon from "../cart/CartIcon";
 import SideBarMenu from "./SideBarMenu";
-import MegaMenu from "./MegaMenu/MegaMenu";
-import ExtraMenu from "./MegaMenu/ExtraMenu";
+import MegaMenu from "./MegaMenu";
 import dynamic from "next/dynamic";
 const UserBox = dynamic(() => import("./user"), {
   ssr: false,
@@ -74,10 +73,7 @@ const Header = () => {
           </div>
         </div>
         <div className="hidden md:flex justify-between items-center my-4">
-          <div className="flex items-center grow">
-            <MegaMenu />
-            <ExtraMenu />
-          </div>
+          <MegaMenu />
           <div className="flex items-center justify-between ">
             <Language />
             <Theme />
