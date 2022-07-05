@@ -4,22 +4,22 @@ import { activeMenuItemActions } from "../../../store/activeMenuItem-slice";
 import menuItems from "../../../mock/menuItems";
 import MenuItems from "../../UI/MenuItems";
 import { IDropDown } from "../../../lib/types/dropDown";
-import Submenu from "./Submenu";
+import SubMenu from "./SubMenu";
 const MenusContainer = () => {
-  const [submenu, setSubmenu] = useState<IDropDown[]>();
+  const [subMenuItems, setSubMenuItems] = useState<IDropDown[]>();
   const dispatch = useDispatch();
   function activeItem(
     submenuList: IDropDown[] | undefined,
     activeItemIndex: number,
     activeItemName: string
   ) {
-    setSubmenu(submenuList);
+    setSubMenuItems(submenuList);
     dispatch(activeMenuItemActions.setActiveMenuItemIndex(activeItemIndex));
     dispatch(activeMenuItemActions.setActiveMenuItemText(activeItemName));
   }
 
   useEffect(() => {
-    setSubmenu(menuItems[0].productsGroup);
+    setSubMenuItems(menuItems[0].productsGroup);
     return () => {
       dispatch(activeMenuItemActions.setActiveMenuItemIndex(0));
       dispatch(activeMenuItemActions.setActiveMenuItemText("digital"));
@@ -32,7 +32,7 @@ const MenusContainer = () => {
       <nav className="md:w-72 md:py-4 ltr:border-r-2 rtl:border-l-2 border-slate-300">
         <MenuItems onMouseOver={activeItem} />
       </nav>
-      <Submenu subMenu={submenu} />
+      <SubMenu subMenuItems={subMenuItems} />
     </div>
   );
 };

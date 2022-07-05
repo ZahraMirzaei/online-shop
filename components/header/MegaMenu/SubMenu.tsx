@@ -8,9 +8,9 @@ import { IActiveMenuItemRootState } from "../../../lib/types/activeMenuItem";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 
 interface Props {
-  subMenu: IDropDown[] | undefined;
+  subMenuItems: IDropDown[] | undefined;
 }
-const Submenu: React.FC<Props> = ({ subMenu }) => {
+const SubMenu: React.FC<Props> = ({ subMenuItems }) => {
   const { t, locale } = useLanguage();
   const ArrowDirection = locale === "en" ? HiChevronRight : HiChevronLeft;
   const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const Submenu: React.FC<Props> = ({ subMenu }) => {
   return (
     <div className="flex flex-col px-6 py-5 w-full">
       <div className="flex items-center hover:text-palette-primary transition-color duration-300">
-        {subMenu ? (
+        {subMenuItems ? (
           <>
             <Link href={`/${activeMenuItemText}`}>
               <a className="block rtl:ml-4 lrt:mr-4 text-[16px] ">
@@ -36,9 +36,9 @@ const Submenu: React.FC<Props> = ({ subMenu }) => {
       </div>
       <br />
       <div className="relative grow md:columns-[188px] xl:columns-3 xl:max-w-4xl    ">
-        {subMenu ? (
+        {subMenuItems ? (
           <>
-            {subMenu.map((menuTitle, index) => {
+            {subMenuItems.map((menuTitle, index) => {
               return (
                 <div className="py-3" key={`${menuTitle}-${index}`}>
                   <Link href={`/${activeMenuItemText}/${menuTitle.title}`}>
@@ -85,4 +85,4 @@ const Submenu: React.FC<Props> = ({ subMenu }) => {
   );
 };
 
-export default Submenu;
+export default SubMenu;
