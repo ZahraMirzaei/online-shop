@@ -2,7 +2,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import { useLanguage } from "../../hooks/useLanguage";
 import menuItems from "../../mock/menuItems";
-import Link from "next/link";
 import { useWindowDimensions } from "../../hooks/useWindowDimensions";
 
 const SubmenuCategory = () => {
