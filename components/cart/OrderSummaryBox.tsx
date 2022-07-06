@@ -14,10 +14,10 @@ const OrderSummaryBox = () => {
   const totalQuantity = useSelector(
     (state: ICartRootState) => state.cart.totalQuantity
   );
-  const itemList = useSelector((state: ICartRootState) => state.cart.items);
+
   return (
     <>
-      {itemList.length ? (
+      {totalQuantity > 0 ? (
         <div className="flex-grow sticky bottom-0 left-0 right-0 md:top-36 shadow-lg bg-palette-card border-2 rounded-lg py-4 xl:py-12 px-4 xl:px-8 -mx-[1rem] md:mx-4 xl:mx-8 mt-2 w-[100vw] md:w-auto  md:min-w-[300px] md:max-w-[400px]">
           <h3 className="text-md sm:text-lg md:text-xl">{t.orderSummary}</h3>
           <div className="flex flex-col my-1 sm:my-2">
