@@ -10,6 +10,7 @@ import sideNavBarReducer from "./sideNavBar-slice";
 import megaMenuReducer from "./megaMenu-slice";
 import activeMenuItemReducer from "./activeMenuItem-slice";
 import settingBoxReducer from "./settingBox-slice";
+import favoriteReducer from "./favorite-slice";
 
 const store = configureStore({
   reducer: {
@@ -23,6 +24,7 @@ const store = configureStore({
     megaMenu: megaMenuReducer,
     activeMenuItem: activeMenuItemReducer,
     settingBox: settingBoxReducer,
+    favorite: favoriteReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
