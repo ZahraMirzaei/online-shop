@@ -1,15 +1,6 @@
-export interface IFavoriteItem {
-  slug: string;
-  name: string;
-  image: any;
-  brand: string;
-  category: string[];
-  price: number;
-  discount?: number;
-}
-
+import { IProduct } from "./products";
 export interface IFavorite {
-  items: IFavoriteItem[];
+  items: IProduct[];
 }
 
 export interface IFavoriteRootState {
