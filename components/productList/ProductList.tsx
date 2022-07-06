@@ -47,7 +47,7 @@ const ProductList: React.FC<Props> = ({ productList }) => {
             selectedBtn={selectedRadioBtn}
             onChangeSelectedBtn={onChangeHandler}
           />
-          <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 max-w-[1700px]">
+          <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 max-w-[1700px] mx-auto">
             {productsSortedList
               ? productsSortedList.map((product: IProduct) => {
                   return <Card key={product.slug.current} product={product} />;
@@ -61,7 +61,7 @@ const ProductList: React.FC<Props> = ({ productList }) => {
             selectedBtn={selectedRadioBtn}
             onChangeSelectedBtn={onChangeHandler}
           />
-          <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 max-w-[1700px]">
+          <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 max-w-[1700px] mx-auto">
             {productList
               ? productList.map((product: IProduct) => {
                   return <Card key={product.slug.current} product={product} />;
