@@ -21,8 +21,8 @@ const UserAccountBox: React.FC<Props> = ({ onClose }) => {
   return (
     <div>
       <ul>
-        <li className="my-1 py-1">
-          <Link href={"/"}>
+        <li className="my-1 py-1" onClick={onClose}>
+          <Link href={"/favorite"}>
             <a className="flex items-center hover:text-palette-primary">
               <AiOutlineHeart
                 style={{
