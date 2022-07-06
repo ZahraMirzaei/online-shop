@@ -4,6 +4,8 @@ const en: { [key: string]: string } = {
   login: "Login",
   logout: "Logout",
   favorites: "Favorites",
+  delete: "Delete",
+  thereAreNoFavorites: "currently, there are no favorite items",
   signIn: "Sign in",
   seeCart: "See Cart",
   product: "Product",

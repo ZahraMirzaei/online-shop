@@ -5,6 +5,8 @@ const fa: { [key: string]: string } = {
   signIn: "ثبت‌نام",
   logout: "خروج",
   favorites: "علاقه‌مندی‌ها",
+  delete: "حذف",
+  thereAreNoFavorites: "در حال حاضر، هیچ آیتم مورد علاقه وجود ندارد.",
   seeCart: "مشاهدۀ سبد خرید",
   product: "کالا",
   totalAmount: "قیمت کل",
