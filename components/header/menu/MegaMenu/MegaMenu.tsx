@@ -43,7 +43,7 @@ const MegaMenu = () => {
           return (
             <div ref={nodeRef} className="z-[100]">
               <div
-                className={`fixed top-[7.2rem] inset-0 bg-gray-600/60
+                className={`fixed top-[8.2rem] inset-0 bg-gray-600/60
                 ${
                   state === "entering"
                     ? "animate-fadeEntering"

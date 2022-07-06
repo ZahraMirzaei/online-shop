@@ -4,7 +4,7 @@ import MegaMenu from "./MegaMenu";
 
 const index = () => {
   return (
-    <div className="flex items-center grow">
+    <div className="hidden md:flex items-center flex-grow">
       <MegaMenu />
       <ExtraMenu />
     </div>

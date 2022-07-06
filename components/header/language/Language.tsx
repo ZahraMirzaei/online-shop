@@ -33,6 +33,7 @@ const Language = () => {
           />
         </div>
       </div>
+
       <div
         className="hidden md:flex items-center cursor-pointer"
         onClick={() => setOpenLang((prevState) => !prevState)}
@@ -40,7 +41,6 @@ const Language = () => {
         <p className="mx-[0.3rem] text-sm font-bold font-english">
           {locale === "en" ? "En" : "Fa"}
         </p>
-
         <MdLanguage style={{ fontSize: "1.3rem" }} />
       </div>
       {openLang ? (

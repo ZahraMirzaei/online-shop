@@ -4,7 +4,7 @@ import SideNavSide from "./SideNavSide";
 
 const index = () => {
   return (
-    <div>
+    <div className="md:hidden">
       <SideBar />
       <SideNavSide />
     </div>
