@@ -22,23 +22,10 @@ const CallToAction: React.FC<Props> = ({ product }) => {
 
   const dispatch = useDispatch();
 
-  const productInfoAddToCart = {
-    image: product.image,
-    name: product.name,
-    slug: product.slug,
-    price: product.price,
-    discount: product.discount ? product.discount : undefined,
-    brand: product.brand,
-    category: product.category,
-    starRating: product.starRating,
-    quantity: 1,
-    totalPrice: product.price,
-  };
-
   function addToCartHandler() {
     dispatch(
       cartActions.addItemToCart({
-        product: productInfoAddToCart,
+        product: product,
         quantity: counter,
       })
     );

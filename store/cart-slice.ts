@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICart } from "../lib/types/cart";
-import { ICartProduct } from "../lib/types/cart";
+import { IProduct } from "../lib/types/products";
 import { calculateDiscountPercentage } from "../utilities/calculateDiscountPercentage";
 
 const initialState: ICart = {
@@ -15,7 +15,7 @@ const cartSlice = createSlice({
   reducers: {
     addItemToCart(
       state: ICart,
-      action: PayloadAction<{ product: ICartProduct; quantity: number }>
+      action: PayloadAction<{ product: IProduct; quantity: number }>
     ) {
       const newItem = action.payload.product;
 
@@ -42,14 +42,7 @@ const cartSlice = createSlice({
             : newItem.price) * action.payload.quantity;
 
         state.items.push({
-          image: newItem.image,
-          name: newItem.name,
-          slug: newItem.slug,
-          price: newItem.price,
-          discount: newItem.discount,
-          brand: newItem.brand,
-          category: newItem.category,
-          starRating: newItem.starRating,
+          ...newItem,
           quantity: action.payload.quantity,
           totalPrice,
         });

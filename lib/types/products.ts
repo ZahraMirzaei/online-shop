@@ -41,11 +41,11 @@ export interface IProduct {
   slug: TSlug;
   price: number;
   discount?: number;
-  details: IProductDetails[];
+  details?: IProductDetails[];
   brand: string;
   category: string[];
-  isOffer: boolean;
-  registerDate: string;
+  isOffer?: boolean;
+  registerDate?: string;
   timeStamp?: number;
   starRating: number;
 }

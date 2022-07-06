@@ -1,4 +1,4 @@
-import { TSlug } from "./products";
+import { IProductDetails, TSlug } from "./products";
 
 export interface ICartProduct {
   image: any;
@@ -9,6 +9,9 @@ export interface ICartProduct {
   brand: string;
   category: string[];
   starRating: number;
+  isOffer?: boolean;
+  details?: IProductDetails[];
+  registerDate?: string;
   quantity: number;
   totalPrice: number;
 }
