@@ -21,7 +21,7 @@ const Slide: React.FC<Props> = ({ title, description, bgImg, url }) => {
         <Link href={url}>
           <a className="block">
             <div
-              className={`backdrop-filter backdrop-blur-[10px] bg-palette-card/40 p-3 md:p-8 lg:p-10 shadow-lg md:overflow-hidden ltr:text-left rtl:text-right rounded-md md:w-[60%] lg:w-[50%] md:mt-auto absolute bottom-0 md:top-[45%] md:right-[25%] md:bottom-auto`}
+              className={`backdrop-filter backdrop-blur-[12px] bg-palette-card/60 p-3 md:p-8 lg:p-10 shadow-lg md:overflow-hidden ltr:text-left rtl:text-right rounded-md md:w-[60%] lg:w-[50%] md:mt-auto absolute bottom-0 md:top-[45%] md:right-[25%] md:bottom-auto`}
             >
               <h3 className="text-lg md:text-2xl lg:text-3xl font-medium">
                 {t[`${title}`]}
