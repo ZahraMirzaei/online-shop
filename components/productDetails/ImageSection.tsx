@@ -1,20 +1,21 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { urlFor } from "../../lib/client";
-import { TImage } from "../../lib/types/products";
+import { IProduct, TImage } from "../../lib/types/products";
 import ProductPageActions from "./ProductPageActions";
 
 interface Props {
   imgArray: TImage[];
+  product: IProduct;
 }
-const ImageSection: React.FC<Props> = ({ imgArray }) => {
+const ImageSection: React.FC<Props> = ({ imgArray, product }) => {
   const [selectedImg, setSelectedImg] = useState(0);
   function onClickHandler(index: number) {
     setSelectedImg(index);
   }
   return (
     <div className="flex items-start rounded-lg w-full md:w-auto">
-      <ProductPageActions />
+      <ProductPageActions product={product} />
       <div className="flex flex-col items-center w-full md:w-auto">
         <div className="flex flex-grow md:ltr:mr-3 md:rtl:ml-3">
           <Image
