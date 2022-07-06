@@ -22,7 +22,7 @@ const Settings = () => {
   }
 
   return (
-    <div className="relative flex justify-between items-center z-[150]">
+    <div className="relative md:hidden flex justify-between items-center z-[150]">
       <div onClick={toggleShowSettingBox}>
         <AiOutlineSetting style={{ fontSize: "1.5rem" }} />
       </div>
