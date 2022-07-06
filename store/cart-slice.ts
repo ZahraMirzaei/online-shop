@@ -105,7 +105,7 @@ const cartSlice = createSlice({
       }
     },
 
-    clearCart(state: ICart) {
+    clearCart(state) {
       state = initialState;
     },
   },
