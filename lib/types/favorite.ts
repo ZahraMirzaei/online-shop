@@ -1,7 +1,3 @@
-export interface IFavorite {
-  items: IFavoriteItem[];
-}
-
 export interface IFavoriteItem {
   slug: string;
   name: string;
@@ -10,4 +6,12 @@ export interface IFavoriteItem {
   category: string[];
   price: number;
   discount?: number;
+}
+
+export interface IFavorite {
+  items: IFavoriteItem[];
+}
+
+export interface IFavoriteRootState {
+  favorite: IFavorite;
 }
