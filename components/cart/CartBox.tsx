@@ -6,7 +6,6 @@ import { useLanguage } from "../../hooks/useLanguage";
 import { ICartRootState } from "../../lib/types/cart";
 import { changeNumbersFormatEnToFa } from "../../utilities/changeNumbersFormatEnToFa";
 import { gbpCurrencyFormat } from "../../utilities/currencyFormat";
-import { ICartProduct } from "../../lib/types/cart";
 import CartItem from "./CartItem";
 import { useExchangeRateGBPToIRR } from "../../hooks/useExchangeRateGBPToIRR";
 import { IUserInfoRootState } from "../../lib/types/user";
@@ -23,17 +22,13 @@ const CartBox = () => {
     (state: ICartRootState) => state.cart.totalAmount
   );
 
-  const cartItems: ICartProduct[] = useSelector(
-    (state: ICartRootState): ICartProduct[] => {
-      return state.cart.items;
-    }
+  const cartItems = useSelector((state: ICartRootState) => state.cart.items);
+
+  const userInfo = useSelector(
+    (state: IUserInfoRootState) => state.userInfo.userInformation
   );
 
-  const userInfo = useSelector((state: IUserInfoRootState) => {
-    return state.userInfo.userInformation;
-  });
-
-  function onSeeCartClickHandler() {
+  function onCloseCartBoxHandler() {
     dispatch(cartUiActions.toggleCartBox(false));
   }
 
@@ -49,7 +44,7 @@ const CartBox = () => {
               : changeNumbersFormatEnToFa(cartItemQuantity)}{" "}
             {t.product}
           </span>
-          <span onClick={onSeeCartClickHandler}>
+          <span onClick={onCloseCartBoxHandler}>
             <Link href="/cart">
               <a className="text-cyan-500">{t.seeCart}</a>
             </Link>
@@ -80,17 +75,21 @@ const CartBox = () => {
               </p>
             </div>
             {!userInfo ? (
-              <Link href={"/login"}>
-                <a className="py-2 px-3 bg-palette-primary text-[12px] text-palette-side rounded-lg">
-                  {t.loginAndOrder}
-                </a>
-              </Link>
+              <div onClick={onCloseCartBoxHandler}>
+                <Link href={"/login"}>
+                  <a className="py-2 px-3 bg-palette-primary text-[12px] text-palette-side rounded-lg">
+                    {t.loginAndOrder}
+                  </a>
+                </Link>
+              </div>
             ) : (
-              <Link href={"/"}>
-                <a className="py-2 px-10 bg-palette-primary text-[12px] text-palette-side rounded-lg">
-                  {t.order}
-                </a>
-              </Link>
+              <div onClick={onCloseCartBoxHandler}>
+                <Link href={"/cart"}>
+                  <a className="py-2 px-10 bg-palette-primary text-[12px] text-palette-side rounded-lg">
+                    {t.order}
+                  </a>
+                </Link>
+              </div>
             )}
           </div>
         ) : null}

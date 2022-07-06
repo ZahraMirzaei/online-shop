@@ -4,9 +4,7 @@ import { ICartRootState, ICartProduct } from "../../lib/types/cart";
 import CartItem from "./CartItem";
 
 const CartList = () => {
-  const cartItems: ICartProduct[] = useSelector((state: ICartRootState) => {
-    return state.cart.items;
-  });
+  const cartItems = useSelector((state: ICartRootState) => state.cart.items);
   return (
     <div>
       <div className="max-w-[950px]">
