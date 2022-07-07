@@ -18,6 +18,7 @@ const SubMenu: React.FC<Props> = ({ subMenuItems }) => {
   const activeMenuItemText = useSelector(
     (state: IActiveMenuItemRootState) => state.activeMenuItem.activeMenuItemText
   );
+
   return (
     <div className="flex flex-col px-6 py-5 w-full">
       <div className="flex items-center hover:text-palette-primary transition-color duration-300">
@@ -56,7 +57,9 @@ const SubMenu: React.FC<Props> = ({ subMenuItems }) => {
                     return (
                       <div key={`${subTitle}-${index}`}>
                         <Link
-                          href={`/${activeMenuItemText}/${menuTitle.title}/${subTitle}`}
+                          href={`/${activeMenuItemText && activeMenuItemText}/${
+                            menuTitle.title
+                          }/${subTitle}`}
                         >
                           <a className="block py-2 hover:text-palette-primary transition-color duration-200">
                             <div

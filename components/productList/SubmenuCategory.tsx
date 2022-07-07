@@ -18,7 +18,9 @@ const SubmenuCategory = () => {
     icon: item.icon,
   }));
   function onClickHandler(subCategory: string) {
-    router.replace(`/${selectedCategory[0]?.category}/${subCategory}`);
+    if (selectedCategory[0].category) {
+      router.push(`/${selectedCategory[0].category}/${subCategory}`);
+    }
   }
 
   return subCategories ? (
