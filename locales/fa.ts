@@ -229,5 +229,9 @@ const fa: { [key: string]: string } = {
   signUp: "ثبت‌نام",
   Invalid_email_or_password: "ایمیل یا رمزعبور اشتباه است.",
   Email_already_exists: "در حال حاضر این ایمیل وجود دارد",
+  aboutLongText:
+    "قالب فروشگاه ZShop جهت تثبیت دانش front-end بنده، با استفاده از تکنولوژی‌هایی نظیر TailwindCSS, Reactjs, TypeScript, Nextjsو ... به عنوان نمونه کار ، نوشته شده. از CafeDX و البته مهندس سید مهدی حسن‌پور، بابت تمام حمایت‌ها و نظراتشون از صمیم قلب سپاسگزارم.",
+  aboutEnjoy: "امیدوارم از تماشا و کار با این قالب لذت ببرید.",
+  myName: "زهرا میرزایی",
 };
 export default fa;
