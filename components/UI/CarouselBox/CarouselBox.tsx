@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useLanguage } from "../../../hooks/useLanguage";
 import { NextArrow, PrevArrow } from "./CarouselBoxArrows";
 import Slider from "react-slick";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
 
 interface Props {
   title: string;
@@ -22,7 +23,7 @@ const CarouselBox: React.FC<Props> = ({
 
   const settings = {
     className: ` px-4 ${full ? "bg-palette-fill" : "bg-[#37bccef9]"}`,
-    infinite: false,
+    infinite: true,
     speed: 600,
     centerPadding: "60px",
     slidesToShow: 5,
@@ -91,9 +92,19 @@ const CarouselBox: React.FC<Props> = ({
         ) : null}
       </div>
       <div
-        className={`${full ? "w-full mt-4" : "w-[55%] sm:w-[75%] md:w-[85%]"}`}
+        className={`relative ${
+          full ? "w-full mt-4" : "w-[55%] sm:w-[75%] md:w-[85%]"
+        }`}
       >
         <Slider {...settings}>{children}</Slider>
+        <div>
+          <div className="absolute top-[45%] right-4 md:right-1 shadow-lg rounded-full bg-palette-card p-1 drop-shadow-lg text-[0.8rem] md:text-[1.8rem]">
+            <HiOutlineChevronRight style={{ color: "gray" }} />
+          </div>
+          <div className="absolute top-[45%] left-4 md:-left-1 shadow-lg rounded-full bg-palette-card p-1 drop-shadow-lg text-[0.8rem] md:text-[1.8rem]">
+            <HiOutlineChevronLeft style={{ color: "gray" }} />
+          </div>
+        </div>
       </div>
     </div>
   );
