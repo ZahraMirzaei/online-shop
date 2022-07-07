@@ -4,7 +4,7 @@ function withOpacity(variableName) {
     if (opacityValue !== undefined) {
       return `rgba(var(${variableName}), ${opacityValue})`;
     }
-    return `rgba(var(${variableName})`;
+    return `rgba(var(${variableName}))`;
   };
 }
 
