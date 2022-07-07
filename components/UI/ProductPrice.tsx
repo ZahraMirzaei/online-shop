@@ -44,7 +44,7 @@ const ProductPrice: React.FC<Props> = ({
           <div className="flex items-end flex-wrap" style={{ flexDirection }}>
             <span className="flex flex-col">
               <del
-                className={`${textDiscountPriceSize} text-rose-600 dark:text-rose-300 md:text-sm`}
+                className={`text-rose-600 dark:text-rose-300 md:text-sm ${textDiscountPriceSize}`}
               >
                 <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
                 <sub className="ml-1 text-[10px]">
@@ -53,7 +53,7 @@ const ProductPrice: React.FC<Props> = ({
                 {locale === "en" ? gbpCurrencyFormat(price) : irPrice}
               </del>
               <ins
-                className={`${textMainPriceSize} font-bold self-end no-underline mt-1`}
+                className={`font-bold self-end no-underline mt-1 ${textMainPriceSize}`}
               >
                 <sup className="mr-1">{locale === "en" ? "£" : ""}</sup>
                 <sub className="ml-1 text-[10px]">
