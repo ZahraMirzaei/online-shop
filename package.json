@@ -21,6 +21,7 @@
     "@types/react-slick": "^0.23.8",
     "@types/react-star-rating-component": "^1.4.1",
     "@types/react-transition-group": "^4.4.4",
+    "@zeit/next-css": "^1.0.2-canary.0",
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "js-cookie": "^3.0.1",
