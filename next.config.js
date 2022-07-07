@@ -9,6 +9,13 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io"],
   },
+  use: {
+    loader: "url-loader",
+    options: {
+      limit: 100000,
+      name: "[name].[ext]",
+    },
+  },
 };
 
 module.exports = nextConfig;
