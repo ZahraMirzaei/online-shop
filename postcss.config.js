@@ -1,10 +1,10 @@
 module.exports = {
   plugins: [
-    "tailwindcss",
-    "autoprefixer",
+    require("tailwindcss"),
+    require("autoprefixer"),
     process.env.NODE_ENV === "production"
       ? [
-          "@fullhuman/postcss-purgecss",
+          require("@fullhuman/postcss-purgecss"),
           {
             content: [
               "./pages/**/*.{js,jsx,ts,tsx}",
