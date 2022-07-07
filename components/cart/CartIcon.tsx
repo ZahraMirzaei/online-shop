@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { Transition } from "react-transition-group";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { cartUiActions } from "../../store/cartUi-slice";
+import { cartUiActions } from "../../store/cartUI-slice";
 import CartBox from "./CartBox";
 import { ICartUiRootState, ICartRootState } from "../../lib/types/cart";
 import { changeNumbersFormatEnToFa } from "../../utilities/changeNumbersFormatEnToFa";

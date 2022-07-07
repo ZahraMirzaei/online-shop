@@ -3,7 +3,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import specialOfferProductsReducer from "./specialOfferProducts-slice";
 import newestProductReducer from "./newestProduct-slice";
 import SortedProductsListReducer from "./sortedProductList-slice";
-import cartUiReducer from "./cartUi-slice";
+import cartUiReducer from "./cartUI-slice";
 import cartSliceReducer from "./cart-slice";
 import userInfoReducer from "./user-slice";
 import sideNavBarReducer from "./sideNavBar-slice";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { cartUiActions } from "../../store/cartUi-slice";
+import { cartUiActions } from "../../store/cartUI-slice";
 import { useLanguage } from "../../hooks/useLanguage";
 import { ICartRootState } from "../../lib/types/cart";
 import { changeNumbersFormatEnToFa } from "../../utilities/changeNumbersFormatEnToFa";
