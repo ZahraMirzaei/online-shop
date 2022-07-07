@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { IBreadcrumb } from "../../lib/types/breadcrumb";
 import { useLanguage } from "../../hooks/useLanguage";
+import { BsShop } from "react-icons/bs";
 
 const convertBreadcrumb = (str: string) => {
   return str
@@ -42,7 +43,12 @@ const Breadcrumb = () => {
         <ul className="flex items-center space-x-1 md:space-x-3">
           <li className="cursor-pointer">
             <Link href="/">
-              <a className="inline-block ltr:pr-2 rtl:pl-2">{t.mainPage}</a>
+              <a className="flex ltr:pr-2 rtl:pl-2">
+                <span>
+                  <BsShop style={{ fontSize: "1.2rem" }} />
+                </span>
+                <span className="ltr:ml-1 rtl:mr-1">{t.mainPage}</span>
+              </a>
             </Link>
           </li>
           {breadcrumbs.map((breadcrumb, i) => {
