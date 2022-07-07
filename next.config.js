@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const withCSS = require("@zeit/next-css");
+
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
@@ -8,7 +8,7 @@ const nextConfig = {
     localeDetection: false,
   },
   images: {
-    domains: ["cdn.sanity.io"],
+    domains: ["cdn.sanity.io", "localhost"],
   },
   webpack: function (config) {
     config.module.rules.push({
@@ -25,4 +25,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withCSS(nextConfig);
+module.exports = nextConfig;
