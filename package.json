@@ -22,7 +22,6 @@
     "@types/react-star-rating-component": "^1.4.1",
     "@types/react-transition-group": "^4.4.4",
     "@zeit/next-css": "^1.0.2-canary.0",
-    "autoprefixer": "^9.8.8",
     "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "js-cookie": "^3.0.1",
@@ -31,7 +30,6 @@
     "next-connect": "^0.12.2",
     "next-sanity-image": "^3.2.1",
     "next-themes": "^0.2.0",
-    "postcss": "^7.0.39",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-hot-toast": "^2.2.0",
@@ -43,16 +41,18 @@
     "react-transition-group": "^4.4.2",
     "slick-carousel": "^1.8.1",
     "stripe": "^9.1.0",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "url-loader": "^4.1.1"
   },
   "devDependencies": {
     "@types/node": "17.0.31",
     "@types/react": "18.0.8",
     "@types/react-dom": "18.0.3",
+    "autoprefixer": "^10.4.7",
     "eslint": "8.14.0",
     "eslint-config-next": "12.1.6",
+    "postcss": "^8.4.14",
     "postcss-import": "^14.1.0",
+    "tailwindcss": "^3.1.4",
     "typescript": "4.6.4"
   }
 }
