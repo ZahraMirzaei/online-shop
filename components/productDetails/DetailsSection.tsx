@@ -32,14 +32,14 @@ const DetailsSection: React.FC<Props> = ({ product }) => {
           </div>
           <h3 className="text-lg mt-2">{t.details}</h3>
           <div className="mt-4">
-            {Object.entries(product.details).map(([key, value]) => {
-              const detailsValue = Array.isArray(product.details[key])
-                ? [...product.details[key]].join(" - ")
-                : product.details[key] === true
+            {Object.keys(product.details!).map((key) => {
+              const detailsValue = Array.isArray(product.details![key])
+                ? [...product.details![key]].join(" - ")
+                : product.details![key] === true
                 ? t.true
-                : product.details[key] === false
+                : product.details![key] === false
                 ? t.false
-                : product.details[key];
+                : product.details![key];
 
               return (
                 <div className="flex flex-wrap items-center" key={key}>
