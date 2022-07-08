@@ -146,6 +146,7 @@ a {
 .slick-prev:before,
 .slick-next:before {
   opacity: 9 !important;
+  content: "" !important;
 }
 
 @media (min-width: 1024px) {
