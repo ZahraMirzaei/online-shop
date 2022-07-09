@@ -81,7 +81,7 @@ const en: { [key: string]: string } = {
   sport: "Sport and Trip",
   stationery: "Books, Stationery and Art",
   noProduct:
-    "There are no products in this category yet! There are no products in this category yet. New products will be added soon.",
+    "There are no products in this category yet! New products will be added soon.",
   digitalBT: "Have the best Experiences",
   digitalBD:
     "We provide the best Experience with the most popular Brands.  With a warranty of 18 months, you can be confident in your choice",
