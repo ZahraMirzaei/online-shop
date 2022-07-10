@@ -46,8 +46,6 @@ const Card: React.FC<Props> = ({ product }) => {
                   name="product_rate"
                   starCount={5}
                   value={product.starRating}
-                  starColor={"#ffc300"}
-                  emptyStarColor={"#d6d6d6"}
                 />
               </div>
               <h4 className="text-sm sm:text-[12px] md:text-sm text-center text-palette-mute  ">
