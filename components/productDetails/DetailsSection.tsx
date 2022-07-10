@@ -23,8 +23,8 @@ const DetailsSection: React.FC<Props> = ({ product }) => {
               name="product_rate"
               starCount={5}
               value={product.starRating}
-              starColor={"gold"}
-              emptyStarColor={"gray"}
+              starColor={"#ffc300"}
+              emptyStarColor={"#d6d6d6"}
             />
             <p className="text-sm text-palette-mute rtl:mr-2 ltr:ml-2">
               {product.starRating} {t.stars}
