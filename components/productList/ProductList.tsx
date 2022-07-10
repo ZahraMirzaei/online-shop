@@ -33,7 +33,6 @@ const ProductList: React.FC<Props> = ({ productList }) => {
   function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setSelectedRadioBtn(e.currentTarget.id);
   }
-  console.log(productList);
 
   return (
     <div>
