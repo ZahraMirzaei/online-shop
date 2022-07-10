@@ -100,6 +100,6 @@ const menuItems = [
 export default menuItems;
 
 export const extraMenu = [
-  { title: "offer", icon: AiOutlinePercentage },
-  { title: "bestSells", icon: RiFireLine },
+  { title: "offer", icon: AiOutlinePercentage, href: "/offers" },
+  { title: "bestSells", icon: RiFireLine, href: "/" },
 ];
