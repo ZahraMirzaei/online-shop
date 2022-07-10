@@ -5,9 +5,10 @@ import SubmenuCategory from "./SubmenuCategory";
 import Card from "../UI/card/Card";
 import Breadcrumb from "../UI/Breadcrumb";
 import Sort from "./Sort";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { SortedProductsListActions } from "../../store/sortedProductList-slice";
 import { useRouter } from "next/router";
+import { IProductListRootState } from "../../lib/types/productList";
 
 interface Props {
   productList: IProduct[];
@@ -30,6 +31,10 @@ const ProductList: React.FC<Props> = ({ productList }) => {
     );
   }, [dispatch, productList, selectedRadioBtn]);
 
+  const sortedProductList = useSelector(
+    (state: IProductListRootState) => state.sortedProductsList.productsList
+  );
+
   function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
     setSelectedRadioBtn(e.currentTarget.id);
   }
@@ -46,18 +51,16 @@ const ProductList: React.FC<Props> = ({ productList }) => {
               })
             : null}
         </div>
-      ) : productList.length ? (
+      ) : sortedProductList ? (
         <div>
           <Sort
             selectedBtn={selectedRadioBtn}
             onChangeSelectedBtn={onChangeHandler}
           />
           <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 max-w-[1700px] mx-auto">
-            {productList
-              ? productList.map((product: IProduct) => {
-                  return <Card key={product.slug.current} product={product} />;
-                })
-              : null}
+            {sortedProductList.map((product: IProduct) => {
+              return <Card key={product.slug.current} product={product} />;
+            })}
           </div>
         </div>
       ) : (
