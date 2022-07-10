@@ -17,7 +17,7 @@ const SideNav = forwardRef<HTMLDivElement, Props>(({ state, onClose }, ref) => {
     <>
       <div
         ref={ref}
-        className={`max-w-[380px] w-[80%] h-screen fixed top-0 shadow-md z-[1000] bg-palette-card origin-left overflow-auto 
+        className={`max-w-[380px] w-[80%] h-screen fixed top-0 shadow-md z-[1000] bg-palette-card origin-left overflow-y-auto 
         ${locale == "en" ? "left-0" : "right-0"} 
         ${locale == "en" ? "translate-x-[-100%]" : "translate-x-[100%]"}
         ${
