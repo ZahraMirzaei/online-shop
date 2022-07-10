@@ -8,6 +8,7 @@ import Sort from "./Sort";
 import { useDispatch, useSelector } from "react-redux";
 import { SortedProductsListActions } from "../../store/sortedProductList-slice";
 import { useRouter } from "next/router";
+import { IProductListRootState } from "../../lib/types/productList";
 
 interface Props {
   productList: IProduct[];
@@ -30,7 +31,7 @@ const ProductList: React.FC<Props> = ({ productList }) => {
   }, [dispatch, productList, selectedRadioBtn]);
 
   const productsSortedList = useSelector(
-    (state: any) => state.sortedProductsList.productsList
+    (state: IProductListRootState) => state.sortedProductsList.productsList
   );
 
   function onChangeHandler(e: React.ChangeEvent<HTMLInputElement>) {
@@ -41,7 +42,7 @@ const ProductList: React.FC<Props> = ({ productList }) => {
     <div>
       <Breadcrumb />
       <SubmenuCategory />
-      {productsSortedList?.length ? (
+      {productsSortedList.length ? (
         <div>
           <Sort
             selectedBtn={selectedRadioBtn}
