@@ -37,7 +37,7 @@ const index = () => {
           <div className="flex-grow">
             <SearchBar />
           </div>
-          <div className="ltr:ml-2 rtl:mr-2 sm:ltr:ml-4 sm:rtl:mr-4 flex items-center justify-between min-w-[4rem]">
+          <div className="ltr:ml-2 rtl:mr-2 sm:ltr:ml-4 sm:rtl:mr-4 flex items-center justify-between ">
             <UserBox />
             <CartIcon />
           </div>
