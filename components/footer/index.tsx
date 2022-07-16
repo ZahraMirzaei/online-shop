@@ -8,9 +8,11 @@ const Footer = () => {
   const { t, locale } = useLanguage();
   return (
     <footer>
-      <div className="flex flex-wrap mt-12  py-8 px-4 border-t-[1px] border-slate-500/30">
-        <FooterColumns />
-        <SocialPart />
+      <div className="border-t-[1px] border-slate-500/30">
+        <div className="flex flex-wrap mt-12  py-8 px-4 xl:max-w-[2100px] mx-auto">
+          <FooterColumns />
+          <SocialPart />
+        </div>
       </div>
       <div className="flex items-center justify-center flex-wrap border-t-[1px] border-slate-500/30 py-4 text-center text-sm md:text-base">
         {t.copyRight}

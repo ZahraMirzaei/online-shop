@@ -29,7 +29,7 @@ const Category = () => {
       </div>
 
       {/* 💻lg break point */}
-      <div className="hidden lg:grid  gap-4 grid-rows-9 grid-cols-2 md:grid-cols-9 max-w-[1700px] mx-auto">
+      <div className="hidden lg:grid  gap-4 grid-rows-9 grid-cols-2 md:grid-cols-9 xl:max-w-[2100px] mx-auto">
         <div className="flex justify-around items-center md:row-span-6 md:col-span-3 bg-palette-digitalCategory py-8 px-4 rounded-md shadow-lg overflow-hidden">
           <div>
             <h3 className="text-2xl font-[500]">{t.digitalCategoryTitle}</h3>
