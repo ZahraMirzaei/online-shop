@@ -7,7 +7,7 @@ const CartList = () => {
   const cartItems = useSelector((state: ICartRootState) => state.cart.items);
   return (
     <div>
-      <div className="max-w-[2100px] mx-auto">
+      <div className="w-full xl:max-w-[2100px] mx-auto">
         {cartItems.length
           ? cartItems.map((cartItem: ICartProduct) => {
               return (

@@ -6,7 +6,7 @@ import { benefitContent } from "../../mock/benefits";
 const Benefits = () => {
   const { t } = useLanguage();
   return (
-    <div className="flex items-center flex-wrap justify-evenly pt-4 my-4 xl:max-w-[2100px] mx-auto">
+    <div className="flex items-center flex-wrap justify-evenly pt-4 my-4 w-full xl:max-w-[2100px] mx-auto">
       {benefitContent.map((benefitItem) => {
         return (
           <div
