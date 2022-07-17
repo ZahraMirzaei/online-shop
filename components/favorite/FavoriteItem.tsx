@@ -26,7 +26,7 @@ const FavoriteItem: React.FC<Props> = ({ product }) => {
     dispatch(cartActions.addItemToCart({ product: product, quantity: 1 }));
   }
   return (
-    <div className="col-span-6 sm:col-span-3 lg:col-span-4 flex flex-col w-full h-full px-2 my-2 shadow-lg rounded-md bg-palette-card relative">
+    <div className="col-span-6 sm:col-span-3 lg:col-span-4 xl:col-span-3 flex flex-col w-full h-full px-2 my-2 shadow-lg rounded-md bg-palette-card relative">
       <Link
         href={`/${product.category[0]}/${product.category[1]}/${product.category[2]}/${product.slug.current}`}
       >
