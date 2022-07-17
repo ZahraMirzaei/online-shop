@@ -16,9 +16,9 @@ const Theme = dynamic(() => import("./theme/Theme"), {
 
 const index = () => {
   return (
-    <header className="md:fixed left-0 right-0 top-0 md:bg-palette-fill shadow-sm pt-4 z-[1000] relative">
-      <div className="flex flex-col md:px-4">
-        <div className="flex items-center justify-between md:order-2 md:mt-2">
+    <header className="md:fixed left-0 right-0 top-0 md:bg-palette-fill shadow-sm pt-4 z-[1000]">
+      <div className="flex flex-col md:px-4 mb-2">
+        <div className="flex items-center justify-between md:order-2 md:mt-2  relative">
           <Menu />
           <div className="md:hidden">
             <Logo />
