@@ -7,7 +7,7 @@ const SocialPart = () => {
   const { t } = useLanguage();
 
   return (
-    <div className="mt-8 md:mt-0 rtl:lg:mr-12 ltr:xl:ml-60">
+    <div className="mt-8 rtl:lg:mt-0 ltr:xl:mt-0 rtl:lg:mr-12 ltr:xl:ml-12  ltr:2xl:ml-48">
       <div>
         <h4 className="text-md sm:text-lg">{t.beWithUs}</h4>
         <div className="flex mt-3">
