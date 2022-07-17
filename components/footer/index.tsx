@@ -7,9 +7,9 @@ import { BsFillSuitHeartFill } from "react-icons/bs";
 const Footer = () => {
   const { t, locale } = useLanguage();
   return (
-    <footer>
+    <footer className="mt-12">
       <div className="border-t-[1px] border-slate-500/30">
-        <div className="flex flex-wrap mt-12  py-8 px-4 xl:max-w-[2100px] mx-auto">
+        <div className="flex flex-wrap mt-4  py-8 px-4 xl:max-w-[2100px] mx-auto">
           <FooterColumns />
           <SocialPart />
         </div>
