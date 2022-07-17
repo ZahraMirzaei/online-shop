@@ -43,29 +43,31 @@ const ProductList: React.FC<Props> = ({ productList }) => {
     <div>
       <Breadcrumb />
       <SubmenuCategory />
-      {isInNewestProductsPage && productList.length ? (
-        <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 max-w-[1700px] mx-auto">
-          {productList
-            ? productList.map((product: IProduct) => {
-                return <Card key={product.slug.current} product={product} />;
-              })
-            : null}
-        </div>
-      ) : sortedProductList ? (
-        <div>
-          <Sort
-            selectedBtn={selectedRadioBtn}
-            onChangeSelectedBtn={onChangeHandler}
-          />
-          <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12 max-w-[1700px] mx-auto">
-            {sortedProductList.map((product: IProduct) => {
-              return <Card key={product.slug.current} product={product} />;
-            })}
+      <div className=" max-w-[2100px] mx-auto">
+        {isInNewestProductsPage && productList.length ? (
+          <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12">
+            {productList
+              ? productList.map((product: IProduct) => {
+                  return <Card key={product.slug.current} product={product} />;
+                })
+              : null}
           </div>
-        </div>
-      ) : (
-        <p className="text-palette-mute text-center mt-8">{t.noProduct}</p>
-      )}
+        ) : sortedProductList ? (
+          <div>
+            <Sort
+              selectedBtn={selectedRadioBtn}
+              onChangeSelectedBtn={onChangeHandler}
+            />
+            <div className="grid gap-4 md:gap-2 grid-cols-6 md:grid-cols-12">
+              {sortedProductList.map((product: IProduct) => {
+                return <Card key={product.slug.current} product={product} />;
+              })}
+            </div>
+          </div>
+        ) : (
+          <p className="text-palette-mute text-center mt-8">{t.noProduct}</p>
+        )}
+      </div>
     </div>
   );
 };

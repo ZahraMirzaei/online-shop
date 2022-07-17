@@ -7,7 +7,7 @@ const cart: NextPage = () => {
   return (
     <div>
       <Breadcrumb />
-      <div className="flex justify-center flex-col md:flex-row items-start relative">
+      <div className="flex justify-center flex-col md:flex-row items-start relative max-w-[2100px] mx-auto">
         <CartList />
         <OrderSummaryBox />
       </div>

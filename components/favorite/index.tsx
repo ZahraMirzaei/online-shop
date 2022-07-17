@@ -10,7 +10,7 @@ const Favorites = () => {
     (state: IFavoriteRootState) => state.favorite.items
   );
   return (
-    <div className="max-w-[1700px] mx-auto">
+    <div className="max-w-[2100px] mx-auto">
       {favoriteItems.length ? (
         <div className="grid gap-4 grid-cols-6 lg:grid-cols-12">
           {favoriteItems.map((favoriteItem) => (
