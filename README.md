@@ -1,4 +1,16 @@
-This is a online shop, developed with [Next.js](https://nextjs.org/) - [TypeScript](https://www.typescriptlang.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+
+![ZiShop](public/images/logo.png)
+<hr/>
+
+An E-commerce site template, implemented with [Next.js](https://nextjs.org/) and [TypeScript](https://www.typescriptlang.org/). Styled with [TailwindCSS](https://tailwindcss.com/). This is one of my portfolios, but I would be pleased if these codes helped others, so I published it as an open-source project. feel free to explore it, and if you need help, ask me. I would respond as soon as possible.\
+![GitHub last commit](https://img.shields.io/github/last-commit/zahramirzaei/online-shop)&nbsp;
+![GitHub commit activity](https://img.shields.io/github/commit-activity/w/zahramirzaei/online-shop)&nbsp;
+![GitHub Repo stars](https://img.shields.io/github/stars/zahramirzaei/online-shop?color=yellow)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/zahramirzaei/online-shop?display_name=tag)&nbsp;
+</div>
+
+
 
 ## Getting Started
 
