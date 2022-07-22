@@ -29,7 +29,7 @@ An E-commerce site template, implemented with [Next.js](https://nextjs.org/) and
 <img src="/public/images/zishopBanner.png"/>
 </div>
 
-## 🔧 Technologies
+## 🔧Technologies
 ![React](https://img.shields.io/badge/-React-05122A?style=for-the-badge&logo=react)&nbsp;
 ![TypeScript](https://img.shields.io/badge/-TypeScript-05122A?style=for-the-badge&logo=typescript)&nbsp;
 ![Next.js](https://img.shields.io/badge/-Next.js-05122A?style=for-the-badge&logo=next.js)&nbsp;
@@ -37,17 +37,17 @@ An E-commerce site template, implemented with [Next.js](https://nextjs.org/) and
 ![Tailwind CSS](https://img.shields.io/badge/-TailwindCSS-05122A?style=for-the-badge&logo=tailwindCSS&logoColor=06B6D4)
 
 
-## ✨ Demo
+## ✨Demo
 You can visit and explore in the ZiShop template at [ZiShop.vercel.app](https://zishop.vercel.app/).
 
-## 🔥 Features
+## 🔥Features
 * Using Redux toolkit as state manager
 * Using [Sanity.io](https://www.sanity.io/) as database
 * Fully responsive
 * Multi-language (EN-FA)
 * Multi-theme (Dark/Light)
 
-## 📃 Pages
+## 📃Pages
 * Main (index)
 * Login/SignUp
 * Products List
@@ -57,7 +57,7 @@ You can visit and explore in the ZiShop template at [ZiShop.vercel.app](https://
 * About
 <p align="right">(<a href="#top">BACK TO TOP 🔝</a>)</p>
 
-## 🚀 Getting Started
+## 🚀Getting Started
 1. Sign up in [sanity.io](https://www.sanity.io/) and get `projectId` and `token`
 
 > **Warning**&nbsp;
@@ -96,7 +96,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-## 🤝 Contributing
+## 🤝Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -112,7 +112,7 @@ Don't forget to give the project a star! Thanks again!
 
 
 
-## 💬 Contact Me
+## 💬Contact Me
   <p>
     <a href="https://linkedin.com/in/zahramirzaei"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=Linkedin&logoColor=white"/></a>
     <a href="mailto:z.mirzaei2019@gmail.com"><img src="https://img.shields.io/badge/-Gmail-D14836?style=flat&logo=Gmail&logoColor=white"/></a>
