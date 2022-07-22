@@ -1,18 +1,63 @@
 <div align="center">
 
 ![ZiShop](public/images/logo.png)
-<hr/>
 
-An E-commerce site template, implemented with [Next.js](https://nextjs.org/) and [TypeScript](https://www.typescriptlang.org/). Styled with [TailwindCSS](https://tailwindcss.com/). This is one of my portfolios, but I would be pleased if these codes helped others, so I published it as an open-source project. feel free to explore it, and if you need help, ask me. I would respond as soon as possible.\
+An E-commerce site template, implemented with [Next.js](https://nextjs.org/) and [TypeScript](https://www.typescriptlang.org/). Styled with [TailwindCSS](https://tailwindcss.com/). This is one of my portfolios, but I would be pleased if these codes helped others, so I published it as an open-source project. feel free to explore it, and if you need help, ask me. I would respond as soon as possible.
+
+<p>
+
+![GitHub top language](https://img.shields.io/github/languages/top/zahramirzaei/online-shop)&nbsp;
 ![GitHub last commit](https://img.shields.io/github/last-commit/zahramirzaei/online-shop)&nbsp;
-![GitHub commit activity](https://img.shields.io/github/commit-activity/w/zahramirzaei/online-shop)&nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/zahramirzaei/online-shop?color=yellow)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/zahramirzaei/online-shop)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/zahramirzaei/online-shop?display_name=tag)&nbsp;
+![GitHub Repo stars](https://img.shields.io/github/stars/zahramirzaei/online-shop?color=yellow)
+![GitHub forks](https://img.shields.io/github/forks/zahramirzaei/online-shop)
+
+</p>
+
+<p>
+
+[Technologies](#technologies) •
+[Demo](#demo) •
+[Features](#features) •
+[Pages](#pages) •
+[Getting started](#getting-started) •
+[Installation](#installation) •
+[Configuration](#configuration) •
+[Integrations](#third-party-integrations)
+</p>
+<img src="/public/images/zishopBanner.png"/>
 </div>
 
+## Technologies
+![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)&nbsp;
+![TypeScript](https://img.shields.io/badge/-TypeScript-05122A?style=flat&logo=typescript)&nbsp;
+![Next.js](https://img.shields.io/badge/-Next.js-05122A?style=flat&logo=next.js)&nbsp;
+![Redux](https://img.shields.io/badge/-Redux-05122A?style=flat&logo=redux&logoColor=764ABC)&nbsp;
+![Tailwind CSS](https://img.shields.io/badge/-TailwindCSS-05122A?style=flat&logo=tailwindCSS&logoColor=06B6D4)
+
+## Demo
+You can visit and explore in the ZiShop template at [ZiShop.vercel.app](https://zishop.vercel.app/).
+
+## Features
+* Using Redux toolkit as state manager
+* Using [Sanity.io](https://www.sanity.io/) as database
+* Fully responsive
+* Multi-language (EN-FA)
+* Multi-theme (Dark/Light)
+
+## Pages
+* Main (index)
+* Login/SignUp
+* Products List
+* Product Details
+* Cart
+* Favorites
+* About
 
 
 ## Getting Started
+
 
 First, run the development server:
 
