@@ -57,23 +57,43 @@ You can visit and explore in the ZiShop template at [ZiShop.vercel.app](https://
 
 
 ## Getting Started
+1. Sign up in [sanity.io](https://www.sanity.io/) and get `projectId` and `token`
 
+> **Warning**&nbsp;
+> To work with sanity, people how live in Iran should run `VPN`.
 
-First, run the development server:
+2. Clone the project
+  ```bash
+  git clone https://github.com/ZahraMirzaei/online-shop.git
+  ```
+3. Install project dependencies
+  ```bash
+  npm install
+  #or
+  yarn add
+  ```
+4. Enter your `projectId` into `lib/client.ts`
+5. Add `.env` file to root project, and enter your `token` into `.env`
+  ```js
+  NEXT_PUBLIC_SANITY_TOKEN= [ENTER YOUR TOKEN]
+  ```
+6. Go to sanity_onlineshop folder and open new terminal in this path, then
+  ```bash
+  sanity start
+  ```
+open `http://localhost:3333` and enter products.
+ 
+7. Run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+  ```bash
+  npm run dev
+  # or
+  yarn dev
+  ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## Learn More
 
