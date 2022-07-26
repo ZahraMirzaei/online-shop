@@ -14,7 +14,7 @@ const LoginBtn = () => {
             {t.login} | {t.signUp}
           </p>
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden rtl:ml-3 rtl:mr-1 ltr:mr-3 ltr:ml-1">
           <HiOutlineLogin style={{ fontSize: "1.6rem" }} />
         </div>
       </a>
