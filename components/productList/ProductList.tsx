@@ -52,7 +52,7 @@ const ProductList: React.FC<Props> = ({ productList }) => {
                 })
               : null}
           </div>
-        ) : sortedProductList ? (
+        ) : sortedProductList && sortedProductList.length ? (
           <div>
             <Sort
               selectedBtn={selectedRadioBtn}
