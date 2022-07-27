@@ -3,15 +3,16 @@
 ![ZiShop](public/images/logo.png)
 
 An E-commerce site template, implemented with [Next.js](https://nextjs.org/) and [TypeScript](https://www.typescriptlang.org/). Styled with [TailwindCSS](https://tailwindcss.com/). This is one of my portfolios, but I would be pleased if these codes helped others, so I published it as an open-source project. feel free to explore it, and if you need help, ask me. I would respond as soon as possible.\
-To support me, please create <strong>Pull request</strong> and give <strong>star⭐</strong> to this repository. I appreciate your support in advance. ❤
+<p>To support me, please create <strong>Pull request</strong> and give <strong>star⭐</strong> to this repository.<br/>
+   I appreciate your support in advance. ❤</p>
 
 <p>
 
 ![GitHub top language](https://img.shields.io/github/languages/top/zahramirzaei/online-shop)&nbsp;
 ![GitHub last commit](https://img.shields.io/github/last-commit/zahramirzaei/online-shop)&nbsp;
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/zahramirzaei/online-shop)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/zahramirzaei/online-shop)&nbsp;
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/zahramirzaei/online-shop?display_name=tag)&nbsp;
-![GitHub Repo stars](https://img.shields.io/github/stars/zahramirzaei/online-shop?color=yellow)
+![GitHub Repo stars](https://img.shields.io/github/stars/zahramirzaei/online-shop?color=yellow)&nbsp;
 ![GitHub forks](https://img.shields.io/github/forks/zahramirzaei/online-shop)
 
 </p>
