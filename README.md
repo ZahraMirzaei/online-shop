@@ -3,7 +3,7 @@
 ![ZiShop](public/images/logo.png)
 
 An E-commerce site template, implemented with [Next.js](https://nextjs.org/) and [TypeScript](https://www.typescriptlang.org/). Styled with [TailwindCSS](https://tailwindcss.com/). This is one of my portfolios, but I would be pleased if these codes helped others, so I published it as an open-source project. feel free to explore it, and if you need help, ask me. I would respond as soon as possible.\
-If you mind support me, please create <strong>Pull request</strong> and give <strong>star⭐</strong> to this repository. Thanks for your support ❤
+To support me, please create <strong>Pull request</strong> and give <strong>star⭐</strong> to this repository. Thanks for your support ❤
 
 <p>
 
