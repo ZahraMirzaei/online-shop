@@ -11,12 +11,16 @@ import {
 import { IProduct } from "../../../lib/types/products";
 import { IFavoriteRootState } from "../../../lib/types/favorite";
 
+import { toast } from "react-toastify";
+import { useLanguage } from "../../../hooks/useLanguage";
+
 interface Props {
   product: IProduct;
 }
 
 const CardActions: React.FC<Props> = ({ product }) => {
   const dispatch = useDispatch();
+  const { t } = useLanguage();
 
   const favoriteItems = useSelector(
     (state: IFavoriteRootState) => state.favorite.items
@@ -28,6 +32,7 @@ const CardActions: React.FC<Props> = ({ product }) => {
 
   function addToCartHandler() {
     dispatch(cartActions.addItemToCart({ product: product, quantity: 1 }));
+    toast.success(t.productAddedToCartMsg);
   }
 
   function toggleFavoriteHandler() {

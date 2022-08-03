@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../store/cart-slice";
 import { IProduct } from "../../lib/types/products";
 import ProductPrice from "../UI/ProductPrice";
+import { toast } from "react-toastify";
 
 interface Props {
   product: IProduct;
@@ -13,6 +14,7 @@ interface Props {
 const CallToAction: React.FC<Props> = ({ product }) => {
   const { price, discount } = product;
   const [counter, setCounter] = useState(1);
+  const { t } = useLanguage();
 
   useEffect(() => {
     return () => {
@@ -29,6 +31,7 @@ const CallToAction: React.FC<Props> = ({ product }) => {
         quantity: counter,
       })
     );
+    toast.success(t.productAddedToCartMsg);
   }
 
   function increment() {
@@ -47,8 +50,6 @@ const CallToAction: React.FC<Props> = ({ product }) => {
       setCounter(+e.currentTarget.value);
     }
   }
-
-  const { t } = useLanguage();
 
   return (
     <div className="flex flex-col items-center flex-grow sticky top-10 md:top-36 max-w-[350px] mt-8 rtl:mr-auto ltr:ml-auto xl:rtl:ml-2 px-6 py-4 sm:p-4 xl:p-6 border-2 shadow-lg">
