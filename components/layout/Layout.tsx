@@ -7,6 +7,7 @@ import store from "../../store/index";
 import Footer from "../footer";
 import { ToastContainer } from "react-toastify";
 import { useLanguage } from "../../hooks/useLanguage";
+import NextNProgress from "nextjs-progressbar";
 
 const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const { locale } = useLanguage();
@@ -17,6 +18,7 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
           <title>ZiShop</title>
         </Head>
         <div className="flex flex-col min-h-[100vh]">
+          <NextNProgress height={5} />
           <Header />
           <main className="flex-grow  md:mt-40">{children}</main>
           <Footer />
