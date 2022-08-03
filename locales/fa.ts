@@ -234,5 +234,6 @@ const fa: { [key: string]: string } = {
   aboutEnjoy: "امیدوارم از تماشا و کار با این قالب لذت ببرید.",
   myName: "زهرا میرزایی",
   cafeDX: "کار برای بهبود زندگی است نه برعکس.",
+  productAddedToCartMsg: "محصول با موفقیت به سبد خرید اضافه شد",
 };
 export default fa;

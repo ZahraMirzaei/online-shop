@@ -237,5 +237,6 @@ const en: { [key: string]: string } = {
   aboutEnjoy: "I hope you enjoy watching and working with this template.",
   myName: "Zahra Mirzaei",
   cafeDX: "Work is meant to improve life, not the opposite.",
+  productAddedToCartMsg: "Product added to cart successfully",
 };
 export default en;
