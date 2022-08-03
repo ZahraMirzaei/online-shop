@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTheme } from "next-themes";
 import { cartActions } from "../../../store/cart-slice";
 import { favoriteActions } from "../../../store/favorite-slice";
 import {
@@ -21,6 +22,7 @@ interface Props {
 const CardActions: React.FC<Props> = ({ product }) => {
   const dispatch = useDispatch();
   const { t } = useLanguage();
+  const { theme } = useTheme();
 
   const favoriteItems = useSelector(
     (state: IFavoriteRootState) => state.favorite.items
@@ -32,7 +34,9 @@ const CardActions: React.FC<Props> = ({ product }) => {
 
   function addToCartHandler() {
     dispatch(cartActions.addItemToCart({ product: product, quantity: 1 }));
-    toast.success(t.productAddedToCartMsg);
+    toast.success(t.productAddedToCartMsg, {
+      theme: theme === "dark" ? "dark" : "light",
+    });
   }
 
   function toggleFavoriteHandler() {

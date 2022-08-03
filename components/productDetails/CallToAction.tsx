@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import { HiOutlinePlusSm, HiMinusSm } from "react-icons/hi";
 import { BsCartPlus } from "react-icons/bs";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -15,6 +16,7 @@ const CallToAction: React.FC<Props> = ({ product }) => {
   const { price, discount } = product;
   const [counter, setCounter] = useState(1);
   const { t } = useLanguage();
+  const { theme } = useTheme();
 
   useEffect(() => {
     return () => {
@@ -31,7 +33,9 @@ const CallToAction: React.FC<Props> = ({ product }) => {
         quantity: counter,
       })
     );
-    toast.success(t.productAddedToCartMsg);
+    toast.success(t.productAddedToCartMsg, {
+      theme: theme === "dark" ? "dark" : "light",
+    });
   }
 
   function increment() {
