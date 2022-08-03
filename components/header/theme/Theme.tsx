@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useTheme } from "next-themes";
-import { BsFillBrightnessHighFill } from "react-icons/bs";
-import { RiMoonFill } from "react-icons/ri";
-import { CgDarkMode } from "react-icons/cg";
 import { MdOutlineLightMode } from "react-icons/md";
 import { BiMoon } from "react-icons/bi";
 import { useLanguage } from "../../../hooks/useLanguage";
 import ThemeItem from "./ThemeItem";
 const Theme = () => {
-  // const [mounted, setMounted] = useState(false);
   const { t } = useLanguage();
 
-  // useEffect(() => {
-  //   setMounted(true);
-  // }, []);
-
-  const { systemTheme, theme, setTheme } = useTheme();
+  const { systemTheme, theme } = useTheme();
   const currentTheme = theme === "system" ? systemTheme : theme;
 
   const renderThemeChanger = () => {
-    // if (!mounted) return null;
     if (currentTheme === "dark") {
       return <ThemeItem theme="light" Icon={MdOutlineLightMode} />;
     } else {
