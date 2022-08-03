@@ -236,5 +236,6 @@ const en: { [key: string]: string } = {
     "The ZShop store template was written to consolidate my front-end knowledge, using technologies such as Nextjs, Typescript, React, Tailwindcss, etc. as a portfolio. I would like to thank CafeDX and engineer Seyed Mehdi Hasanpour for his support and opinions.",
   aboutEnjoy: "I hope you enjoy watching and working with this template.",
   myName: "Zahra Mirzaei",
+  cafeDX: "Work is meant to improve life, not the opposite.",
 };
 export default en;
