@@ -30,6 +30,7 @@
     "next-connect": "^0.12.2",
     "next-sanity-image": "^3.2.1",
     "next-themes": "^0.2.0",
+    "nextjs-progressbar": "^0.0.14",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-hot-toast": "^2.2.0",
