@@ -42,7 +42,7 @@ const Category = () => {
           </div>
 
           <Image
-            src="/images/category-img/digital-category.png"
+            src="/images/category-img/digital-category.webp"
             alt="digital"
             width={190}
             height={240}
@@ -61,7 +61,7 @@ const Category = () => {
           </div>
 
           <Image
-            src="/images/category-img/fashion-category.png"
+            src="/images/category-img/fashion-category.webp"
             alt="fashion"
             width={240}
             height={250}
@@ -80,7 +80,7 @@ const Category = () => {
           </div>
 
           <Image
-            src="/images/category-img/beauty-category.png"
+            src="/images/category-img/beauty-category.webp"
             alt="beauty"
             width={170}
             height={150}
@@ -89,7 +89,7 @@ const Category = () => {
         </div>
         <div className="flex justify-around items-center md:row-span-3 md:col-span-3 rounded-md shadow-lg bg-palette-sportCategory">
           <Image
-            src="/images/category-img/sport-category.png"
+            src="/images/category-img/sport-category.webp"
             alt="sport"
             width={130}
             height={150}
@@ -116,7 +116,7 @@ const Category = () => {
             </Link>
           </div>
           <Image
-            src="/images/category-img/house-category.png"
+            src="/images/category-img/house-category.webp"
             alt="house"
             width={320}
             height={240}
@@ -134,7 +134,7 @@ const Category = () => {
             </Link>
           </div>
           <Image
-            src="/images/category-img/toy-category.png"
+            src="/images/category-img/toy-category.webp"
             alt="toy"
             width={130}
             height={110}
@@ -154,7 +154,7 @@ const Category = () => {
             </Link>
           </div>
           <Image
-            src="/images/category-img/stationery-category.png"
+            src="/images/category-img/stationery-category.webp"
             alt="stationery"
             width={130}
             height={250}
