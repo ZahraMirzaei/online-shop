@@ -28,7 +28,7 @@ const SocialPart = () => {
         </div>
       </div>
       <div className="mt-6">
-        <h4 className="text-sm sm:text-base">{t.emailRegister}</h4>
+        <h4 className="text-md sm:text-lg">{t.emailRegister}</h4>
         <form
           className="flex items-center flex-wrap sm:flex-nowrap mt-4 "
           onSubmit={(e) => {
