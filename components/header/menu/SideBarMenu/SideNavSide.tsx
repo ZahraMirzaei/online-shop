@@ -57,7 +57,7 @@ const SideNavSide = () => {
             return (
               <div
                 ref={nodeRef}
-                className={`max-w-[380px] w-[80%] h-screen pb-4 fixed top-0 shadow-md z-[1010]   bg-palette-card origin-left overflow-auto md:hidden
+                className={`max-w-[380px] w-[90%] h-screen pb-4 fixed top-0 shadow-md z-[1010]   bg-palette-card origin-left overflow-auto md:hidden
                 ${locale == "en" ? "left-0" : "right-0"} 
                 
                 ${
@@ -79,19 +79,22 @@ const SideNavSide = () => {
 
                 <hr className="mb-6" />
 
-                <div className="flex items-center justify-between ltr:pr-6 rtl:pl-6 pb-6 mb-3 border-b-2 border-slate-400-600">
+                <div className=" ltr:pr-6 rtl:pl-6 pb-6 mb-3 border-b-2 border-slate-400-600">
                   <Link href={`/${activeMenuItemText}`}>
-                    <a>
-                      <div className="font-bold mx-6" onClick={closeNavbar}>
+                    <a className="flex items-center justify-between">
+                      <div
+                        className="font-bold ltr:ml-6 rtl:mr-6"
+                        onClick={closeNavbar}
+                      >
                         {t.seeAllProduct}
                       </div>
+                      {locale === "en" ? (
+                        <HiChevronRight style={{ fontSize: "1.5rem" }} />
+                      ) : (
+                        <HiChevronLeft style={{ fontSize: "1.5rem" }} />
+                      )}
                     </a>
                   </Link>
-                  {locale === "en" ? (
-                    <HiChevronRight style={{ fontSize: "1.5rem" }} />
-                  ) : (
-                    <HiChevronLeft style={{ fontSize: "1.5rem" }} />
-                  )}
                 </div>
                 {dropDownList.map((item) => {
                   return (
