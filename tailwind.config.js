@@ -77,7 +77,7 @@ module.exports = {
         dropDownExit: "dropDown 0.3s reverse forwards",
       },
       backgroundImage: {
-        offersBG: "url('/images/carouselBox-bg/offersbg.png')",
+        offersBG: "url('/images/carouselBox-bg/offersbg.webp')",
       },
     },
   },
