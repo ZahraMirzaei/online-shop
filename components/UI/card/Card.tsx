@@ -43,7 +43,7 @@ const Card: React.FC<Props> = ({ product }) => {
             <div className="flex justify-center md:justify-start flex-col  flex-grow overflow-hidden">
               <div className="self-center">
                 <StarRatingComponent
-                  name="product_rate"
+                  name={`product_rate_${product.slug.current}`}
                   starCount={5}
                   value={product.starRating}
                 />
