@@ -17,6 +17,11 @@
   dependencies:
     "regenerator-runtime" "^0.13.4"
 
+"@corex/deepmerge@^4.0.29":
+  "integrity" "sha512-q/yVUnqckA8Do+EvAfpy7RLdumnBy9ZsducMUtZTvpdbJC7azEf1hGtnYYxm0QfphYxjwggv6XtH64prvS1W+A=="
+  "resolved" "https://registry.npmjs.org/@corex/deepmerge/-/deepmerge-4.0.29.tgz"
+  "version" "4.0.29"
+
 "@eslint/eslintrc@^1.2.2":
   "integrity" "sha512-lTVWHs7O2hjBFZunXTZYnYqtB9GakA1lnxIf+gKq2nY5gxkkNi/lQvveW6t8gFdOHTg6nG50Xs95PrLqVpcaLg=="
   "resolved" "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-1.2.2.tgz"
@@ -53,7 +58,7 @@
   "resolved" "https://registry.npmjs.org/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz"
   "version" "1.2.1"
 
-"@next/env@12.1.6":
+"@next/env@*", "@next/env@12.1.6":
   "integrity" "sha512-Te/OBDXFSodPU6jlXYPAXpmZr/AkG6DCATAxttQxqOWaq6eDFX25Db3dK0120GZrSZmv4QCe9KsZmJKDbWs4OA=="
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.1.6.tgz"
   "version" "12.1.6"
@@ -2108,6 +2113,14 @@
   "version" "3.2.1"
   dependencies:
     "@sanity/image-url" "^0.140.22"
+
+"next-sitemap@^3.1.17":
+  "integrity" "sha512-xop7KgEbWsqOe4Fr50g9RQ1UGb1bAEJoKYVVynbUqietpSltAnCIzvq/StL2gZcNyFW9K+9tZV7EpcD+72gRrA=="
+  "resolved" "https://registry.npmjs.org/next-sitemap/-/next-sitemap-3.1.17.tgz"
+  "version" "3.1.17"
+  dependencies:
+    "@corex/deepmerge" "^4.0.29"
+    "minimist" "^1.2.6"
 
 "next-themes@^0.2.0":
   "integrity" "sha512-myhpDL4vadBD9YDSHiewqvzorGzB03N84e+3LxCwHRlM/hiBOaW+UsKsQojQAzC7fdcJA0l2ppveXcYaVV+hxQ=="
