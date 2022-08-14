@@ -8,7 +8,7 @@ const nextConfig = {
     localeDetection: false,
   },
   images: {
-    domains: ["cdn.sanity.io", "localhost"],
+    domains: ["cdn.sanity.io"],
   },
   webpack: function (config) {
     config.module.rules.push({
