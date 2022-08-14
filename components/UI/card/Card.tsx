@@ -13,7 +13,7 @@ interface Props {
 
 const Card: React.FC<Props> = ({ product }) => {
   return (
-    <div className="col-span-6 sm:col-span-3 md:col-span-4 lg:col-span-3 2xl:col-span-2 shadow-xl my-4 ltr:mr-2 rtl:ml-1 md:mx-6  bg-palette-card rounded-xl flex relative">
+    <div className="col-span-6 sm:col-span-3 md:col-span-4 lg:col-span-3 2xl:col-span-2 shadow-xl my-1 md:my-4 ltr:mr-2 rtl:ml-1 md:mx-6  bg-palette-card rounded-xl flex relative">
       <Link
         href={`/${product.category[0]}/${product.category[1]}/${product.category[2]}/${product.slug.current}`}
       >
