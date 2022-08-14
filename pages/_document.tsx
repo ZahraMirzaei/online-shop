@@ -3,6 +3,10 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <meta
+          name="description"
+          content="Zishop store developed with Next.js/TypeScript/TailwindCSS and ... as Zahra Mirzaei's portfolio"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
