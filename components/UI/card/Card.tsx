@@ -31,7 +31,7 @@ const Card: React.FC<Props> = ({ product }) => {
             {product?.discount ? (
               <span className="w-8 sm:w-auto block absolute -top-2 -right-2">
                 <Image
-                  src="/images/discount-icon/discount.png"
+                  src="/images/discount-icon/discount.webp"
                   width={40}
                   height={40}
                   alt="discount-icon"
