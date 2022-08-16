@@ -29,7 +29,7 @@ const CarouselBoxCard: React.FC<Props> = ({ product }) => {
             {product.isOffer ? (
               <span className="block absolute -top-2 -right-2">
                 <Image
-                  src="/images/discount-icon/discount.png"
+                  src="/images/discount-icon/discount.webp"
                   width={40}
                   height={40}
                   alt="discount-icon"
