@@ -4,7 +4,6 @@
 
 @layer base {
   :root {
-    /*--color-primary: 238, 56, 78; #ee384e*/
     --color-primary: 167, 27, 74; /* #A71B4A*/
     --color-secondary: 74, 76, 90; /* #4a4c5a*/
 
@@ -28,13 +27,13 @@
   .dark {
     --color-bg: 15, 23, 42; /* #0f172a*/
     --color-bg-side: 30, 41, 59; /* #1e293b*/
-    --digital-category-bgc: #0d4c76; /*#219ebc;*/
-    --fashion-category-bgc: #892a19; /*#e29578;*/
-    --beauty-category-bgc: #6d305f; /*#af4d98;*/
-    --sport-category-bgc: #650606; /* #f46036;*/
-    --house-category-bgc: #164c4b; /*#6b9080;*/
-    --toy-category-bgc: #6d3d4b; /*#b77e8f;*/
-    --stationery-category-bgc: #6a4202; /* #fbb13c;*/
+    --digital-category-bgc: #0d4c76;
+    --fashion-category-bgc: #892a19;
+    --beauty-category-bgc: #6d305f;
+    --sport-category-bgc: #650606;
+    --house-category-bgc: #164c4b;
+    --toy-category-bgc: #6d3d4b;
+    --stationery-category-bgc: #6a4202;
 
     --color-text-base: 226, 232, 240; /*#e2e8f0*/
     --color-text-muted: 140, 154, 175; /*#8c9aaf*/
