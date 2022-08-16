@@ -6,7 +6,7 @@ import { benefitContent } from "../../mock/benefits";
 const Benefits = () => {
   const { t } = useLanguage();
   return (
-    <div className="grid gap-4 grid-cols-12 my-6 xl:max-w-[2100px] mx-auto">
+    <div className="grid gap-4 grid-cols-12 my-8 pt-4 xl:max-w-[2100px] mx-auto">
       {benefitContent.map((benefitItem) => {
         return (
           <div
@@ -20,7 +20,7 @@ const Benefits = () => {
               alt={benefitItem.title}
               className=""
             />
-            <p className="py-2 text-sm md:text-base text-palette-base/90">
+            <p className="py-2 text-sm md:text-base text-palette-base/90 text-center">
               {t[`${benefitItem.title}`]}
             </p>
           </div>
