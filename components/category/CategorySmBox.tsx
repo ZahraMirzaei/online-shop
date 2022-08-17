@@ -20,8 +20,10 @@ const CategorySmBox: React.FC<Props> = ({
     <Link href={`${href}`}>
       <a>
         <div
-          className={`flex flex-col items-center  ${
-            locale === "en" ? "w-[8.8rem]" : "min-w-[7rem] w-[7.5rem]"
+          className={`flex flex-col items-center text-center  ${
+            locale === "en"
+              ? "w-[10rem] sm:w-[13rem]"
+              : "min-w-[7rem] w-[9.3rem] sm:w-[10rem]"
           } my-2`}
         >
           <div
@@ -35,7 +37,7 @@ const CategorySmBox: React.FC<Props> = ({
               className="drop-shadow-lg"
             />
           </div>
-          <h3 className="text-[11px] font-bold mt-2">
+          <h3 className="text-sm md:text-base font-bold mt-2">
             {t[`${categoryTitle}`]}
           </h3>
         </div>
