@@ -31,14 +31,14 @@ const ThemeItem: React.FC<Props> = ({ theme, Icon, currentTheme }) => {
       }`}
       onClick={onThemeClickHandler}
     >
-      <div role="button">
+      <button className="border-none" aria-label="theme-toggle" role="button">
         <Icon
           style={{
             fontSize: "1.3rem",
             filter: "drop-shadow(0px 0px 5px rgb(0 0 0 / 0.3))",
           }}
         />
-      </div>
+      </button>
       <h4 className="md:hidden rtl:mr-3 ltr:ml-3">{t[`${theme}`]}</h4>
     </div>
   );
