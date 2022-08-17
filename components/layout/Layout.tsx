@@ -27,7 +27,7 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
           autoClose={2000}
           hideProgressBar={true}
           rtl={locale === "en" ? false : true}
-          position={locale === "en" ? "bottom-right" : "bottom-left"}
+          position={locale === "en" ? "top-right" : "top-left"}
         />
       </ThemeProvider>
     </Provider>
