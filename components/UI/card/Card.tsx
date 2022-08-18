@@ -48,9 +48,9 @@ const Card: React.FC<Props> = ({ product }) => {
                   value={product.starRating}
                 />
               </div>
-              <h4 className="text-sm sm:text-[12px] md:text-sm text-center text-palette-mute  ">
+              <h3 className="text-sm sm:text-[12px] md:text-sm text-center text-palette-mute  ">
                 {product.name}
-              </h4>
+              </h3>
             </div>
             <ProductPrice price={product.price} discount={product.discount} />
           </div>
