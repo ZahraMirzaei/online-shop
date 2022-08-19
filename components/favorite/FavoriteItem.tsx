@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 import { favoriteActions } from "../../store/favorite-slice";
 import { cartActions } from "../../store/cart-slice";
 import { useLanguage } from "../../hooks/useLanguage";
@@ -10,12 +11,14 @@ import ProductPrice from "../UI/ProductPrice";
 import { BsCartPlus } from "react-icons/bs";
 import { HiOutlineTrash } from "react-icons/hi";
 import { IProduct } from "../../lib/types/products";
+import { useTheme } from "next-themes";
 
 interface Props {
   product: IProduct;
 }
 const FavoriteItem: React.FC<Props> = ({ product }) => {
   const { t } = useLanguage();
+  const { theme } = useTheme();
   const dispatch = useDispatch();
 
   function onRemoveFavoriteItem(productSlug: string) {
@@ -24,6 +27,9 @@ const FavoriteItem: React.FC<Props> = ({ product }) => {
 
   function onAddToCart(product: IProduct) {
     dispatch(cartActions.addItemToCart({ product: product, quantity: 1 }));
+    toast.success(t.productAddedToCartMsg, {
+      theme: theme === "dark" ? "dark" : "light",
+    });
   }
   return (
     <div className="col-span-6 sm:col-span-3 lg:col-span-4 xl:col-span-3 flex flex-col w-full h-full px-2 my-2 shadow-lg rounded-md bg-palette-card relative">
