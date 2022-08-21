@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://zishop.vercel.app/
+
+# Sitemaps
+Sitemap: https://zishop.vercel.app/sitemap.xml
