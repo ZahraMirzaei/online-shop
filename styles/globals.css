@@ -70,6 +70,7 @@ a {
   src: url("/fonts/woff/iranyekanwebbold.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanwebbold.ttf")
       format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -79,6 +80,7 @@ a {
   src: url("/fonts/woff/iranyekanwebthin.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanwebthin.ttf")
       format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -88,6 +90,7 @@ a {
   src: url("/fonts/woff/iranyekanweblight.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanweblight.ttf")
       format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -97,6 +100,7 @@ a {
   src: url("/fonts/woff/iranyekanwebregular.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
       url("/fonts/ttf/iranyekanwebregular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -106,6 +110,7 @@ a {
   src: url("/fonts/woff/iranyekanwebmedium.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanwebmedium.ttf")
       format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -115,6 +120,7 @@ a {
   src: url("/fonts/woff/iranyekanwebextrabold.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
       url("/fonts/ttf/iranyekanwebextrabold.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -124,6 +130,7 @@ a {
   src: url("/fonts/woff/iranyekanwebblack.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanwebblack.ttf")
       format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -133,6 +140,7 @@ a {
   src: url("/fonts/woff/iranyekanwebextrablack.woff") format("woff"),
     /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
       url("/fonts/ttf/iranyekanwebextrablack.ttf") format("truetype");
+  font-display: swap;
 }
 
 .slick-dots li button::before {
