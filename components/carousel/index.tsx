@@ -31,14 +31,14 @@ const Carousel = () => {
           return <Slide key={slideContent.ID} {...slideContent} />;
         })}
       </Slider>
-      <div>
+      <>
         <div className="absolute top-1/2 right-4 md:right-3 lg:right-8 shadow-lg rounded-full bg-palette-card/80 p-1 drop-shadow-lg text-[0.8rem] md:text-[1.8rem]">
           <HiOutlineChevronRight />
         </div>
         <div className="absolute top-1/2 left-4  md:left-3 lg:left-8 shadow-lg rounded-full bg-palette-card/80 p-1 drop-shadow-lg text-[0.8rem] md:text-[1.8rem]">
           <HiOutlineChevronLeft />
         </div>
-      </div>
+      </>
     </div>
   );
 };
