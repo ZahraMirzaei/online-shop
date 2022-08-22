@@ -10,7 +10,7 @@ const ExtraMenu = () => {
       {extraMenu.map((menuItem) => {
         return (
           <div
-            className="flex items-center text-palette-mute dark:text-slate-300 mx-2"
+            className="flex items-center text-base/90 mx-2"
             key={menuItem.title}
           >
             <menuItem.icon />
