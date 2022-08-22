@@ -14,8 +14,9 @@ interface Props {
     paddingBlock: string;
     textAlign?: string;
   };
+  rowSpan: number;
+  colSpan: number;
   href: string;
-  gridSpans: string;
   imgSrc: string;
   imgWidth: number;
   imgHeight: number;
@@ -25,13 +26,15 @@ const CategoryLgBox: React.FC<Props> = ({
   title,
   description,
   styles,
+  rowSpan,
+  colSpan,
   href,
-  gridSpans,
   imgSrc,
   imgWidth,
   imgHeight,
 }) => {
   const { t } = useLanguage();
+  let gridSpans = `md:row-span-${rowSpan} md:col-span-${colSpan}`;
   return (
     <div
       key={title}

@@ -43,7 +43,6 @@ const Category = () => {
             imgWidth,
             imgHeight,
           }) => {
-            let gridSpans = `md:row-span-${rowSpan} md:col-span-${colSpan}`;
             return (
               <CategoryLgBox
                 key={name}
@@ -51,8 +50,9 @@ const Category = () => {
                 title={title}
                 description={description}
                 styles={styles}
+                rowSpan={rowSpan}
+                colSpan={colSpan}
                 href={href}
-                gridSpans={gridSpans}
                 imgSrc={imgSrc}
                 imgWidth={imgWidth}
                 imgHeight={imgHeight}
