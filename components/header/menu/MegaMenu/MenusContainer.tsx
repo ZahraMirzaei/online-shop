@@ -29,7 +29,7 @@ const MenusContainer = () => {
 
   return (
     <div className=" flex">
-      <nav className="md:w-72 md:py-4 ltr:border-r-2 rtl:border-l-2 border-slate-300">
+      <nav className="md:w-80 md:py-4 ltr:border-r-2 rtl:border-l-2 border-slate-300">
         <MenuItems onMouseOver={activeItem} />
       </nav>
       <SubMenu subMenuItems={subMenuItems} />
