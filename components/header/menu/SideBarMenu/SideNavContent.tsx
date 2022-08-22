@@ -22,7 +22,7 @@ const SideNavContent = () => {
     dispatch(activeMenuItemActions.setActiveMenuItemIndex(activeItemIndex));
   };
   return (
-    <div className="absolute w-full h-full ">
+    <div className="absolute w-full">
       <div className="flex flex-col  mt-3 pt-3  ltr:px-5 rtl:px-5  cursor-pointer">
         {extraMenu.map((menuItem) => {
           return (
