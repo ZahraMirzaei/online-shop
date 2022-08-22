@@ -36,8 +36,6 @@ const Category = () => {
             title,
             description,
             styles,
-            rowSpan,
-            colSpan,
             href,
             imgSrc,
             imgWidth,
@@ -50,8 +48,6 @@ const Category = () => {
                 title={title}
                 description={description}
                 styles={styles}
-                rowSpan={rowSpan}
-                colSpan={colSpan}
                 href={href}
                 imgSrc={imgSrc}
                 imgWidth={imgWidth}

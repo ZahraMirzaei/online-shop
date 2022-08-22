@@ -13,9 +13,9 @@ interface Props {
     paddingInline: string;
     paddingBlock: string;
     textAlign?: string;
+    gridRow: string;
+    gridColumn: string;
   };
-  rowSpan: number;
-  colSpan: number;
   href: string;
   imgSrc: string;
   imgWidth: number;
@@ -26,19 +26,17 @@ const CategoryLgBox: React.FC<Props> = ({
   title,
   description,
   styles,
-  rowSpan,
-  colSpan,
   href,
   imgSrc,
   imgWidth,
   imgHeight,
 }) => {
   const { t } = useLanguage();
-  let gridSpans = `md:row-span-${rowSpan} md:col-span-${colSpan}`;
+
   return (
     <div
       key={title}
-      className={`flex justify-around items-center rounded-md shadow-lg overflow-hidden ${gridSpans}`}
+      className={`flex justify-around items-center rounded-md shadow-lg overflow-hidden`}
       style={styles as React.CSSProperties}
     >
       <div className="mx-[0.5rem]">
