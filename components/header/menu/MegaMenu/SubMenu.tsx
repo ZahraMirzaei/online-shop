@@ -25,10 +25,11 @@ const SubMenu: React.FC<Props> = ({ subMenuItems }) => {
         {subMenuItems ? (
           <>
             <Link href={`/${activeMenuItemText}`}>
-              <a className="block rtl:ml-4 lrt:mr-4 text-[16px] ">
-                <div onClick={() => dispatch(megaMenuActions.closeMegaMenu())}>
-                  {t.seeAllProduct}
-                </div>
+              <a
+                className="block rtl:ml-4 lrt:mr-4 text-[16px] "
+                onClick={() => dispatch(megaMenuActions.closeMegaMenu())}
+              >
+                {t.seeAllProduct}
               </a>
             </Link>
             <ArrowDirection style={{ fontSize: "1rem", color: "inherit" }} />
@@ -43,33 +44,28 @@ const SubMenu: React.FC<Props> = ({ subMenuItems }) => {
               return (
                 <div className="py-3" key={`${menuTitle}-${index}`}>
                   <Link href={`/${activeMenuItemText}/${menuTitle.title}`}>
-                    <a className="block text-sm rtl:ml-10 ltr:mr-10 font-bold px-2 ltr:border-l-4 rtl:border-r-4 border-palette-primary rounded-sm hover:text-palette-primary transition-color duration-300">
-                      <div
-                        onClick={() =>
-                          dispatch(megaMenuActions.closeMegaMenu())
-                        }
-                      >
-                        {t[`${menuTitle.title}`]}
-                      </div>
+                    <a
+                      className="block text-sm rtl:ml-10 ltr:mr-10 font-bold px-2 ltr:border-l-4 rtl:border-r-4 border-palette-primary rounded-sm hover:text-palette-primary transition-color duration-300"
+                      onClick={() => dispatch(megaMenuActions.closeMegaMenu())}
+                    >
+                      {t[`${menuTitle.title}`]}
                     </a>
                   </Link>
                   {menuTitle.subtitles.map((subTitle, index) => {
                     return (
-                      <div key={`${subTitle}-${index}`}>
-                        <Link
-                          href={`/${activeMenuItemText}/${menuTitle.title}/${subTitle}`}
+                      <Link
+                        href={`/${activeMenuItemText}/${menuTitle.title}/${subTitle}`}
+                        key={`${subTitle}-${index}`}
+                      >
+                        <a
+                          className="block py-2 hover:text-palette-primary transition-color duration-200"
+                          onClick={() =>
+                            dispatch(megaMenuActions.closeMegaMenu())
+                          }
                         >
-                          <a className="block py-2 hover:text-palette-primary transition-color duration-200">
-                            <div
-                              onClick={() =>
-                                dispatch(megaMenuActions.closeMegaMenu())
-                              }
-                            >
-                              {t[`${subTitle}`]}
-                            </div>
-                          </a>
-                        </Link>
-                      </div>
+                          {t[`${subTitle}`]}
+                        </a>
+                      </Link>
                     );
                   })}
                 </div>
