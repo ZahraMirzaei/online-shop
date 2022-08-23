@@ -2,6 +2,9 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
 # Host
 Host: https://zishop.vercel.app/
 
