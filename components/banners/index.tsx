@@ -1,14 +1,13 @@
 import React from "react";
 import BannerBox from "./banner-box/BannerBox";
 import { bannerContent } from "../../mock/banner";
-import { useLanguage } from "../../hooks/useLanguage";
+import SectionTitle from "../UI/SectionTitle";
 
 const Banner = () => {
-  const { t } = useLanguage();
   return (
-    <div className="flex items-center flex-col w-full xl:max-w-[2100px] mx-auto">
-      <h2 className="my-4 text-2xl md:text-3xl">{t.specialSale}</h2>
-      <div className="grid gap-4 grid-cols-6 lg:grid-cols-12 mt-4 md:mt-8 mb-8 sm:mb-16">
+    <div className="flex items-center flex-col w-full xl:max-w-[2100px] my-4 md:my-8 mx-auto">
+      <SectionTitle title={"specialSale"} />
+      <div className="grid gap-4 grid-cols-6 lg:grid-cols-12">
         {bannerContent.map(
           ({
             title,

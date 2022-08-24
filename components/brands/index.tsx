@@ -2,10 +2,8 @@ import React from "react";
 import BrandBox from "./BrandBox";
 import { brandContent } from "../../mock/brand";
 import Slider from "react-slick";
-import { NextArrow, PrevArrow } from "../UI/CarouselBox/CarouselBoxArrows";
-import { useLanguage } from "../../hooks/useLanguage";
+import SectionTitle from "../UI/SectionTitle";
 const Brands = () => {
-  const { t } = useLanguage();
   const settings = {
     infinite: true,
     speed: 6000,
@@ -40,10 +38,8 @@ const Brands = () => {
     ],
   };
   return (
-    <div className="p-1 text-center">
-      <h2 className="mx-auto text-2xl md:text-3xl my-4 md:mt-8 mb-8">
-        {t.popularBrands}
-      </h2>
+    <div className="p-1 my-4 md:my-8 text-center">
+      <SectionTitle title={"popularBrands"} />
       <Slider {...settings}>
         {brandContent.map((brandItem) => {
           return (
