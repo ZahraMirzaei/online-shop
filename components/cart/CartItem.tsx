@@ -57,7 +57,7 @@ const CartItem: React.FC<Props> = ({ product }) => {
               />
             </div>
             <div
-              className=" flex-grow text-sm font-normal mb-2 sm:mb-0 w-full rtl:ml-2 ltr:mr-2"
+              className="flex-grow text-sm font-normal mb-2 sm:mb-0 mx-2 w-full"
               style={{ direction: "ltr" }}
             >
               {product.name}
@@ -97,7 +97,7 @@ const CartItem: React.FC<Props> = ({ product }) => {
           </div>
         </div>
         <div className="flex flex-col flex-grow font-normal rtl:mr-1 lrt:ml-1">
-          <p className="self-center lg:self-start">{t.totalAmount}</p>
+          <p>{t.totalAmount}</p>
           <ProductPrice
             price={product.price * counter!}
             discount={product.discount}
