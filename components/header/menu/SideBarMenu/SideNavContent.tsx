@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { sideNavBarActions } from "../../../../store/sideNavBar-slice";
 import { activeMenuItemActions } from "../../../../store/activeMenuItem-slice";
 import { IDropDown } from "../../../../lib/types/dropDown";
-import MenuItems from "../../../UI/MenuItems";
+import MenuItems from "../../../UI/MenuItems/MenuItems";
 
 const SideNavContent = () => {
   const { t } = useLanguage();
@@ -23,16 +23,16 @@ const SideNavContent = () => {
   };
   return (
     <div className="absolute w-full">
-      <div className="flex flex-col  mt-3 pt-3  ltr:px-5 rtl:px-5  cursor-pointer">
+      <div className="flex flex-col mt-3 pt-3 ltr:px-5 rtl:px-5 cursor-pointer">
         {extraMenu.map((menuItem) => {
           return (
             <div
-              className="flex items-center  py-3 text-palette-mute "
+              className="flex items-center py-3 text-palette-mute "
               key={menuItem.title}
             >
               <menuItem.icon />
               <Link href={menuItem.href}>
-                <a className=" mx-4">{t[`${menuItem.title}`]}</a>
+                <a className="mx-4">{t[`${menuItem.title}`]}</a>
               </Link>
             </div>
           );
