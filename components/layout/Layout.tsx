@@ -18,7 +18,7 @@ const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
           <title>ZiShop</title>
         </Head>
         <div className="flex flex-col min-h-[100vh]">
-          <NextNProgress height={5} />
+          <NextNProgress height={7} />
           <Header />
           <main className="flex-grow  md:mt-40">{children}</main>
           <Footer />
