@@ -3,6 +3,7 @@ import React from "react";
 import { GoSearch } from "react-icons/go";
 import { useLanguage } from "../../hooks/useLanguage";
 
+//TODO: search by product name.
 const SearchBar = () => {
   const { t } = useLanguage();
   return (
