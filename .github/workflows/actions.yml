@@ -17,5 +17,7 @@ jobs:
           node-version: 16.x
       - name: Install dependencies
         run: npm ci
+        env:
+          NEXT_PUBLIC_SANITY_TOKEN: ${{secrets.NEXT_PUBLIC_SANITY_TOKEN}}
       - name: Run tests
         run: npm test
