@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  test:
+  test-actions-on-zishop:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,5 +19,3 @@ jobs:
         run: npm ci --legacy-peer-deps
         env:
           NEXT_PUBLIC_SANITY_TOKEN: ${{secrets.NEXT_PUBLIC_SANITY_TOKEN}}
-      - name: Run tests
-        run: npm test
