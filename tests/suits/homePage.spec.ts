@@ -1,8 +1,17 @@
 import { test } from './homePage.fixture'
 
-test.describe('CreditLandingPage', () => {
+test.describe('Home page', () => {
 
-		test('Пользователь кликает кнопку "назад" -> Возврат к первому шагу', async ({ homePage }) => {
-			await homePage.page.pause()
+	test.describe('Courusel', () => {
+
+		test('Clicking right courusel arrow -> shows 2nd slide', async ({ homePage }) => {
+			await homePage.clickSlideRight()
+			await homePage.checkSecondSlideVisible()
 		})
+
+		test('Clicking left courusel arrow -> shows 6th slide', async ({ homePage }) => {
+			await homePage.clickSlideRight()
+			await homePage.checkSixthSlideVisible()
+		})
+})
 })
