@@ -1,3 +1,5 @@
 export * from './mockDevMiddlewareManifest'
 export * from './mockDevPagesManifest'
 export * from './mockEn'
+export * from './mockUserInfo'
+export * from './mockProductData'

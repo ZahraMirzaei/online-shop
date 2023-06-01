@@ -2,7 +2,8 @@ import { test as base } from '@playwright/test'
 import {
 	mockEn,
 	mockDevMiddlewareManifest,
-	mockDevPagesManifest
+	mockDevPagesManifest,
+	mockUserInfo
 } from '../mocks/'
 
 import { HomePage } from '../pageObjects/pages/HomePage'
@@ -16,8 +17,9 @@ export const test = base.extend<TestFixtures>({
 		const homePage = new HomePage(page)
 		await Promise.all([
 			mockEn(context),
-			// mockDevMiddlewareManifest(context),
-			mockDevPagesManifest(context)
+			mockDevMiddlewareManifest(context),
+			mockDevPagesManifest(context),
+			mockUserInfo(context),
 		])
 
 		await homePage.open()

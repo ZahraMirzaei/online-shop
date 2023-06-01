@@ -79,6 +79,7 @@ const CallToAction: React.FC<Props> = ({ product }) => {
       </div>
       <br />
       <button
+        data-testid="add-to-cart"
         className="border-none bg-palette-primary/90 hover:bg-palette-primary/100 transition-colors duration-200 shadow-lg px-3 lg:px-8 py-4 text-palette-side flex items-center rounded-lg cursor-pointer  text-[12px] sm:text-base"
         onClick={addToCartHandler}
       >

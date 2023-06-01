@@ -10,7 +10,7 @@ const config: PlaywrightTestConfig = {
 	],
 
 	use: {
-		baseURL: 'http://localhost:3000/',
+		baseURL: 'http://localhost:3000',
 		headless: true,
 		ignoreHTTPSErrors: true,
 		screenshot: 'only-on-failure',

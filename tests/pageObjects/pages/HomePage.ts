@@ -2,8 +2,6 @@ import { Page, test, expect } from '@playwright/test'
 
 import { BasePage } from './BasePage'
 
-const appId = '1'
-
 /**
  * HomePage - start page of shop
  */
@@ -17,7 +15,7 @@ export class HomePage extends BasePage {
 	constructor(page: Page) {
 		super(page)
 
-		this.pageUrl = `redirect?/`
+		this.pageUrl = `/redirect?/`
 	}
 
 	public async clickSlideRight(): Promise<void> {

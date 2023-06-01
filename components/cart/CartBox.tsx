@@ -77,7 +77,7 @@ const CartBox = () => {
             {!userInfo ? (
               <div onClick={onCloseCartBoxHandler}>
                 <Link href={"/login"}>
-                  <a className="py-2 px-3 bg-palette-primary text-[12px] text-palette-side rounded-lg">
+                  <a data-testid="login-and-order" className="py-2 px-3 bg-palette-primary text-[12px] text-palette-side rounded-lg">
                     {t.loginAndOrder}
                   </a>
                 </Link>
@@ -85,7 +85,7 @@ const CartBox = () => {
             ) : (
               <div onClick={onCloseCartBoxHandler}>
                 <Link href={"/cart"}>
-                  <a className="py-2 px-10 bg-palette-primary text-[12px] text-palette-side rounded-lg">
+                  <a data-testid="order" className="py-2 px-10 bg-palette-primary text-[12px] text-palette-side rounded-lg">
                     {t.order}
                   </a>
                 </Link>

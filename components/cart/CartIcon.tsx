@@ -27,6 +27,7 @@ const Basket = () => {
 
   return (
     <div
+      data-testid="header-cart"
       className="relative"
       onMouseOver={() => onMouseHoverHandler(true)}
       onMouseOut={() => onMouseHoverHandler(false)}
