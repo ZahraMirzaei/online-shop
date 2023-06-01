@@ -1,10 +1,9 @@
 import { test as base } from '@playwright/test'
 import {
-	mockEn,
 	mockDevMiddlewareManifest,
 	mockDevPagesManifest,
     mockProductData
-} from '../mocks/'
+} from '../mocks'
 
 import { ProductPage } from '../pageObjects/pages/ProductPage'
 import { HeaderComponent } from '../pageObjects/components/HeaderComponent'
@@ -18,7 +17,6 @@ export const test = base.extend<TestFixtures>({
 	productPage: async ({ page, context }, use) => {
 		const productPage = new ProductPage(page)
 		await Promise.all([
-			// mockEn(context),
 			mockDevMiddlewareManifest(context),
 			mockDevPagesManifest(context),
             mockProductData(context),
