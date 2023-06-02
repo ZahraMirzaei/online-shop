@@ -753,7 +753,7 @@ export const mockProductData = async (context: BrowserContext, output = defaultO
 			contentType: 'application/json',
 			status: 200,
 
-			body: JSON.stringify({...defaultOutput}),
+			body: JSON.stringify({output}),
 		})
 	})
 }

@@ -1,12 +1,7 @@
 import { test as base } from '@playwright/test'
-import {
-	mockDevMiddlewareManifest,
-	mockDevPagesManifest,
-    mockProductData
-} from '../mocks'
-
-import { ProductPage } from '../pageObjects/pages/ProductPage'
-import { HeaderComponent } from '../pageObjects/components/HeaderComponent'
+import {mocks} from '../mocks'
+import { ProductPage } from '../pageObjects/pages/'
+import { HeaderComponent } from '../pageObjects/components/'
 
 type TestFixtures = {
 	productPage: ProductPage
@@ -16,10 +11,11 @@ type TestFixtures = {
 export const test = base.extend<TestFixtures>({
 	productPage: async ({ page, context }, use) => {
 		const productPage = new ProductPage(page)
+		
 		await Promise.all([
-			mockDevMiddlewareManifest(context),
-			mockDevPagesManifest(context),
-            mockProductData(context),
+			mocks.devMiddlewareManifest(context),
+			mocks.devPagesManifest(context),
+			mocks.productData(context),
 		])
 
 		await productPage.open()

@@ -1,12 +1,6 @@
 import { test as base } from '@playwright/test'
-import {
-	mockEn,
-	mockDevMiddlewareManifest,
-	mockDevPagesManifest,
-	mockUserInfo
-} from '../mocks/'
-
-import { HomePage } from '../pageObjects/pages/HomePage'
+import {mocks} from '../mocks/'
+import { HomePage } from '../pageObjects/pages'
 
 type TestFixtures = {
 	homePage: HomePage
@@ -15,11 +9,12 @@ type TestFixtures = {
 export const test = base.extend<TestFixtures>({
 	homePage: async ({ page, context }, use) => {
 		const homePage = new HomePage(page)
+		
 		await Promise.all([
-			mockEn(context),
-			mockDevMiddlewareManifest(context),
-			mockDevPagesManifest(context),
-			mockUserInfo(context),
+			mocks.en(context),
+			mocks.devMiddlewareManifest(context),
+			mocks.devPagesManifest(context),
+			mocks.userInfo(context),
 		])
 
 		await homePage.open()
