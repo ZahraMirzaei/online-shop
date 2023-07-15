@@ -63,7 +63,7 @@ You can visit and explore in the ZiShop template at [ZiShop.vercel.app](https://
 1. Sign up in [sanity.io](https://www.sanity.io/) and get `projectId` and `token`
 
 > **Warning**&nbsp;
-> To work with sanity, people how live in Iran should run `VPN`.
+> To work with sanity, people who live in Iran should use a `VPN`.
 
 2. Clone the project
   ```bash
